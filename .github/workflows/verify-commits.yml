@@ -27,7 +27,7 @@ permissions:
 jobs:
   verify-signatures:
     name: Verify Commit Signatures
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-slim
     timeout-minutes: 1
     steps:
       - uses: actions/checkout@v6
