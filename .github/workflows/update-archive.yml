@@ -30,15 +30,14 @@ jobs:
   update:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Java
-        uses: actions/setup-java@v4
+      - uses: actions/checkout@v4
         with:
-          distribution: 'temurin'
+          repository: 'apache/fineract-chat-archive'
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: 'zulu'
           java-version: '21'
-          cache: 'gradle'
 
       - name: Update archive
         env:
