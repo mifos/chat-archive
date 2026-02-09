@@ -23,13 +23,31 @@ on:
     - cron: '0 2 * * *'
   workflow_dispatch:
 
-permissions:
-  contents: write
-
 jobs:
-  update:
-    runs-on: ubuntu-latest
+  load:
+    name: Load state
+    runs-on: ubuntu-slim
+    timeout-minutes: 1
     steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/upload-artifact@v6
+        with:
+          path: |
+            docs
+            state
+          name: state
+
+  update:
+    name: Update archive
+    needs: load
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - uses: actions/download-artifact@v7
+        with:
+          name: state
+
       - uses: actions/checkout@v6
         with:
           repository: 'apache/fineract-chat-archive'
@@ -39,10 +57,29 @@ jobs:
           distribution: 'zulu'
           java-version: '21'
 
-      - name: Update archive
+      - name: Fetch messages
         env:
           SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
         run: ./gradlew updateChatArchive
+
+      - uses: actions/upload-artifact@v6
+        with:
+          path: |
+            docs
+            state
+          name: state
+
+  save:
+    name: Save state
+    needs: update
+    runs-on: ubuntu-slim
+    timeout-minutes: 1
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v7
+        with:
+          name: state
 
       - name: Commit updates
         run: |
