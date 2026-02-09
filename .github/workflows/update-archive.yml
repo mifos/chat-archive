@@ -36,7 +36,7 @@ jobs:
           path: |
             docs
             state
-          name: state
+          name: current-state
 
   update:
     name: Update archive
@@ -46,7 +46,7 @@ jobs:
     steps:
       - uses: actions/download-artifact@v7
         with:
-          name: state
+          name: current-state
 
       - uses: actions/checkout@v6
         with:
@@ -67,7 +67,7 @@ jobs:
           path: |
             docs
             state
-          name: state
+          name: new-state
 
   save:
     name: Save state
@@ -79,7 +79,7 @@ jobs:
     steps:
       - uses: actions/download-artifact@v7
         with:
-          name: state
+          name: new-state
 
       - name: Commit updates
         run: |
