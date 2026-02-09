@@ -7,3 +7,5 @@ See automations in `.github/workflows/`.
 ## Copyright and License
 
 This archive is ©2026 Mifos Initiative. Some rights reserved. Released under the [Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) License](https://creativecommons.org/licenses/by-sa/4.0/).
+
+Includes ASF software `scripts/verify-signed-commits.sh` from <https://github.com/apache/fineract/commit/d61b5e65f940f722e5610c36201b42bf0f3d70f1>.
