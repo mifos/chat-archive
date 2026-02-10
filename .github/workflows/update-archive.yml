@@ -60,6 +60,8 @@ jobs:
       - name: Fetch messages
         env:
           SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+          CHANNELS_ALLOWLIST: '#fineract'
+          LOOKBACK_DAYS: 1
         run: ./gradlew updateChatArchive
 
       - uses: actions/upload-artifact@v6
