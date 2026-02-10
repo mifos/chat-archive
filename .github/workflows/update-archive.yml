@@ -59,7 +59,6 @@ jobs:
           java-version: '21'
 
       - name: Fetch messages
-        working-directory: archiver
         env:
           SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
           CHANNELS_ALLOWLIST: '#fineract'
