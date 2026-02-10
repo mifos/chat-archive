@@ -1,5 +1,5 @@
 ---
-title: "Fineract Chat Archive"
+title: "Chat Archive"
 ---
 
 ## Channels
