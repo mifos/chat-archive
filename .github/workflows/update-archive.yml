@@ -16,6 +16,19 @@
 # specific language governing permissions and limitations
 # under the License.
 #
+
+#######################################################################
+#                               NOTICE                                #
+#######################################################################
+# Currently this is the best and only example for how to set up
+# https://github.com/apache/fineract-chat-archive to run automatically with
+# GitHub Actions.
+#
+# If you change anything below in a way that others can/should benefit from,
+# please also submit a PR to that repo so the upstream version of
+# `update-archive.yml` is kept up to date.
+#######################################################################
+
 name: Update chat archive
 
 on:
