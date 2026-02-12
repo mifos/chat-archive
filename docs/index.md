@@ -1,7 +1,13 @@
 ---
 title: "Chat Archive"
+permalink: /
 ---
 
-## Channels
+<link rel="stylesheet" href="assets/chat-archive.css">
 
-- [#fineract](daily/fineract/index.md)
+<section class="archive-index">
+<h2>Channels</h2>
+<ul class="archive-channel-list">
+<li><a href="daily/fineract/">#fineract</a></li>
+</ul>
+</section>
