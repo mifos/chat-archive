@@ -76,6 +76,7 @@ jobs:
           SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
           CHANNELS_ALLOWLIST: '#fineract'
           LOOKBACK_DAYS: 1
+          SITE_BASE_URL: 'https://mifos.github.io/chat-archive'
         run: ./gradlew --quiet updateChatArchive
 
       - uses: actions/upload-artifact@v6
