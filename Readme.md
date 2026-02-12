@@ -6,7 +6,7 @@ See automations in `.github/workflows/`.
 
 ## Local run
 
-Tested in Bash shell on Ubuntu LTS desktop.
+### Bash shell on Ubuntu LTS desktop
 
 ```bash
 sudo apt install openjdk-25-jdk-headless
