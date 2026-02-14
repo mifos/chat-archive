@@ -1,15 +1,63 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+
 :root {
-  color-scheme: light;
+  color-scheme: light dark;
 }
 
 body {
+  margin: 0;
+  background: #f8fafc;
+  color: #1e293b;
+  font-family: "Segoe UI", Arial, sans-serif;
+  line-height: 1.5;
+}
+
+.archive-page {
   margin: 0 auto;
   max-width: 960px;
   padding: 1.5rem;
-  font-family: "Segoe UI", Arial, sans-serif;
-  line-height: 1.5;
-  color: #1e293b;
-  background: #f8fafc;
+}
+
+.archive-header h1 {
+  margin: 0 0 0.75rem 0;
+  color: #0f172a;
+}
+
+.archive-header h2 {
+  margin: 0 0 0.75rem 0;
+  color: #0f172a;
+}
+
+.archive-breadcrumb {
+  margin: 0 0 0.5rem 0;
+  font-size: 0.95rem;
+  color: #475569;
+}
+
+.archive-breadcrumb a {
+  color: #0a58ca;
+  text-decoration: none;
+}
+
+.archive-breadcrumb a:hover {
+  text-decoration: underline;
 }
 
 .archive-log {
@@ -18,24 +66,47 @@ body {
 }
 
 .archive-message {
-  display: grid;
-  grid-template-columns: max-content max-content 1fr;
-  gap: 0.75rem;
-  align-items: baseline;
-  padding: 0.625rem 0.75rem;
+  padding: 0.75rem 0.9rem;
   border: 1px solid #dbe3ef;
-  border-radius: 8px;
+  border-radius: 10px;
   background: #ffffff;
 }
 
+.archive-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.archive-thread {
+  margin: 0.1rem 0 0.5rem 1.6rem;
+  padding-left: 1rem;
+  border-left: 3px solid #94a3b8;
+  display: grid;
+  gap: 0.65rem;
+}
+
+.archive-thread .archive-message {
+  background: #f6faff;
+  border-color: #cad8eb;
+}
+
 .archive-message-reply {
-  margin-left: 1.5rem;
-  border-left: 4px solid #cbd5e1;
+  margin-left: 0;
 }
 
 .archive-reply-indicator {
-  color: #64748b;
+  color: #4f46e5;
+  font-weight: 700;
+}
+
+.archive-reply-label {
+  color: #475569;
+  font-size: 0.83rem;
   font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
 }
 
 .archive-time {
@@ -59,6 +130,44 @@ body {
 .archive-text {
   color: #1e293b;
   overflow-wrap: anywhere;
+  margin-top: 0.5rem;
+}
+
+.archive-reactions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.55rem;
+}
+
+.archive-reaction {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.12rem 0.55rem;
+  border-radius: 999px;
+  border: 1px solid #bfd1e8;
+  background: #eaf2fb;
+  color: #0f3a67;
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.archive-line {
+  display: inline;
+}
+
+.archive-list {
+  margin: 0.45rem 0 0.45rem 1.25rem;
+  padding: 0;
+}
+
+.archive-list-numbered {
+  list-style-type: decimal;
+}
+
+.archive-list li {
+  margin: 0.2rem 0;
 }
 
 .archive-link {
@@ -76,17 +185,79 @@ body {
   margin: 0.35rem 0;
 }
 
-@media (max-width: 720px) {
+.archive-index a {
+  color: #0a58ca;
+}
+
+@media (prefers-color-scheme: dark) {
   body {
-    padding: 1rem;
+    background: #0f172a;
+    color: #e2e8f0;
+  }
+
+  .archive-header h1,
+  .archive-header h2 {
+    color: #f8fafc;
+  }
+
+  .archive-breadcrumb {
+    color: #cbd5e1;
+  }
+
+  .archive-breadcrumb a,
+  .archive-index a,
+  .archive-link {
+    color: #7dd3fc;
   }
 
   .archive-message {
-    grid-template-columns: 1fr;
-    gap: 0.35rem;
+    background: #111827;
+    border-color: #334155;
   }
 
-  .archive-message-reply {
-    margin-left: 0.75rem;
+  .archive-thread {
+    border-left-color: #64748b;
+  }
+
+  .archive-thread .archive-message {
+    background: #0f1b2f;
+    border-color: #344860;
+  }
+
+  .archive-reply-indicator {
+    color: #a5b4fc;
+  }
+
+  .archive-reply-label {
+    color: #cbd5e1;
+  }
+
+  .archive-time {
+    color: #cbd5e1;
+  }
+
+  .archive-user {
+    color: #f8fafc;
+  }
+
+  .archive-text {
+    color: #e2e8f0;
+  }
+
+  .archive-reaction {
+    border-color: #3b5f85;
+    background: #173252;
+    color: #bfdbfe;
+  }
+}
+
+@media (max-width: 720px) {
+  .archive-page {
+    padding: 1rem;
+  }
+
+  .archive-thread {
+    margin-left: 0.9rem;
+    padding-left: 0.75rem;
   }
 }
