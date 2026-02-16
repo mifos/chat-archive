@@ -9,6 +9,7 @@ permalink: /daily/fineract/
 <section class="archive-index">
 <h2>Days</h2>
 <ul class="archive-day-list">
+<li><a href="2026-02-15/">2026-02-15</a></li>
 <li><a href="2026-02-12/">2026-02-12</a></li>
 <li><a href="2026-02-11/">2026-02-11</a></li>
 <li><a href="2026-02-10/">2026-02-10</a></li>
