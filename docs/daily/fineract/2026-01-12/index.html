@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>#fineract 2026-01-12</title>
+  <link rel="stylesheet" href="../../../assets/chat-archive.css">
+</head>
+<body>
+  <main class="archive-page">
+<header class="archive-header">
+<p class="archive-breadcrumb"><a href="../../../">Channels</a> / <a href="../">#fineract</a> / 2026-01-12</p><h1>#fineract 2026-01-12</h1></header><section class="archive-log"><article class="archive-message">
+<div class="archive-meta">
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1768215301213789" title="Mon, 12 Jan 2026 10:55:01 GMT">Mon 10:55</a><span class="archive-user">Anand Mutha</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">@Anand Mutha has joined the channel</span>
+</div>
+</article><article class="archive-message">
+<div class="archive-meta">
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1768216520677579" title="Mon, 12 Jan 2026 11:15:20 GMT">Mon 11:15</a><span class="archive-user">Anand Mutha</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">👋 Hello, team!</span>
+<br><br>
+<span class="archive-line">While generating some important reports in Mifos, like disbursal report, I am getting this type of Error -</span>
+<br><span class="archive-line">&quot;Http failure response for <a class="archive-link" href="http://192.168.241.3:8086/fineract-provider/api/v1/runreports/Disbursal%20Report?tenantIdentifier=default&amp;amp;locale=en&amp;amp;dateFormat=dd%20MMMM%20yyyy&amp;amp;R_fromDate=01%20October%202025&amp;amp;R_toDate=12%20January%202026&amp;amp;R_branch=1&amp;amp;output-type=HTML">http://192.168.241.3:8086/fineract-provider/api/v1/runreports/Disbursal%20Report?tenantIdentifier=default&amp;amp;locale=en&amp;amp;dateFormat=dd%20MMMM%20yyyy&amp;amp;R_fromDate=01%20October%202025&amp;amp;R_toDate=12%20January%202026&amp;amp;R_branch=1&amp;amp;output-type=HTML</a>: 403 OK&quot;</span>
+<br><br>
+<span class="archive-line">Can anyone please help me with this ?</span>
+</div>
+</article><article class="archive-message">
+<div class="archive-meta">
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1768216773445569" title="Mon, 12 Jan 2026 11:19:33 GMT">Mon 11:19</a><span class="archive-user">Adam Saghy</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">Can you please copy the full response object from the browser network tab for this failed call?</span>
+</div>
+</article><article class="archive-message">
+<div class="archive-meta">
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1768216789862359" title="Mon, 12 Jan 2026 11:19:49 GMT">Mon 11:19</a><span class="archive-user">Adam Saghy</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">if it does not contain any useful information, you might wanna share the console log of the backend too</span>
+</div>
+</article><article class="archive-message">
+<div class="archive-meta">
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1768217647521079" title="Mon, 12 Jan 2026 11:34:07 GMT">Mon 11:34</a><span class="archive-user">Horlugingin Ayoade</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">@Anand Mutha , most likely you have not setup pentaho . just like Adam said , please share the response body</span>
+</div>
+</article><article class="archive-message">
+<div class="archive-meta">
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1768223975647519" title="Mon, 12 Jan 2026 13:19:35 GMT">Mon 13:19</a><span class="archive-user">Dhroov Sankla</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">@Dhroov Sankla has joined the channel</span>
+</div>
+</article><article class="archive-message">
+<div class="archive-meta">
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1768224248362089" title="Mon, 12 Jan 2026 13:24:08 GMT">Mon 13:24</a><span class="archive-user">Dhroov Sankla</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">&quot;Hello # team! I’m <strong>Dhroov Sankla</strong>, a developer interested in contributing to the backend modernization projects for GSoC 2026. My stack includes <strong>Java 17/21, Spring Boot, and MySQL</strong>. I&#39;m currently studying the API architecture and looking for &#39;good first issues&#39; to get started. Glad to be here!&quot;</span>
+</div>
+</article><article class="archive-message">
+<div class="archive-meta">
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1768224354038099" title="Mon, 12 Jan 2026 13:25:54 GMT">Mon 13:25</a><span class="archive-user">Anand Mutha</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">Hii @Adam Saghy,</span>
+<br><br>
+<span class="archive-line">{</span>
+<br><span class="archive-line">    &quot;developerMessage&quot;: &quot;The request caused a data integrity issue to be fired by the database.&quot;,</span>
+<br><span class="archive-line">    &quot;httpStatusCode&quot;: &quot;403&quot;,</span>
+<br><span class="archive-line">    &quot;defaultUserMessage&quot;: &quot;Pentaho failed: Failed to execute query.&quot;,</span>
+<br><span class="archive-line">    &quot;userMessageGlobalisationCode&quot;: &quot;error.msg.reporting.error&quot;,</span>
+<br><span class="archive-line">    &quot;errors&quot;: [</span>
+<br><span class="archive-line">        {</span>
+<br><span class="archive-line">            &quot;defaultUserMessage&quot;: &quot;Pentaho failed: Failed to execute query.&quot;,</span>
+<br><span class="archive-line">            &quot;developerMessage&quot;: &quot;Pentaho failed: Failed to execute query.&quot;,</span>
+<br><span class="archive-line">            &quot;userMessageGlobalisationCode&quot;: &quot;error.msg.reporting.error&quot;,</span>
+<br><span class="archive-line">            &quot;args&quot;: []</span>
+<br><span class="archive-line">        }</span>
+<br><span class="archive-line">    ]</span>
+<br><span class="archive-line">}</span>
+</div>
+</article><article class="archive-message">
+<div class="archive-meta">
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1768224411647929?thread_ts=1768224411.647929&amp;cid=C028634A61L" title="Mon, 12 Jan 2026 13:26:51 GMT">Mon 13:26</a><span class="archive-user">Anand Mutha</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">Hii @Horlugingin Ayoade, I already did, also other pentaho reports working perfectly fine,</span>
+<br><br>
+<span class="archive-line">{</span>
+<br><span class="archive-line">    &quot;developerMessage&quot;: &quot;The request caused a data integrity issue to be fired by the database.&quot;,</span>
+<br><span class="archive-line">    &quot;httpStatusCode&quot;: &quot;403&quot;,</span>
+<br><span class="archive-line">    &quot;defaultUserMessage&quot;: &quot;Pentaho failed: Failed to execute query.&quot;,</span>
+<br><span class="archive-line">    &quot;userMessageGlobalisationCode&quot;: &quot;error.msg.reporting.error&quot;,</span>
+<br><span class="archive-line">    &quot;errors&quot;: [</span>
+<br><span class="archive-line">        {</span>
+<br><span class="archive-line">            &quot;defaultUserMessage&quot;: &quot;Pentaho failed: Failed to execute query.&quot;,</span>
+<br><span class="archive-line">            &quot;developerMessage&quot;: &quot;Pentaho failed: Failed to execute query.&quot;,</span>
+<br><span class="archive-line">            &quot;userMessageGlobalisationCode&quot;: &quot;error.msg.reporting.error&quot;,</span>
+<br><span class="archive-line">            &quot;args&quot;: []</span>
+<br><span class="archive-line">        }</span>
+<br><span class="archive-line">    ]</span>
+<br><span class="archive-line">}</span>
+</div>
+</article><section class="archive-thread" aria-label="Thread replies">
+<article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1768228992946509?thread_ts=1768224411.647929&amp;cid=C028634A61L" title="Mon, 12 Jan 2026 14:43:12 GMT">Mon 14:43</a><span class="archive-user">Horlugingin Ayoade</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">we can hop on a call tomorrow . The logs can also help us</span>
+</div>
+</article></section></section>
+  </main>
+</body>
+</html>

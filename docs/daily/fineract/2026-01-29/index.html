@@ -8,7 +8,41 @@
 </head>
 <body>
   <main class="archive-page">
-<header class="archive-header"><p class="archive-breadcrumb"><a href="../../../">Channels</a> / <a href="../">#fineract</a> / 2026-01-29</p><h1>#fineract 2026-01-29</h1></header><section class="archive-log"><article class="archive-message"><div class="archive-meta"><a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1769668676030219?thread_ts=1769668676.030219&amp;cid=C028634A61L" title="Thu, 29 Jan 2026 06:37:56 GMT">Thu 06:37</a><span class="archive-user">Krishna Mewara (DeathGun44)</span></div><div class="archive-text"><span class="archive-line">Hey maintainers! Working on FINERACT-2004 (Login Retry Limit) and wanted to get your thoughts on something.</span><br><br><span class="archive-line">The core feature is done - accounts lock after N failed attempts, reset on success, toggle on/off via config. All working with tests.</span><br><br><span class="archive-line">But the ticket mentions &quot;Add this to permissions list to allow granting the same to qualified roles&quot; and I&#39;m not 100% sure what&#39;s intended here.</span><br><br><span class="archive-line">Right now, unlocking a locked user happens through the existing UPDATE_USER permission (admin edits the user). But I&#39;m wondering if the ticket wants a dedicated UNLOCK_USER permission so, say, a help desk person could unlock accounts without having full user-edit access?</span><br><br><span class="archive-line">If that&#39;s the case, I could:</span><br><ul class="archive-list"><li>Add the UNLOCK_USER permission seed in this PR</li><li>Create a follow-up ticket for the dedicated unlock endpoint keeping this PR focused.</li></ul><br><span class="archive-line">Or if the existing UPDATE_USER flow is fine, I&#39;ll just skip the new permission entirely.</span><br><span class="archive-line">What do you think? Happy to go either way.</span><br><span class="archive-line">Jira: <a class="archive-link" href="https://issues.apache.org/jira/browse/FINERACT-2004">https://issues.apache.org/jira/browse/FINERACT-2004</a></span></div></article><section class="archive-thread" aria-label="Thread replies"><article class="archive-message archive-message-reply"><div class="archive-meta"><span class="archive-reply-indicator" aria-hidden="true">&rarr;</span><span class="archive-reply-label">reply</span><a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1769800434087969?thread_ts=1769668676.030219&amp;cid=C028634A61L" title="Fri, 30 Jan 2026 19:13:54 GMT">Fri 19:13</a><span class="archive-user">Krishna Mewara (DeathGun44)</span></div><div class="archive-text"><span class="archive-line">@Adam Saghy could you please take a quick look at this when you have a moment?</span></div></article></section></section>
+<header class="archive-header">
+<p class="archive-breadcrumb"><a href="../../../">Channels</a> / <a href="../">#fineract</a> / 2026-01-29</p><h1>#fineract 2026-01-29</h1></header><section class="archive-log"><article class="archive-message">
+<div class="archive-meta">
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1769668676030219?thread_ts=1769668676.030219&amp;cid=C028634A61L" title="Thu, 29 Jan 2026 06:37:56 GMT">Thu 06:37</a><span class="archive-user">Krishna Mewara (DeathGun44)</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">Hey maintainers! Working on FINERACT-2004 (Login Retry Limit) and wanted to get your thoughts on something.</span>
+<br><br>
+<span class="archive-line">The core feature is done - accounts lock after N failed attempts, reset on success, toggle on/off via config. All working with tests.</span>
+<br><br>
+<span class="archive-line">But the ticket mentions &quot;Add this to permissions list to allow granting the same to qualified roles&quot; and I&#39;m not 100% sure what&#39;s intended here.</span>
+<br><br>
+<span class="archive-line">Right now, unlocking a locked user happens through the existing UPDATE_USER permission (admin edits the user). But I&#39;m wondering if the ticket wants a dedicated UNLOCK_USER permission so, say, a help desk person could unlock accounts without having full user-edit access?</span>
+<br><br>
+<span class="archive-line">If that&#39;s the case, I could:</span>
+<br><ul class="archive-list">
+<li>Add the UNLOCK_USER permission seed in this PR</li>
+<li>Create a follow-up ticket for the dedicated unlock endpoint keeping this PR focused.</li>
+</ul>
+<br>
+<span class="archive-line">Or if the existing UPDATE_USER flow is fine, I&#39;ll just skip the new permission entirely.</span>
+<br><span class="archive-line">What do you think? Happy to go either way.</span>
+<br><span class="archive-line">Jira: <a class="archive-link" href="https://issues.apache.org/jira/browse/FINERACT-2004">https://issues.apache.org/jira/browse/FINERACT-2004</a></span>
+</div>
+</article><section class="archive-thread" aria-label="Thread replies">
+<article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1769800434087969?thread_ts=1769668676.030219&amp;cid=C028634A61L" title="Fri, 30 Jan 2026 19:13:54 GMT">Fri 19:13</a><span class="archive-user">Krishna Mewara (DeathGun44)</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">@Adam Saghy could you please take a quick look at this when you have a moment?</span>
+</div>
+</article></section></section>
   </main>
 </body>
 </html>

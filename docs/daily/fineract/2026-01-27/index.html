@@ -8,7 +8,233 @@
 </head>
 <body>
   <main class="archive-page">
-<header class="archive-header"><p class="archive-breadcrumb"><a href="../../../">Channels</a> / <a href="../">#fineract</a> / 2026-01-27</p><h1>#fineract 2026-01-27</h1></header><section class="archive-log"><article class="archive-message"><div class="archive-meta"><a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1769479935139969" title="Tue, 27 Jan 2026 02:12:15 GMT">Tue 02:12</a><span class="archive-user">Edward K</span></div><div class="archive-text"><span class="archive-line">Hi everyone, I saw a TODO in the codebase and started a ticket to work on it. The purpose is to improve the logging of AdvancedPaymentScheduleTransactionProcessor. Could I please get a review for approval to work on this? Thank you! <a class="archive-link" href="https://issues.apache.org/jira/browse/FINERACT-2453">https://issues.apache.org/jira/browse/FINERACT-2453</a></span></div></article><article class="archive-message"><div class="archive-meta"><a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1769521902699919?thread_ts=1769521902.699919&amp;cid=C028634A61L" title="Tue, 27 Jan 2026 13:51:42 GMT">Tue 13:51</a><span class="archive-user">Edson</span></div><div class="archive-text"><span class="archive-line">hay @David Higgins @Horlugingin Ayoade @Victor Romero i have a trouble running fineract locally on my machine, running these was a succes [./gradlew createDB -PdbName=fineract_tenants</span><br><span class="archive-line">./gradlew createDB -PdbName=fineract_default]   run succesfully but this ./gradlew devRun fails to build. I need a solution for this</span></div></article><section class="archive-thread" aria-label="Thread replies"><article class="archive-message archive-message-reply"><div class="archive-meta"><span class="archive-reply-indicator" aria-hidden="true">&rarr;</span><span class="archive-reply-label">reply</span><a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1769522433847759?thread_ts=1769521902.699919&amp;cid=C028634A61L" title="Tue, 27 Jan 2026 14:00:33 GMT">Tue 14:00</a><span class="archive-user">Adam Saghy</span></div><div class="archive-text"><span class="archive-line">If you could share your console log, it would make it easier for us to help you!</span></div><div class="archive-reactions"><span class="archive-reaction">👍 1</span></div></article><article class="archive-message archive-message-reply"><div class="archive-meta"><span class="archive-reply-indicator" aria-hidden="true">&rarr;</span><span class="archive-reply-label">reply</span><a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1769522508949929?thread_ts=1769521902.699919&amp;cid=C028634A61L" title="Tue, 27 Jan 2026 14:01:48 GMT">Tue 14:01</a><span class="archive-user">Horlugingin Ayoade</span></div><div class="archive-text"><span class="archive-line">@Edson did you set credentials for your db ?</span></div></article><article class="archive-message archive-message-reply"><div class="archive-meta"><span class="archive-reply-indicator" aria-hidden="true">&rarr;</span><span class="archive-reply-label">reply</span><a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1769522919399299?thread_ts=1769521902.699919&amp;cid=C028634A61L" title="Tue, 27 Jan 2026 14:08:39 GMT">Tue 14:08</a><span class="archive-user">Edson</span></div><div class="archive-text"><span class="archive-line">i just hard coded them in the application.properties file, more so the hikari and tenent password</span></div></article><article class="archive-message archive-message-reply"><div class="archive-meta"><span class="archive-reply-indicator" aria-hidden="true">&rarr;</span><span class="archive-reply-label">reply</span><a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1769522977213449?thread_ts=1769521902.699919&amp;cid=C028634A61L" title="Tue, 27 Jan 2026 14:09:37 GMT">Tue 14:09</a><span class="archive-user">Edson</span></div><div class="archive-text"><span class="archive-line">@Adam Saghy i&#39;m running it again i shall provide the logs</span></div></article><article class="archive-message archive-message-reply"><div class="archive-meta"><span class="archive-reply-indicator" aria-hidden="true">&rarr;</span><span class="archive-reply-label">reply</span><a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1769523237622829?thread_ts=1769521902.699919&amp;cid=C028634A61L" title="Tue, 27 Jan 2026 14:13:57 GMT">Tue 14:13</a><span class="archive-user">Edson</span></div><div class="archive-text"><span class="archive-line">a full log is her <a class="archive-link" href="https://pastes.io/ps-gmifosb">https://pastes.io/ps-gmifosb</a>  @Adam Saghy @Horlugingin Ayoade</span></div></article><article class="archive-message archive-message-reply"><div class="archive-meta"><span class="archive-reply-indicator" aria-hidden="true">&rarr;</span><span class="archive-reply-label">reply</span><a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1769523497707319?thread_ts=1769521902.699919&amp;cid=C028634A61L" title="Tue, 27 Jan 2026 14:18:17 GMT">Tue 14:18</a><span class="archive-user">Horlugingin Ayoade</span></div><div class="archive-text"><span class="archive-line">`org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1643) at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913) at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ... 156 common frames omitted Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name &#39;hikariTenantDataSource&#39; defined in class path resource [org/apache/fineract/infrastructure/core/config/HikariCpConfig.class]: Socket fail to connect to localhost. Connection refused: getsockopt`</span></div></article><article class="archive-message archive-message-reply"><div class="archive-meta"><span class="archive-reply-indicator" aria-hidden="true">&rarr;</span><span class="archive-reply-label">reply</span><a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1769523550367099?thread_ts=1769521902.699919&amp;cid=C028634A61L" title="Tue, 27 Jan 2026 14:19:10 GMT">Tue 14:19</a><span class="archive-user">Adam Saghy</span></div><div class="archive-text"><span class="archive-line">```Caused by: java.sql.SQLNonTransientConnectionException: Socket fail to connect to localhost. Connection refused: getsockopt</span><br><span class="archive-line">        at org.mariadb.jdbc.client.impl.ConnectionHelper.connectSocket(ConnectionHelper.java:131)</span><br><span class="archive-line">        at org.mariadb.jdbc.client.impl.StandardClient.&amp;lt;init&amp;gt;(StandardClient.java:125)</span><br><span class="archive-line">        at org.mariadb.jdbc.Driver.connect(Driver.java:75)</span><br><span class="archive-line">        at org.mariadb.jdbc.Driver.connect(Driver.java:104)</span><br><span class="archive-line">        at org.mariadb.jdbc.Driver.connect(Driver.java:29)</span><br><span class="archive-line">        at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144)</span><br><span class="archive-line">        at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:370)</span><br><span class="archive-line">        at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:207)</span><br><span class="archive-line">        at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488)</span><br><span class="archive-line">        at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:576)</span><br><span class="archive-line">        at com.zaxxer.hikari.pool.HikariPool.&amp;lt;init&amp;gt;(HikariPool.java:97)</span><br><span class="archive-line">        at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111)</span><br><span class="archive-line">        at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)</span><br><span class="archive-line">        at java.base/java.lang.reflect.Method.invoke(Method.java:580)</span><br><span class="archive-line">        at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeCustomInitMethod(AbstractAutowireCapableBeanFactory.java:1930)</span><br><span class="archive-line">        at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1883)</span><br><span class="archive-line">        at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1822)</span><br><span class="archive-line">        ... 180 common frames omitted</span><br><span class="archive-line">Caused by: java.net.ConnectException: Connection refused: getsockopt</span><br><span class="archive-line">        at java.base/sun.nio.ch.Net.pollConnect(Native Method)</span><br><span class="archive-line">        at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:690)</span><br><span class="archive-line">        at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)</span><br><span class="archive-line">        at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)</span><br><span class="archive-line">        at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)</span><br><span class="archive-line">        at java.base/java.net.Socket.connect(Socket.java:751)</span><br><span class="archive-line">        at org.mariadb.jdbc.client.impl.ConnectionHelper.connectSocket(ConnectionHelper.java:118)</span><br><span class="archive-line">        ... 196 common frames omitted```</span><br><span class="archive-line">The connection details seems incorrect in your setup</span></div><div class="archive-reactions"><span class="archive-reaction">👍 1</span></div></article><article class="archive-message archive-message-reply"><div class="archive-meta"><span class="archive-reply-indicator" aria-hidden="true">&rarr;</span><span class="archive-reply-label">reply</span><a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1769523811720789?thread_ts=1769521902.699919&amp;cid=C028634A61L" title="Tue, 27 Jan 2026 14:23:31 GMT">Tue 14:23</a><span class="archive-user">Edson</span></div><div class="archive-text"><span class="archive-line">so what are the steps of fixing the db connection, i have made much changes to files trying to fix the problem, i might have messed up some things...</span></div></article><article class="archive-message archive-message-reply"><div class="archive-meta"><span class="archive-reply-indicator" aria-hidden="true">&rarr;</span><span class="archive-reply-label">reply</span><a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1769523862200289?thread_ts=1769521902.699919&amp;cid=C028634A61L" title="Tue, 27 Jan 2026 14:24:22 GMT">Tue 14:24</a><span class="archive-user">Horlugingin Ayoade</span></div><div class="archive-text"><span class="archive-line">@Edson , my advice is to first run using the  given docker compose files</span></div></article><article class="archive-message archive-message-reply"><div class="archive-meta"><span class="archive-reply-indicator" aria-hidden="true">&rarr;</span><span class="archive-reply-label">reply</span><a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1769524021376139?thread_ts=1769521902.699919&amp;cid=C028634A61L" title="Tue, 27 Jan 2026 14:27:01 GMT">Tue 14:27</a><span class="archive-user">Edson</span></div><div class="archive-text"><span class="archive-line">Actually my aim is running both frontend and backend...will changes in the backend show impact if I use docker?</span></div></article><article class="archive-message archive-message-reply"><div class="archive-meta"><span class="archive-reply-indicator" aria-hidden="true">&rarr;</span><span class="archive-reply-label">reply</span><a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1769524088898779?thread_ts=1769521902.699919&amp;cid=C028634A61L" title="Tue, 27 Jan 2026 14:28:08 GMT">Tue 14:28</a><span class="archive-user">Horlugingin Ayoade</span></div><div class="archive-text"><span class="archive-line">yes it will</span></div></article><article class="archive-message archive-message-reply"><div class="archive-meta"><span class="archive-reply-indicator" aria-hidden="true">&rarr;</span><span class="archive-reply-label">reply</span><a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1769524194791639?thread_ts=1769521902.699919&amp;cid=C028634A61L" title="Tue, 27 Jan 2026 14:29:54 GMT">Tue 14:29</a><span class="archive-user">Edson</span></div><div class="archive-text"><span class="archive-line">@Horlugingin Ayoade how do i go about the docker compose file because i have docker on my machine</span></div></article><article class="archive-message archive-message-reply"><div class="archive-meta"><span class="archive-reply-indicator" aria-hidden="true">&rarr;</span><span class="archive-reply-label">reply</span><a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1769542570288749?thread_ts=1769521902.699919&amp;cid=C028634A61L" title="Tue, 27 Jan 2026 19:36:10 GMT">Tue 19:36</a><span class="archive-user">Adam Monsen (meonkeys)</span></div><div class="archive-text"><span class="archive-line">@Edson step-by-step details on how to set up and test/connect with a RDBMS and basic docker compose usage is not covered in the docs, and probably won&#39;t be added. What is your end goal here? Are you hoping to be a contributor? Do you want to just see/try Fineract?</span></div></article><article class="archive-message archive-message-reply"><div class="archive-meta"><span class="archive-reply-indicator" aria-hidden="true">&rarr;</span><span class="archive-reply-label">reply</span><a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1769566829653039?thread_ts=1769521902.699919&amp;cid=C028634A61L" title="Wed, 28 Jan 2026 02:20:29 GMT">Wed 02:20</a><span class="archive-user">Victor Romero</span></div><div class="archive-text"><span class="archive-line">@Edson <a class="archive-link" href="https://github.com/openMF/mifosx-platform">https://github.com/openMF/mifosx-platform</a></span></div><div class="archive-reactions"><span class="archive-reaction">👍 1</span></div></article><article class="archive-message archive-message-reply"><div class="archive-meta"><span class="archive-reply-indicator" aria-hidden="true">&rarr;</span><span class="archive-reply-label">reply</span><a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1769566988800029?thread_ts=1769521902.699919&amp;cid=C028634A61L" title="Wed, 28 Jan 2026 02:23:08 GMT">Wed 02:23</a><span class="archive-user">Victor Romero</span></div><div class="archive-text"><span class="archive-line">@Edson <a class="archive-link" href="https://youtu.be/VIrtKS4EDvs?si=OmAWGLpjMyx_C4CG">https://youtu.be/VIrtKS4EDvs?si=OmAWGLpjMyx_C4CG</a> (Mac OS)</span></div></article><article class="archive-message archive-message-reply"><div class="archive-meta"><span class="archive-reply-indicator" aria-hidden="true">&rarr;</span><span class="archive-reply-label">reply</span><a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1769567032053649?thread_ts=1769521902.699919&amp;cid=C028634A61L" title="Wed, 28 Jan 2026 02:23:52 GMT">Wed 02:23</a><span class="archive-user">Victor Romero</span></div><div class="archive-text"><span class="archive-line">@Edson <a class="archive-link" href="https://youtu.be/UnyTvFNh4H0?si=OEGhwITa7lLAxlzv">https://youtu.be/UnyTvFNh4H0?si=OEGhwITa7lLAxlzv</a> (K8s + Linux + Postgres database)</span></div></article><article class="archive-message archive-message-reply"><div class="archive-meta"><span class="archive-reply-indicator" aria-hidden="true">&rarr;</span><span class="archive-reply-label">reply</span><a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1769567069004739?thread_ts=1769521902.699919&amp;cid=C028634A61L" title="Wed, 28 Jan 2026 02:24:29 GMT">Wed 02:24</a><span class="archive-user">Victor Romero</span></div><div class="archive-text"><span class="archive-line"><a class="archive-link" href="https://youtu.be/ceeb87bNcPM?si=6oorLEC8pBTaYfmv">https://youtu.be/ceeb87bNcPM?si=6oorLEC8pBTaYfmv</a> (K8s + Linux + MariaDB database)</span></div></article><article class="archive-message archive-message-reply"><div class="archive-meta"><span class="archive-reply-indicator" aria-hidden="true">&rarr;</span><span class="archive-reply-label">reply</span><a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1769567118099729?thread_ts=1769521902.699919&amp;cid=C028634A61L" title="Wed, 28 Jan 2026 02:25:18 GMT">Wed 02:25</a><span class="archive-user">Victor Romero</span></div><div class="archive-text"><span class="archive-line">and Docker <a class="archive-link" href="https://youtu.be/V5XJCk9Lc0w?si=dCoAcuhw2G4j5pfw">https://youtu.be/V5XJCk9Lc0w?si=dCoAcuhw2G4j5pfw</a></span></div><div class="archive-reactions"><span class="archive-reaction">👍 1</span></div></article><article class="archive-message archive-message-reply"><div class="archive-meta"><span class="archive-reply-indicator" aria-hidden="true">&rarr;</span><span class="archive-reply-label">reply</span><a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1769674498004179?thread_ts=1769521902.699919&amp;cid=C028634A61L" title="Thu, 29 Jan 2026 08:14:58 GMT">Thu 08:14</a><span class="archive-user">Edson</span></div><div class="archive-text"><span class="archive-line">@Adam Monsen (meonkeys) my aim is to contribute toward fineract</span></div><div class="archive-reactions"><span class="archive-reaction">👍 1</span></div></article></section></section>
+<header class="archive-header">
+<p class="archive-breadcrumb"><a href="../../../">Channels</a> / <a href="../">#fineract</a> / 2026-01-27</p><h1>#fineract 2026-01-27</h1></header><section class="archive-log"><article class="archive-message">
+<div class="archive-meta">
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1769479935139969" title="Tue, 27 Jan 2026 02:12:15 GMT">Tue 02:12</a><span class="archive-user">Edward K</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">Hi everyone, I saw a TODO in the codebase and started a ticket to work on it. The purpose is to improve the logging of AdvancedPaymentScheduleTransactionProcessor. Could I please get a review for approval to work on this? Thank you! <a class="archive-link" href="https://issues.apache.org/jira/browse/FINERACT-2453">https://issues.apache.org/jira/browse/FINERACT-2453</a></span>
+</div>
+</article><article class="archive-message">
+<div class="archive-meta">
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1769521902699919?thread_ts=1769521902.699919&amp;cid=C028634A61L" title="Tue, 27 Jan 2026 13:51:42 GMT">Tue 13:51</a><span class="archive-user">Edson</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">hay @David Higgins @Horlugingin Ayoade @Victor Romero i have a trouble running fineract locally on my machine, running these was a succes [./gradlew createDB -PdbName=fineract_tenants</span>
+<br><span class="archive-line">./gradlew createDB -PdbName=fineract_default]   run succesfully but this ./gradlew devRun fails to build. I need a solution for this</span>
+</div>
+</article><section class="archive-thread" aria-label="Thread replies">
+<article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1769522433847759?thread_ts=1769521902.699919&amp;cid=C028634A61L" title="Tue, 27 Jan 2026 14:00:33 GMT">Tue 14:00</a><span class="archive-user">Adam Saghy</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">If you could share your console log, it would make it easier for us to help you!</span>
+</div>
+<div class="archive-reactions"><span class="archive-reaction">👍 1</span>
+</div>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1769522508949929?thread_ts=1769521902.699919&amp;cid=C028634A61L" title="Tue, 27 Jan 2026 14:01:48 GMT">Tue 14:01</a><span class="archive-user">Horlugingin Ayoade</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">@Edson did you set credentials for your db ?</span>
+</div>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1769522919399299?thread_ts=1769521902.699919&amp;cid=C028634A61L" title="Tue, 27 Jan 2026 14:08:39 GMT">Tue 14:08</a><span class="archive-user">Edson</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">i just hard coded them in the application.properties file, more so the hikari and tenent password</span>
+</div>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1769522977213449?thread_ts=1769521902.699919&amp;cid=C028634A61L" title="Tue, 27 Jan 2026 14:09:37 GMT">Tue 14:09</a><span class="archive-user">Edson</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">@Adam Saghy i&#39;m running it again i shall provide the logs</span>
+</div>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1769523237622829?thread_ts=1769521902.699919&amp;cid=C028634A61L" title="Tue, 27 Jan 2026 14:13:57 GMT">Tue 14:13</a><span class="archive-user">Edson</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">a full log is her <a class="archive-link" href="https://pastes.io/ps-gmifosb">https://pastes.io/ps-gmifosb</a>  @Adam Saghy @Horlugingin Ayoade</span>
+</div>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1769523497707319?thread_ts=1769521902.699919&amp;cid=C028634A61L" title="Tue, 27 Jan 2026 14:18:17 GMT">Tue 14:18</a><span class="archive-user">Horlugingin Ayoade</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">`org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1643) at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913) at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ... 156 common frames omitted Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name &#39;hikariTenantDataSource&#39; defined in class path resource [org/apache/fineract/infrastructure/core/config/HikariCpConfig.class]: Socket fail to connect to localhost. Connection refused: getsockopt`</span>
+</div>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1769523550367099?thread_ts=1769521902.699919&amp;cid=C028634A61L" title="Tue, 27 Jan 2026 14:19:10 GMT">Tue 14:19</a><span class="archive-user">Adam Saghy</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">```Caused by: java.sql.SQLNonTransientConnectionException: Socket fail to connect to localhost. Connection refused: getsockopt</span>
+<br><span class="archive-line">        at org.mariadb.jdbc.client.impl.ConnectionHelper.connectSocket(ConnectionHelper.java:131)</span>
+<br><span class="archive-line">        at org.mariadb.jdbc.client.impl.StandardClient.&amp;lt;init&amp;gt;(StandardClient.java:125)</span>
+<br><span class="archive-line">        at org.mariadb.jdbc.Driver.connect(Driver.java:75)</span>
+<br><span class="archive-line">        at org.mariadb.jdbc.Driver.connect(Driver.java:104)</span>
+<br><span class="archive-line">        at org.mariadb.jdbc.Driver.connect(Driver.java:29)</span>
+<br><span class="archive-line">        at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144)</span>
+<br><span class="archive-line">        at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:370)</span>
+<br><span class="archive-line">        at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:207)</span>
+<br><span class="archive-line">        at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488)</span>
+<br><span class="archive-line">        at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:576)</span>
+<br><span class="archive-line">        at com.zaxxer.hikari.pool.HikariPool.&amp;lt;init&amp;gt;(HikariPool.java:97)</span>
+<br><span class="archive-line">        at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111)</span>
+<br><span class="archive-line">        at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)</span>
+<br><span class="archive-line">        at java.base/java.lang.reflect.Method.invoke(Method.java:580)</span>
+<br><span class="archive-line">        at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeCustomInitMethod(AbstractAutowireCapableBeanFactory.java:1930)</span>
+<br><span class="archive-line">        at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1883)</span>
+<br><span class="archive-line">        at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1822)</span>
+<br><span class="archive-line">        ... 180 common frames omitted</span>
+<br><span class="archive-line">Caused by: java.net.ConnectException: Connection refused: getsockopt</span>
+<br><span class="archive-line">        at java.base/sun.nio.ch.Net.pollConnect(Native Method)</span>
+<br><span class="archive-line">        at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:690)</span>
+<br><span class="archive-line">        at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)</span>
+<br><span class="archive-line">        at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)</span>
+<br><span class="archive-line">        at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)</span>
+<br><span class="archive-line">        at java.base/java.net.Socket.connect(Socket.java:751)</span>
+<br><span class="archive-line">        at org.mariadb.jdbc.client.impl.ConnectionHelper.connectSocket(ConnectionHelper.java:118)</span>
+<br><span class="archive-line">        ... 196 common frames omitted```</span>
+<br><span class="archive-line">The connection details seems incorrect in your setup</span>
+</div>
+<div class="archive-reactions"><span class="archive-reaction">👍 1</span>
+</div>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1769523811720789?thread_ts=1769521902.699919&amp;cid=C028634A61L" title="Tue, 27 Jan 2026 14:23:31 GMT">Tue 14:23</a><span class="archive-user">Edson</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">so what are the steps of fixing the db connection, i have made much changes to files trying to fix the problem, i might have messed up some things...</span>
+</div>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1769523862200289?thread_ts=1769521902.699919&amp;cid=C028634A61L" title="Tue, 27 Jan 2026 14:24:22 GMT">Tue 14:24</a><span class="archive-user">Horlugingin Ayoade</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">@Edson , my advice is to first run using the  given docker compose files</span>
+</div>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1769524021376139?thread_ts=1769521902.699919&amp;cid=C028634A61L" title="Tue, 27 Jan 2026 14:27:01 GMT">Tue 14:27</a><span class="archive-user">Edson</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">Actually my aim is running both frontend and backend...will changes in the backend show impact if I use docker?</span>
+</div>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1769524088898779?thread_ts=1769521902.699919&amp;cid=C028634A61L" title="Tue, 27 Jan 2026 14:28:08 GMT">Tue 14:28</a><span class="archive-user">Horlugingin Ayoade</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">yes it will</span>
+</div>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1769524194791639?thread_ts=1769521902.699919&amp;cid=C028634A61L" title="Tue, 27 Jan 2026 14:29:54 GMT">Tue 14:29</a><span class="archive-user">Edson</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">@Horlugingin Ayoade how do i go about the docker compose file because i have docker on my machine</span>
+</div>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1769542570288749?thread_ts=1769521902.699919&amp;cid=C028634A61L" title="Tue, 27 Jan 2026 19:36:10 GMT">Tue 19:36</a><span class="archive-user">Adam Monsen (meonkeys)</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">@Edson step-by-step details on how to set up and test/connect with a RDBMS and basic docker compose usage is not covered in the docs, and probably won&#39;t be added. What is your end goal here? Are you hoping to be a contributor? Do you want to just see/try Fineract?</span>
+</div>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1769566829653039?thread_ts=1769521902.699919&amp;cid=C028634A61L" title="Wed, 28 Jan 2026 02:20:29 GMT">Wed 02:20</a><span class="archive-user">Victor Romero</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">@Edson <a class="archive-link" href="https://github.com/openMF/mifosx-platform">https://github.com/openMF/mifosx-platform</a></span>
+</div>
+<div class="archive-reactions"><span class="archive-reaction">👍 1</span>
+</div>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1769566988800029?thread_ts=1769521902.699919&amp;cid=C028634A61L" title="Wed, 28 Jan 2026 02:23:08 GMT">Wed 02:23</a><span class="archive-user">Victor Romero</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">@Edson <a class="archive-link" href="https://youtu.be/VIrtKS4EDvs?si=OmAWGLpjMyx_C4CG">https://youtu.be/VIrtKS4EDvs?si=OmAWGLpjMyx_C4CG</a> (Mac OS)</span>
+</div>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1769567032053649?thread_ts=1769521902.699919&amp;cid=C028634A61L" title="Wed, 28 Jan 2026 02:23:52 GMT">Wed 02:23</a><span class="archive-user">Victor Romero</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">@Edson <a class="archive-link" href="https://youtu.be/UnyTvFNh4H0?si=OEGhwITa7lLAxlzv">https://youtu.be/UnyTvFNh4H0?si=OEGhwITa7lLAxlzv</a> (K8s + Linux + Postgres database)</span>
+</div>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1769567069004739?thread_ts=1769521902.699919&amp;cid=C028634A61L" title="Wed, 28 Jan 2026 02:24:29 GMT">Wed 02:24</a><span class="archive-user">Victor Romero</span>
+</div>
+<div class="archive-text">
+<span class="archive-line"><a class="archive-link" href="https://youtu.be/ceeb87bNcPM?si=6oorLEC8pBTaYfmv">https://youtu.be/ceeb87bNcPM?si=6oorLEC8pBTaYfmv</a> (K8s + Linux + MariaDB database)</span>
+</div>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1769567118099729?thread_ts=1769521902.699919&amp;cid=C028634A61L" title="Wed, 28 Jan 2026 02:25:18 GMT">Wed 02:25</a><span class="archive-user">Victor Romero</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">and Docker <a class="archive-link" href="https://youtu.be/V5XJCk9Lc0w?si=dCoAcuhw2G4j5pfw">https://youtu.be/V5XJCk9Lc0w?si=dCoAcuhw2G4j5pfw</a></span>
+</div>
+<div class="archive-reactions"><span class="archive-reaction">👍 1</span>
+</div>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1769674498004179?thread_ts=1769521902.699919&amp;cid=C028634A61L" title="Thu, 29 Jan 2026 08:14:58 GMT">Thu 08:14</a><span class="archive-user">Edson</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">@Adam Monsen (meonkeys) my aim is to contribute toward fineract</span>
+</div>
+<div class="archive-reactions"><span class="archive-reaction">👍 1</span>
+</div>
+</article></section></section>
   </main>
 </body>
 </html>

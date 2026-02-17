@@ -8,7 +8,37 @@
 </head>
 <body>
   <main class="archive-page">
-<header class="archive-header"><p class="archive-breadcrumb"><a href="../../../">Channels</a> / <a href="../">#fineract</a> / 2026-01-25</p><h1>#fineract 2026-01-25</h1></header><section class="archive-log"><article class="archive-message"><div class="archive-meta"><a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1769345895856619" title="Sun, 25 Jan 2026 12:58:15 GMT">Sun 12:58</a><span class="archive-user">Krishna Mewara (DeathGun44)</span></div><div class="archive-text"><span class="archive-line"><strong>Hi Maintainers,</strong> hope everyone is having a good weekend!</span><br><br><span class="archive-line">Just dropping this here for the start of the week:</span><br><span class="archive-line">While working on <strong>FINERACT-2003</strong>, I ran into `IndexOutOfBounds` crashes in the integration tests. <strong>It looks like</strong> the test harness relies on a fixed number of global configurations, so adding <em>any</em> new config (like the one needed for Password Reset) breaks the build.</span><br><span class="archive-line">I <strong>proposed a fix</strong> in <a class="archive-link" href="https://github.com/apache/fineract/pull/5384">https://github.com/apache/fineract/pull/5384</a> (FINERACT-2450) to make the harness dynamic and stable for everyone.</span><br><span class="archive-line">Could someone take a look when you have a moment?</span><br><br><span class="archive-line">I have also opened the main feature <a class="archive-link" href="https://github.com/apache/fineract/pull/5387">https://github.com/apache/fineract/pull/5387</a> (FINERACT-2003). It temporarily includes the test fix in that PR so the build passes and I will rebase it once the fix is merged.</span><br><span class="archive-line">Thanks!</span></div></article><article class="archive-message"><div class="archive-meta"><a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1769370867489359" title="Sun, 25 Jan 2026 19:54:27 GMT">Sun 19:54</a><span class="archive-user">Ismael Sallami</span></div><div class="archive-text"><span class="archive-line">@Ismael Sallami has joined the channel</span></div></article><article class="archive-message"><div class="archive-meta"><a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1769376494324339" title="Sun, 25 Jan 2026 21:28:14 GMT">Sun 21:28</a><span class="archive-user">Ismael Sallami</span></div><div class="archive-text"><span class="archive-line">Hi! I&#39;m Ismael. I&#39;ve been looking at <strong>FINERACT-2375</strong> (Loan Product templates). I have my local environment ready and I&#39;m currently analyzing the JSON structures to create the predefined templates. If anyone has specific suggestions for the templates (e.g., specific microfinance products), let me know!</span></div></article></section>
+<header class="archive-header">
+<p class="archive-breadcrumb"><a href="../../../">Channels</a> / <a href="../">#fineract</a> / 2026-01-25</p><h1>#fineract 2026-01-25</h1></header><section class="archive-log"><article class="archive-message">
+<div class="archive-meta">
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1769345895856619" title="Sun, 25 Jan 2026 12:58:15 GMT">Sun 12:58</a><span class="archive-user">Krishna Mewara (DeathGun44)</span>
+</div>
+<div class="archive-text">
+<span class="archive-line"><strong>Hi Maintainers,</strong> hope everyone is having a good weekend!</span>
+<br><br>
+<span class="archive-line">Just dropping this here for the start of the week:</span>
+<br><span class="archive-line">While working on <strong>FINERACT-2003</strong>, I ran into `IndexOutOfBounds` crashes in the integration tests. <strong>It looks like</strong> the test harness relies on a fixed number of global configurations, so adding <em>any</em> new config (like the one needed for Password Reset) breaks the build.</span>
+<br><span class="archive-line">I <strong>proposed a fix</strong> in <a class="archive-link" href="https://github.com/apache/fineract/pull/5384">https://github.com/apache/fineract/pull/5384</a> (FINERACT-2450) to make the harness dynamic and stable for everyone.</span>
+<br><span class="archive-line">Could someone take a look when you have a moment?</span>
+<br><br>
+<span class="archive-line">I have also opened the main feature <a class="archive-link" href="https://github.com/apache/fineract/pull/5387">https://github.com/apache/fineract/pull/5387</a> (FINERACT-2003). It temporarily includes the test fix in that PR so the build passes and I will rebase it once the fix is merged.</span>
+<br><span class="archive-line">Thanks!</span>
+</div>
+</article><article class="archive-message">
+<div class="archive-meta">
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1769370867489359" title="Sun, 25 Jan 2026 19:54:27 GMT">Sun 19:54</a><span class="archive-user">Ismael Sallami</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">@Ismael Sallami has joined the channel</span>
+</div>
+</article><article class="archive-message">
+<div class="archive-meta">
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1769376494324339" title="Sun, 25 Jan 2026 21:28:14 GMT">Sun 21:28</a><span class="archive-user">Ismael Sallami</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">Hi! I&#39;m Ismael. I&#39;ve been looking at <strong>FINERACT-2375</strong> (Loan Product templates). I have my local environment ready and I&#39;m currently analyzing the JSON structures to create the predefined templates. If anyone has specific suggestions for the templates (e.g., specific microfinance products), let me know!</span>
+</div>
+</article></section>
   </main>
 </body>
 </html>

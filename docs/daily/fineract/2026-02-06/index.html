@@ -8,7 +8,83 @@
 </head>
 <body>
   <main class="archive-page">
-<header class="archive-header"><p class="archive-breadcrumb"><a href="../../../">Channels</a> / <a href="../">#fineract</a> / 2026-02-06</p><h1>#fineract 2026-02-06</h1></header><section class="archive-log"><article class="archive-message"><div class="archive-meta"><a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1770393067947409" title="Fri, 6 Feb 2026 15:51:07 GMT">Fri 15:51</a><span class="archive-user">Adam Monsen (meonkeys)</span></div><div class="archive-text"><span class="archive-line">@Aira Jena hi there! Wow, 8 PRs for <a class="archive-link" href="https://issues.apache.org/jira/browse/FINERACT-2171">FINERACT-2171</a> already? That is a LOT of code. And it looks like the PRs overlap... how are these intended to be merged? This would take me a long time to review. Do we really need so much complexity for this? Who would maintain this code, and how? I&#39;m concerned this is just kind of spiraling out of control. Does any of it run yet? Have you run/tested it?</span></div></article><article class="archive-message"><div class="archive-meta"><a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1770394721479659" title="Fri, 6 Feb 2026 16:18:41 GMT">Fri 16:18</a><span class="archive-user">Aira Jena</span></div><div class="archive-text"><span class="archive-line">Hi @Adam Monsen (meonkeys) — quick update on FINERACT-2171: I completed the MVP and consolidated everything into a single PR for review. It fetches messages, renders daily Markdown + indexes, stores cursor state, resolves permalinks, handles user display names and thread replies, plus CI automation and rate‑limit handling. I tested in my personal Slack workspace (auth, fetch, render, cursor), screenshots attached in PR description and can help set up a bot in #C028634A61L or a test channel for validation.</span><br><span class="archive-line">Only 1 PR need to be reviewed and merged: <a class="archive-link" href="https://github.com/apache/fineract-chat-archive/pull/8">https://github.com/apache/fineract-chat-archive/pull/8</a></span></div></article><article class="archive-message"><div class="archive-meta"><a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1770416971542499?thread_ts=1770416971.542499&amp;cid=C028634A61L" title="Fri, 6 Feb 2026 22:29:31 GMT">Fri 22:29</a><span class="archive-user">Adam Monsen (meonkeys)</span></div><div class="archive-text"><span class="archive-line">@Aira Jena thank you. I&#39;ll close the other PRs. I&#39;d also like your personal opinion on <strong>complexity</strong> and <strong>maintenance</strong>. Really I&#39;m trying to gauge if you&#39;re going to stick around to maintain this thing, at least until it is stable. And re: maintenance, the patch for PR #8 is 2,000 lines, so I&#39;ve only skimmed it. I know Java is verbose, it just seems like a lot.</span></div></article><section class="archive-thread" aria-label="Thread replies"><article class="archive-message archive-message-reply"><div class="archive-meta"><span class="archive-reply-indicator" aria-hidden="true">&rarr;</span><span class="archive-reply-label">reply</span><a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1770417375371859?thread_ts=1770416971.542499&amp;cid=C028634A61L" title="Fri, 6 Feb 2026 22:36:15 GMT">Fri 22:36</a><span class="archive-user">Adam Monsen (meonkeys)</span></div><div class="archive-text"><span class="archive-line">also, please sign all new commits. Apologies, <a class="archive-link" href="https://lists.apache.org/thread/b2jwr5ql47bt1t600js7t237rkc1q6w2">this is a very recently added requirement</a></span></div></article><article class="archive-message archive-message-reply"><div class="archive-meta"><span class="archive-reply-indicator" aria-hidden="true">&rarr;</span><span class="archive-reply-label">reply</span><a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1770421211411829?thread_ts=1770416971.542499&amp;cid=C028634A61L" title="Fri, 6 Feb 2026 23:40:11 GMT">Fri 23:40</a><span class="archive-user">Adam Monsen (meonkeys)</span></div><div class="archive-text"><span class="archive-line">I rewrote the commit log messages, excluding the string `FINERACT-2171:`  from each. It just takes up space. I&#39;ll add it to the commit log message when I merge to main (and I&#39;m going to do a traditional merge, not squash -- I like preserving these incremental commits for posterity).</span><br><span class="archive-line">I have force-pushed your branch, so you&#39;ll have to fetch and do a hard reset on your end. Sorry for not warning you first -- I don&#39;t plan on doing this often.</span><br><span class="archive-line">If you&#39;d like to add any text to the commit log messages, go right ahead.</span></div></article><article class="archive-message archive-message-reply"><div class="archive-meta"><span class="archive-reply-indicator" aria-hidden="true">&rarr;</span><span class="archive-reply-label">reply</span><a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1770440316125739?thread_ts=1770416971.542499&amp;cid=C028634A61L" title="Sat, 7 Feb 2026 04:58:36 GMT">Sat 04:58</a><span class="archive-user">Aira Jena</span></div><div class="archive-text"><span class="archive-line">Thanks, @Adam Monsen (meonkeys) — I really appreciate you being candid about complexity and maintenance. To answer directly: <strong>yes, I’m committed to maintaining this beyond the MVP</strong>. I’m happy to iterate on it, simplify where needed, and gradually add improvements and features as we learn what’s most useful for the community.</span></div><div class="archive-reactions"><span class="archive-reaction">👍 1</span></div></article><article class="archive-message archive-message-reply"><div class="archive-meta"><span class="archive-reply-indicator" aria-hidden="true">&rarr;</span><span class="archive-reply-label">reply</span><a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1770440370155059?thread_ts=1770416971.542499&amp;cid=C028634A61L" title="Sat, 7 Feb 2026 04:59:30 GMT">Sat 04:59</a><span class="archive-user">Aira Jena</span></div><div class="archive-text"><span class="archive-line">I agree that ~2,000 lines is non-trivial. My intent for the initial implementation was to be explicit and defensive (especially around rate limiting, allow-listing, and idempotency), but I’m very open to reducing surface area and refactoring as we stabilize the design. If there are areas you feel are over-engineered for MVP, I’m glad to revisit them.</span><br><span class="archive-line">I’ve synced to your force-push and <strong>sign all new commits</strong> going forward — thanks for the heads-up. Also I have addressed all your comments in the PR and added the detailed guide to create the token.</span></div><div class="archive-reactions"><span class="archive-reaction">🙌 1</span></div></article><article class="archive-message archive-message-reply"><div class="archive-meta"><span class="archive-reply-indicator" aria-hidden="true">&rarr;</span><span class="archive-reply-label">reply</span><a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1770676111820049?thread_ts=1770416971.542499&amp;cid=C028634A61L" title="Mon, 9 Feb 2026 22:28:31 GMT">Mon 22:28</a><span class="archive-user">Adam Monsen (meonkeys)</span></div><div class="archive-text"><span class="archive-line">it&#39;s working! Please see <a class="archive-link" href="https://issues.apache.org/jira/browse/FINERACT-2478">FINERACT-2478</a> for notes and next steps.</span></div></article></section></section>
+<header class="archive-header">
+<p class="archive-breadcrumb"><a href="../../../">Channels</a> / <a href="../">#fineract</a> / 2026-02-06</p><h1>#fineract 2026-02-06</h1></header><section class="archive-log"><article class="archive-message">
+<div class="archive-meta">
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1770393067947409" title="Fri, 6 Feb 2026 15:51:07 GMT">Fri 15:51</a><span class="archive-user">Adam Monsen (meonkeys)</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">@Aira Jena hi there! Wow, 8 PRs for <a class="archive-link" href="https://issues.apache.org/jira/browse/FINERACT-2171">FINERACT-2171</a> already? That is a LOT of code. And it looks like the PRs overlap... how are these intended to be merged? This would take me a long time to review. Do we really need so much complexity for this? Who would maintain this code, and how? I&#39;m concerned this is just kind of spiraling out of control. Does any of it run yet? Have you run/tested it?</span>
+</div>
+</article><article class="archive-message">
+<div class="archive-meta">
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1770394721479659" title="Fri, 6 Feb 2026 16:18:41 GMT">Fri 16:18</a><span class="archive-user">Aira Jena</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">Hi @Adam Monsen (meonkeys) — quick update on FINERACT-2171: I completed the MVP and consolidated everything into a single PR for review. It fetches messages, renders daily Markdown + indexes, stores cursor state, resolves permalinks, handles user display names and thread replies, plus CI automation and rate‑limit handling. I tested in my personal Slack workspace (auth, fetch, render, cursor), screenshots attached in PR description and can help set up a bot in #C028634A61L or a test channel for validation.</span>
+<br><span class="archive-line">Only 1 PR need to be reviewed and merged: <a class="archive-link" href="https://github.com/apache/fineract-chat-archive/pull/8">https://github.com/apache/fineract-chat-archive/pull/8</a></span>
+</div>
+</article><article class="archive-message">
+<div class="archive-meta">
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1770416971542499?thread_ts=1770416971.542499&amp;cid=C028634A61L" title="Fri, 6 Feb 2026 22:29:31 GMT">Fri 22:29</a><span class="archive-user">Adam Monsen (meonkeys)</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">@Aira Jena thank you. I&#39;ll close the other PRs. I&#39;d also like your personal opinion on <strong>complexity</strong> and <strong>maintenance</strong>. Really I&#39;m trying to gauge if you&#39;re going to stick around to maintain this thing, at least until it is stable. And re: maintenance, the patch for PR #8 is 2,000 lines, so I&#39;ve only skimmed it. I know Java is verbose, it just seems like a lot.</span>
+</div>
+</article><section class="archive-thread" aria-label="Thread replies">
+<article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1770417375371859?thread_ts=1770416971.542499&amp;cid=C028634A61L" title="Fri, 6 Feb 2026 22:36:15 GMT">Fri 22:36</a><span class="archive-user">Adam Monsen (meonkeys)</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">also, please sign all new commits. Apologies, <a class="archive-link" href="https://lists.apache.org/thread/b2jwr5ql47bt1t600js7t237rkc1q6w2">this is a very recently added requirement</a></span>
+</div>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1770421211411829?thread_ts=1770416971.542499&amp;cid=C028634A61L" title="Fri, 6 Feb 2026 23:40:11 GMT">Fri 23:40</a><span class="archive-user">Adam Monsen (meonkeys)</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">I rewrote the commit log messages, excluding the string `FINERACT-2171:`  from each. It just takes up space. I&#39;ll add it to the commit log message when I merge to main (and I&#39;m going to do a traditional merge, not squash -- I like preserving these incremental commits for posterity).</span>
+<br><span class="archive-line">I have force-pushed your branch, so you&#39;ll have to fetch and do a hard reset on your end. Sorry for not warning you first -- I don&#39;t plan on doing this often.</span>
+<br><span class="archive-line">If you&#39;d like to add any text to the commit log messages, go right ahead.</span>
+</div>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1770440316125739?thread_ts=1770416971.542499&amp;cid=C028634A61L" title="Sat, 7 Feb 2026 04:58:36 GMT">Sat 04:58</a><span class="archive-user">Aira Jena</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">Thanks, @Adam Monsen (meonkeys) — I really appreciate you being candid about complexity and maintenance. To answer directly: <strong>yes, I’m committed to maintaining this beyond the MVP</strong>. I’m happy to iterate on it, simplify where needed, and gradually add improvements and features as we learn what’s most useful for the community.</span>
+</div>
+<div class="archive-reactions"><span class="archive-reaction">👍 1</span>
+</div>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1770440370155059?thread_ts=1770416971.542499&amp;cid=C028634A61L" title="Sat, 7 Feb 2026 04:59:30 GMT">Sat 04:59</a><span class="archive-user">Aira Jena</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">I agree that ~2,000 lines is non-trivial. My intent for the initial implementation was to be explicit and defensive (especially around rate limiting, allow-listing, and idempotency), but I’m very open to reducing surface area and refactoring as we stabilize the design. If there are areas you feel are over-engineered for MVP, I’m glad to revisit them.</span>
+<br><span class="archive-line">I’ve synced to your force-push and <strong>sign all new commits</strong> going forward — thanks for the heads-up. Also I have addressed all your comments in the PR and added the detailed guide to create the token.</span>
+</div>
+<div class="archive-reactions"><span class="archive-reaction">🙌 1</span>
+</div>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1770676111820049?thread_ts=1770416971.542499&amp;cid=C028634A61L" title="Mon, 9 Feb 2026 22:28:31 GMT">Mon 22:28</a><span class="archive-user">Adam Monsen (meonkeys)</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">it&#39;s working! Please see <a class="archive-link" href="https://issues.apache.org/jira/browse/FINERACT-2478">FINERACT-2478</a> for notes and next steps.</span>
+</div>
+</article></section></section>
   </main>
 </body>
 </html>

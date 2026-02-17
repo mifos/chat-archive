@@ -8,7 +8,95 @@
 </head>
 <body>
   <main class="archive-page">
-<header class="archive-header"><p class="archive-breadcrumb"><a href="../../../">Channels</a> / <a href="../">#fineract</a> / 2026-01-26</p><h1>#fineract 2026-01-26</h1></header><section class="archive-log"><article class="archive-message"><div class="archive-meta"><a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1769416314951299?thread_ts=1769416314.951299&amp;cid=C028634A61L" title="Mon, 26 Jan 2026 08:31:54 GMT">Mon 08:31</a><span class="archive-user">Horlugingin Ayoade</span></div><div class="archive-text"><span class="archive-line"><strong>Hi Maintainers</strong></span><br><span class="archive-line"> There is a feature often requested by users of Fineract for savings account to have a name .</span><br><span class="archive-line">Do i have the permission to create a ticket to address this and also ensuring that there is backward compatibility ( when no name is passed , client name is used )</span><br><span class="archive-line">cc: @Adam Saghy</span></div></article><section class="archive-thread" aria-label="Thread replies"><article class="archive-message archive-message-reply"><div class="archive-meta"><span class="archive-reply-indicator" aria-hidden="true">&rarr;</span><span class="archive-reply-label">reply</span><a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1769419631125569?thread_ts=1769416314.951299&amp;cid=C028634A61L" title="Mon, 26 Jan 2026 09:27:11 GMT">Mon 09:27</a><span class="archive-user">Adam Saghy</span></div><div class="archive-text"><span class="archive-line">can you elaborate a little further? what kind of name we are talking about? what&#39;s the current behaviour and what&#39;s the expectation?</span></div></article><article class="archive-message archive-message-reply"><div class="archive-meta"><span class="archive-reply-indicator" aria-hidden="true">&rarr;</span><span class="archive-reply-label">reply</span><a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1769422804779869?thread_ts=1769416314.951299&amp;cid=C028634A61L" title="Mon, 26 Jan 2026 10:20:04 GMT">Mon 10:20</a><span class="archive-user">Horlugingin Ayoade</span></div><div class="archive-text"><span class="archive-line">today , when a savings account is created , It does not come with a name and as such you can only tie to client&#39;s name</span><br><span class="archive-line">However , People want a flexibility to allow  for creation of savings account where the account can be tagged &quot;Emergency Savings&quot; or anything</span><br><span class="archive-line">This will require creating a new column in `m_savings_account` for `account_name`</span></div></article><article class="archive-message archive-message-reply"><div class="archive-meta"><span class="archive-reply-indicator" aria-hidden="true">&rarr;</span><span class="archive-reply-label">reply</span><a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1769424143023199?thread_ts=1769416314.951299&amp;cid=C028634A61L" title="Mon, 26 Jan 2026 10:42:23 GMT">Mon 10:42</a><span class="archive-user">Adam Saghy</span></div><div class="archive-text"><span class="archive-line">so its like a &quot;fantasy name&quot; for it?</span></div><div class="archive-reactions"><span class="archive-reaction">👍 1</span></div></article><article class="archive-message archive-message-reply"><div class="archive-meta"><span class="archive-reply-indicator" aria-hidden="true">&rarr;</span><span class="archive-reply-label">reply</span><a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1769424244464269?thread_ts=1769416314.951299&amp;cid=C028634A61L" title="Mon, 26 Jan 2026 10:44:04 GMT">Mon 10:44</a><span class="archive-user">Adam Saghy</span></div><div class="archive-text"><span class="archive-line">sure. you can create a story for this 😉</span></div><div class="archive-reactions"><span class="archive-reaction">🎉 1</span></div></article><article class="archive-message archive-message-reply"><div class="archive-meta"><span class="archive-reply-indicator" aria-hidden="true">&rarr;</span><span class="archive-reply-label">reply</span><a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1769466615910509?thread_ts=1769416314.951299&amp;cid=C028634A61L" title="Mon, 26 Jan 2026 22:30:15 GMT">Mon 22:30</a><span class="archive-user">James Dailey</span></div><div class="archive-text"><span class="archive-line">@Horlugingin Ayoade - there&#39;s already the concept of giving a Product Name to a Product Definition.  See create Product flows... then, once you have a client who needs that product, you open an account of that Product type (and name).  I don&#39;t know why you would need to have anything more...  Sally can have an Emergency Savings account, a Saving Standard Savings Account, etc.</span><br><br><span class="archive-line">Are you talking about the label that appears in a front end app that is chosen by the User?   An alias?  Are you sure that belongs in the backend system?</span></div></article><article class="archive-message archive-message-reply"><div class="archive-meta"><span class="archive-reply-indicator" aria-hidden="true">&rarr;</span><span class="archive-reply-label">reply</span><a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1769522843998449?thread_ts=1769416314.951299&amp;cid=C028634A61L" title="Tue, 27 Jan 2026 14:07:23 GMT">Tue 14:07</a><span class="archive-user">Horlugingin Ayoade</span></div><div class="archive-text"><span class="archive-line">Hi @James Dailey , Thank you for the insight . The use case is more of a client(John Doe) having multiple savings accounts and giving each a name . e.g ( John &amp;amp; sons , The Doe family savings ). I can keep this on hold till we have a major justification</span></div></article></section><article class="archive-message"><div class="archive-meta"><a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1769421081238139" title="Mon, 26 Jan 2026 09:51:21 GMT">Mon 09:51</a><span class="archive-user">Abhishek Sehgal</span></div><div class="archive-text"><span class="archive-line">@Abhishek Sehgal has joined the channel</span></div></article><article class="archive-message"><div class="archive-meta"><a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1769422665063389" title="Mon, 26 Jan 2026 10:17:45 GMT">Mon 10:17</a><span class="archive-user">Aira Jena</span></div><div class="archive-text"><span class="archive-line">@Aira Jena has joined the channel</span></div></article></section>
+<header class="archive-header">
+<p class="archive-breadcrumb"><a href="../../../">Channels</a> / <a href="../">#fineract</a> / 2026-01-26</p><h1>#fineract 2026-01-26</h1></header><section class="archive-log"><article class="archive-message">
+<div class="archive-meta">
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1769416314951299?thread_ts=1769416314.951299&amp;cid=C028634A61L" title="Mon, 26 Jan 2026 08:31:54 GMT">Mon 08:31</a><span class="archive-user">Horlugingin Ayoade</span>
+</div>
+<div class="archive-text">
+<span class="archive-line"><strong>Hi Maintainers</strong></span>
+<br><span class="archive-line"> There is a feature often requested by users of Fineract for savings account to have a name .</span>
+<br><span class="archive-line">Do i have the permission to create a ticket to address this and also ensuring that there is backward compatibility ( when no name is passed , client name is used )</span>
+<br><span class="archive-line">cc: @Adam Saghy</span>
+</div>
+</article><section class="archive-thread" aria-label="Thread replies">
+<article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1769419631125569?thread_ts=1769416314.951299&amp;cid=C028634A61L" title="Mon, 26 Jan 2026 09:27:11 GMT">Mon 09:27</a><span class="archive-user">Adam Saghy</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">can you elaborate a little further? what kind of name we are talking about? what&#39;s the current behaviour and what&#39;s the expectation?</span>
+</div>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1769422804779869?thread_ts=1769416314.951299&amp;cid=C028634A61L" title="Mon, 26 Jan 2026 10:20:04 GMT">Mon 10:20</a><span class="archive-user">Horlugingin Ayoade</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">today , when a savings account is created , It does not come with a name and as such you can only tie to client&#39;s name</span>
+<br><span class="archive-line">However , People want a flexibility to allow  for creation of savings account where the account can be tagged &quot;Emergency Savings&quot; or anything</span>
+<br><span class="archive-line">This will require creating a new column in `m_savings_account` for `account_name`</span>
+</div>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1769424143023199?thread_ts=1769416314.951299&amp;cid=C028634A61L" title="Mon, 26 Jan 2026 10:42:23 GMT">Mon 10:42</a><span class="archive-user">Adam Saghy</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">so its like a &quot;fantasy name&quot; for it?</span>
+</div>
+<div class="archive-reactions"><span class="archive-reaction">👍 1</span>
+</div>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1769424244464269?thread_ts=1769416314.951299&amp;cid=C028634A61L" title="Mon, 26 Jan 2026 10:44:04 GMT">Mon 10:44</a><span class="archive-user">Adam Saghy</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">sure. you can create a story for this 😉</span>
+</div>
+<div class="archive-reactions"><span class="archive-reaction">🎉 1</span>
+</div>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1769466615910509?thread_ts=1769416314.951299&amp;cid=C028634A61L" title="Mon, 26 Jan 2026 22:30:15 GMT">Mon 22:30</a><span class="archive-user">James Dailey</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">@Horlugingin Ayoade - there&#39;s already the concept of giving a Product Name to a Product Definition.  See create Product flows... then, once you have a client who needs that product, you open an account of that Product type (and name).  I don&#39;t know why you would need to have anything more...  Sally can have an Emergency Savings account, a Saving Standard Savings Account, etc.</span>
+<br><br>
+<span class="archive-line">Are you talking about the label that appears in a front end app that is chosen by the User?   An alias?  Are you sure that belongs in the backend system?</span>
+</div>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1769522843998449?thread_ts=1769416314.951299&amp;cid=C028634A61L" title="Tue, 27 Jan 2026 14:07:23 GMT">Tue 14:07</a><span class="archive-user">Horlugingin Ayoade</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">Hi @James Dailey , Thank you for the insight . The use case is more of a client(John Doe) having multiple savings accounts and giving each a name . e.g ( John &amp;amp; sons , The Doe family savings ). I can keep this on hold till we have a major justification</span>
+</div>
+</article></section><article class="archive-message">
+<div class="archive-meta">
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1769421081238139" title="Mon, 26 Jan 2026 09:51:21 GMT">Mon 09:51</a><span class="archive-user">Abhishek Sehgal</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">@Abhishek Sehgal has joined the channel</span>
+</div>
+</article><article class="archive-message">
+<div class="archive-meta">
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1769422665063389" title="Mon, 26 Jan 2026 10:17:45 GMT">Mon 10:17</a><span class="archive-user">Aira Jena</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">@Aira Jena has joined the channel</span>
+</div>
+</article></section>
   </main>
 </body>
 </html>

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>#fineract 2025-12-30</title>
+  <link rel="stylesheet" href="../../../assets/chat-archive.css">
+</head>
+<body>
+  <main class="archive-page">
+<header class="archive-header">
+<p class="archive-breadcrumb"><a href="../../../">Channels</a> / <a href="../">#fineract</a> / 2025-12-30</p><h1>#fineract 2025-12-30</h1></header><section class="archive-log"><article class="archive-message">
+<div class="archive-meta">
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1767109384802999" title="Tue, 30 Dec 2025 15:43:04 GMT">Tue 15:43</a><span class="archive-user">Mario López</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">[reporting] Hi there,</span>
+<br><span class="archive-line">I&#39;m currently working on a project using Apache Fineract for lending. I&#39;ve clients, loan products, and loan accounts. I need to build features around notifying customers about upcoming due dates. I&#39;ve been investigating and I&#39;ve found that I can use the reports for this, by building a SQL query that searches for active loans and its repayments. I can then use the API for querying the report and get JSON results that I can process and build my notifications.</span>
+<br><br>
+<span class="archive-line">Is this the recommended or right way of building this? or is there something I&#39;m missing?</span>
+</div>
+</article><article class="archive-message">
+<div class="archive-meta">
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1767121461527879" title="Tue, 30 Dec 2025 19:04:21 GMT">Tue 19:04</a><span class="archive-user">Adam Saghy</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">you can use the existing business step for this:</span>
+<br><ul class="archive-list">
+<li>CHECK_LOAN_REPAYMENT_DUE -&amp;gt; business event before X days of due date</li>
+<li>CHECK_LOAN_REPAYMENT_OVERDUE -&amp;gt; business event after X days of due date</li>
+<li>CHECK_DUE_INSTALLMENTS -&amp;gt; Business event about overdue installments</li>
+</ul>
+<br>
+</div>
+<div class="archive-reactions"><span class="archive-reaction">:thankyou: 2</span>
+<span class="archive-reaction">👍 3</span>
+</div>
+</article></section>
+  </main>
+</body>
+</html>

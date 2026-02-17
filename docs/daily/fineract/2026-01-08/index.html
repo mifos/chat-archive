@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>#fineract 2026-01-08</title>
+  <link rel="stylesheet" href="../../../assets/chat-archive.css">
+</head>
+<body>
+  <main class="archive-page">
+<header class="archive-header">
+<p class="archive-breadcrumb"><a href="../../../">Channels</a> / <a href="../">#fineract</a> / 2026-01-08</p><h1>#fineract 2026-01-08</h1></header><section class="archive-log"><article class="archive-message">
+<div class="archive-meta">
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1767885486228039" title="Thu, 8 Jan 2026 15:18:06 GMT">Thu 15:18</a><span class="archive-user">Frank Mogbuk</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">@Frank Mogbuk has joined the channel</span>
+</div>
+</article><article class="archive-message">
+<div class="archive-meta">
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1767897067834149?thread_ts=1767897067.834149&amp;cid=C028634A61L" title="Thu, 8 Jan 2026 18:31:07 GMT">Thu 18:31</a><span class="archive-user">Farhan Tigadi</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">As I am Planning more contributions:</span>
+<br><ul class="archive-list">
+<li>Optimize methods with advanced Java(streams)</li>
+<li>Add unit/integration tests for the same methods to check its proper working</li>
+</ul>
+<span class="archive-line">Questions:</span>
+<br><span class="archive-line">1.when refactoring or optimizing an existing method, is it preferred to include the related unit/integration tests in the same PR, or how it should be handled?</span>
+<br><br>
+<span class="archive-line">Any tips or guidance on best practices for such contributions would be appreciated.</span>
+</div>
+</article><section class="archive-thread" aria-label="Thread replies">
+<article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1767897255282189?thread_ts=1767897067.834149&amp;cid=C028634A61L" title="Thu, 8 Jan 2026 18:34:15 GMT">Thu 18:34</a><span class="archive-user">Adam Monsen (meonkeys)</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">yeah, when you improve code, also improve tests for that code if/as necessary</span>
+</div>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1767897266880049?thread_ts=1767897067.834149&amp;cid=C028634A61L" title="Thu, 8 Jan 2026 18:34:26 GMT">Thu 18:34</a><span class="archive-user">Adam Monsen (meonkeys)</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">make sure tests are useful, clear, and meaningful</span>
+</div>
+</article></section><article class="archive-message">
+<div class="archive-meta">
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1767909651127899" title="Thu, 8 Jan 2026 22:00:51 GMT">Thu 22:00</a><span class="archive-user">Adam Monsen (meonkeys)</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">@Adam Saghy and @Victor Romero, A bunch of commits were just pushed on top of a broken build... just checking that you&#39;re both aware / in comms about it</span>
+</div>
+</article><article class="archive-message">
+<div class="archive-meta">
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1767909841994419" title="Thu, 8 Jan 2026 22:04:01 GMT">Thu 22:04</a><span class="archive-user">Victor Romero</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">the latest one that I have sent is the fix for the &quot;ageing&quot; -&gt; &quot;aging&quot; change <a class="archive-link" href="https://github.com/apache/fineract/pull/5302">https://github.com/apache/fineract/pull/5302</a> Thank you for the head ups Adam</span>
+</div>
+<div class="archive-reactions"><span class="archive-reaction">👍 1</span>
+</div>
+</article><article class="archive-message">
+<div class="archive-meta">
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1767910700464919?thread_ts=1767910700.464919&amp;cid=C028634A61L" title="Thu, 8 Jan 2026 22:18:20 GMT">Thu 22:18</a><span class="archive-user">Adam Monsen (meonkeys)</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">just glancing at <a class="archive-link" href="https://github.com/apache/fineract/commits/develop/">https://github.com/apache/fineract/commits/develop/</a> it looks like E2E shard 2 is consistently failing</span>
+</div>
+</article><section class="archive-thread" aria-label="Thread replies">
+<article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1767911595070879?thread_ts=1767910700.464919&amp;cid=C028634A61L" title="Thu, 8 Jan 2026 22:33:15 GMT">Thu 22:33</a><span class="archive-user">Adam Saghy</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">I see Java heap space issues... hmm...</span>
+</div>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1767916250025329?thread_ts=1767910700.464919&amp;cid=C028634A61L" title="Thu, 8 Jan 2026 23:50:50 GMT">Thu 23:50</a><span class="archive-user">Adam Monsen (meonkeys)</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">ugh, lots of variance in build results for the last ~7 commits</span>
+</div>
+</article></section></section>
+  </main>
+</body>
+</html>

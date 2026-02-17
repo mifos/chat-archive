@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>#fineract 2026-01-06</title>
+  <link rel="stylesheet" href="../../../assets/chat-archive.css">
+</head>
+<body>
+  <main class="archive-page">
+<header class="archive-header">
+<p class="archive-breadcrumb"><a href="../../../">Channels</a> / <a href="../">#fineract</a> / 2026-01-06</p><h1>#fineract 2026-01-06</h1></header><section class="archive-log"><article class="archive-message">
+<div class="archive-meta">
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1767687833615589" title="Tue, 6 Jan 2026 08:23:53 GMT">Tue 08:23</a><span class="archive-user">Tanishq Bhakar</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">@Tanishq Bhakar has joined the channel</span>
+</div>
+</article><article class="archive-message">
+<div class="archive-meta">
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1767726160076069?thread_ts=1767726160.076069&amp;cid=C028634A61L" title="Tue, 6 Jan 2026 19:02:40 GMT">Tue 19:02</a><span class="archive-user">Shiv Deshpande</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">Hi everyone,</span>
+<br><span class="archive-line">I have submitted a PR to fix *<a class="archive-link" href="https://issues.apache.org/jira/browse/FINERACT-2320">FINERACT-2320</a>*. Currently, if the `LOAN_COB` job is disabled via configuration, the `/loans/is-catch-up-running` endpoint throws a 403 error, causing the &quot;Manage Jobs&quot; UI to break.</span>
+<br><br>
+<span class="archive-line"><strong>The Fix:</strong> As suggested in the JIRA comments, I updated the API to handle the missing service gracefully. It now returns `200 OK` with `false` instead of throwing an exception.</span>
+<br><span class="archive-line"><strong>Links:</strong></span>
+<br><ul class="archive-list">
+<li><strong>PR:</strong> <a class="archive-link" href="https://github.com/apache/fineract/pull/5291">https://github.com/apache/fineract/pull/5291</a></li>
+</ul>
+<span class="archive-line">Could I get the workflows approved? Thanks in advance for the review!</span>
+</div>
+</article><section class="archive-thread" aria-label="Thread replies">
+<article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1767747220393389?thread_ts=1767726160.076069&amp;cid=C028634A61L" title="Wed, 7 Jan 2026 00:53:40 GMT">Wed 00:53</a><span class="archive-user">Victor Romero</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">Check the comments in the PR please</span>
+</div>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1767762968203739?thread_ts=1767726160.076069&amp;cid=C028634A61L" title="Wed, 7 Jan 2026 05:16:08 GMT">Wed 05:16</a><span class="archive-user">Shiv Deshpande</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">Thank you for the feedback @Victor Romero, I have fixed and pushed the fixes, please have a look.</span>
+<br><br>
+<span class="archive-line"><a class="archive-link" href="https://github.com/apache/fineract/pull/5291">https://github.com/apache/fineract/pull/5291</a></span>
+</div>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1767839846962849?thread_ts=1767726160.076069&amp;cid=C028634A61L" title="Thu, 8 Jan 2026 02:37:26 GMT">Thu 02:37</a><span class="archive-user">Shiv Deshpande</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">Hey @Victor Romero,  I saw that one of the checks is failing,  just after I removed the comment from the code.  May I have some insights from you so that I can look into it, as it was passing before? I am a bit confused,  help would be appreciated.</span>
+</div>
+</article></section></section>
+  </main>
+</body>
+</html>
