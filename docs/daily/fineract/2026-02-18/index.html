@@ -28,7 +28,48 @@
 </div>
 <div class="archive-reactions"><span class="archive-reaction">👍 1</span>
 </div>
-</article></section></section>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1771421127986229?thread_ts=1771380310.612409&amp;cid=C028634A61L" title="Wed, 18 Feb 2026 13:25:27 GMT">Wed 13:25</a><span class="archive-user">David Higgins</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">I am but my experience is it&#39;s not as good as Slack. Someone was telling me the other day there is a new OS project they have been using that is more like Slack will have too research what it is.</span>
+</div>
+</article></section><article class="archive-message">
+<div class="archive-meta">
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1771412382865429" title="Wed, 18 Feb 2026 10:59:42 GMT">Wed 10:59</a><span class="archive-user">Adam Saghy</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">During the last Community Call, the E2E test framework was a topic. I wanted to share some basic information about it to start a conversation and ask your help to review our available documentations, maybe extend it.</span>
+<br><br>
+<span class="archive-line">Also it would be nice if we can cover more functionalities with E2E tests, maybe even replace some of the existing integration tests with these, because easier to work with, easier to read and maintain and hopefully, we can cover more! 🙂</span>
+<br><br>
+<span class="archive-line"><strong>How to run:</strong></span>
+<br><span class="archive-line"><strong>Official documentation:</strong> <a class="archive-link" href="https://fineract.apache.org/docs/1.14.0/#_testing">https://fineract.apache.org/docs/1.14.0/#_testing</a> or in the Fineract codebase fineract-doc/src/docs/en/chapters/testing/cucumber.adoc</span>
+<br><span class="archive-line"><strong>(unofficial article more technical):</strong> <a class="archive-link" href="https://fineract-academy.com/how-to-run-fineract-e2e-test-with-intellij-idea/">https://fineract-academy.com/how-to-run-fineract-e2e-test-with-intellij-idea/</a></span>
+<br><br>
+<span class="archive-line"><strong>Where are they?</strong></span>
+<br><span class="archive-line">`fineract-e2e-tests-core` -&gt; Contains the core data and the test steps (test step implementation) and the framework for the E2E tests. Contains the initialization interfaces</span>
+<br><span class="archive-line">`fineract-e2e-tests-runner` -&gt; Contains the initialization implementation  + the test features files (these describe the test steps)</span>
+<br><br>
+<span class="archive-line"><strong>Where to create a new test step?</strong></span>
+<br><span class="archive-line">In the `fineract-e2e-tests-core` , you can add extra test steps which can be used in the tests. Example: `org.apache.fineract.test.stepdef.loan.LoanRepaymentStepDef#makeLoanRepayment` -&gt; This can be used to initiate a repayment</span>
+<br><br>
+<span class="archive-line"><strong>Where to use the new test step?</strong></span>
+<br><span class="archive-line">In the `fineract-e2e-tests-runner` can be found the test cases and there you can define which steps to be executed with what data. Exameple: `features/LoanReAgingAccruals.feature:31` -&gt; Do a repayment on 1 Feb 2024 with  amount of 17.01</span>
+<br><br>
+<span class="archive-line"><strong>What is covered?</strong></span>
+<br><span class="archive-line">So far mostly Loan related functionalities are covered.</span>
+<br><br>
+<span class="archive-line"><strong>Documentation</strong></span>
+<br><span class="archive-line">fineract-doc/src/docs/en/chapters/testing/cucumber.adoc -&gt; It might need to be extended with more information and use cases to help other to start using it! You can help to review and advise!</span>
+</div>
+<div class="archive-reactions"><span class="archive-reaction">🙌 5</span>
+<span class="archive-reaction">👀 1</span>
+</div>
+</article></section>
   </main>
 </body>
 </html>
