@@ -15,8 +15,8 @@ git clone https://github.com/apache/fineract-chat-archive/
 git clone https://github.com/mifos/chat-archive/
 
 export SLACK_TOKEN="redacted"
-export SITE_BASE_URL='https://mifos.github.io/chat-archive'
-export CHANNELS_ALLOWLIST='#fineract'
+export SITE_BASE_URL="https://mifos.github.io/chat-archive"
+export CHANNELS_ALLOWLIST="#fineract"
 export OUTPUT_DIR="$PWD/chat-archive/docs"
 export OUTPUT_DIR="$PWD/chat-archive/state"
 export LOOKBACK_DAYS=1
