@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>#fineract 2026-02-26</title>
+  <link rel="stylesheet" href="../../../assets/chat-archive.css">
+</head>
+<body>
+  <main class="archive-page">
+<header class="archive-header">
+<p class="archive-breadcrumb"><a href="../../../">Channels</a> / <a href="../">#fineract</a> / 2026-02-26</p><h1>#fineract 2026-02-26</h1></header><section class="archive-log"><article class="archive-message">
+<div class="archive-meta">
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1772101218936589" title="Thu, 26 Feb 2026 10:20:18 GMT">Thu 10:20</a><span class="archive-user">Slackbot</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">@David Asem joined #fineract. They’re also new to Mifos.</span>
+</div>
+</article><article class="archive-message">
+<div class="archive-meta">
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1772105974402079" title="Thu, 26 Feb 2026 11:39:34 GMT">Thu 11:39</a><span class="archive-user">Aryan Singla</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">@Aryan Singla has joined the channel</span>
+</div>
+</article><article class="archive-message">
+<div class="archive-meta">
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1772107952464049" title="Thu, 26 Feb 2026 12:12:32 GMT">Thu 12:12</a><span class="archive-user">Aryan Singla</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">Hi @Aleksandar Vidakovic </span>
+<br><br>
+<span class="archive-line">I&#39;m interested in the EDA for stand-alone modules GSoC project.</span>
+<br><span class="archive-line">I analyzed fineract-provider and found tight coupling in </span>
+<br><span class="archive-line">disburseLoanToSavings (direct call to accountTransfersWritePlatformService). I&#39;m planning to propose refactoring such &quot;one-way&quot; calls using Spring Business Events to make modules independent.</span>
+<br><br>
+<span class="archive-line">Am I on the right track? Should I focus more on any specific module like &quot;savings group support&quot;? Thanks!</span>
+</div>
+</article><article class="archive-message">
+<div class="archive-meta">
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1772117582520909" title="Thu, 26 Feb 2026 14:53:02 GMT">Thu 14:53</a><span class="archive-user">Aleksandar Vidakovic</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">Hi @Aryan Singla... well... that&#39;s a tiny bit of the whole story... the steps to consider here:</span>
+<br><ul class="archive-list">
+<li>first we need to migrate modules to the new command processing (see FINERACT-2169), because that gets us type-safety and less boilerplate code... if we don&#39;t use the handcrafted JSON de-/serialization then we don&#39;t have to care about any tight coupling these have... they just go away (the best case)</li>
+<li>once we have type-safety we can use the IDEs refactoring tools (again) and use tools like &quot;Used by...&quot; etc. ... that will obviously help to find any hidden dependencies</li>
+<li>the generalized version of the case you described: find patterns in the packages/&quot;modules&quot; that can be replaced by one way Spring Application Event publishing; that immediately removes those direct dependencies; that&#39;s the easiest case of removing the tight coupling; before we do that we should standardize on naming conventions... just because some character combinations pass the compiler doesn&#39;t mean they are a good choice; so we have to prepare here a bit of documentation for the next people that want to help out and avoid too much creativity in the wrong place</li>
+<li>the really interesting use cases are those where 2-way communication is necessary aka some function is called and results need to be processed by the caller; I&#39;ve done something like that in a recent refactoring in fineract-document... which is now completely independent (technically at least) from any other (non-core and fineract-command) dependency (which would be the desired goal... if possible); but again, that needs to be documented too</li>
+</ul>
+</div>
+</article><article class="archive-message">
+<div class="archive-meta">
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1772117591331399" title="Thu, 26 Feb 2026 14:53:11 GMT">Thu 14:53</a><span class="archive-user">Aleksandar Vidakovic</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">I think that&#39;s it in a nutshell</span>
+</div>
+</article><article class="archive-message">
+<div class="archive-meta">
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1772117688726309" title="Thu, 26 Feb 2026 14:54:48 GMT">Thu 14:54</a><span class="archive-user">Aleksandar Vidakovic</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">ah... one more... I&#39;ll copy verbatim a part of a conversation that I had with someone else on that topic recently:</span>
+<br><br>
+<span class="archive-line">```one of your colleagues posted this question concerning the event driven project: &quot;Could you guide me on where to begin analyzing coupling in the codebase?&quot;</span>
+<br><br>
+<span class="archive-line">my answer (just copying verbatim for speed and efficiency):</span>
+<br><br>
+<span class="archive-line">we have this &quot;document management&quot; module (it does what it says... upload/download of files, we save some metadata like names, mime types, size in the database... that&#39;s it)... but for some (weird) reason we made a distinction between &quot;documents&quot; (like PDF, word, excel...) and images (png, jpeg, gif...); the latter is only used (currently) in combination with the &quot;staff&quot; and &quot;client&quot; domain (think of: profile pictures for people)... now what&#39;s the difference between an image and a document (rhetorical question)? well... there is none, the only difference is the mime type (like for any other document)... it&#39;s just blobs of binary data with some metadata. now unfortunately the initial implementation made that  distinction and even after the most recent refactoring it&#39;s still there to keep backwards compatibility. but one major improvement was made: before image related files had a hard dependency on the staff and the client packages, because the image uploads/downloads are identified by the main domain entity that these files are associated with (another strategy that should be challenged... but that&#39;s for another day); so for now we have to roll with these decisions: when a file is uploaded it is not identified by it&#39;s own ID, it&#39;s identified (if we take profile pictures as an example) by the entity domain (e.g. &quot;clients&quot;) and the domain entity&#39;s ID (i.e. &quot;the client&#39;s database ID&quot;)... so the REST endpoint would look something like &quot;/v1/clients/23/image&quot;... so, that&#39;s not too great, because now we have these two domains files/documents/images and clients entangled... which is (was) reflected in the code</span>
+<br><span class="archive-line">we would use repository interfaces from the client package in the document package and vice versa... which creates a very weird and nasty circular dependency situation</span>
+<br><span class="archive-line">if you look at the current implementation of the document module then you will see there are no references to client or staff or any other package there anymore (we had a similar situation for &quot;bulk imports&quot;, another package, that was using document management to upload excel sheets for setting up clients, offices etc. etc.)... so how did we do this?</span>
+<br><span class="archive-line">have a look here... <a class="archive-link" href="https://github.com/apache/fineract/blob/701cfae60bc70de68e41b9b4345e0c393ec3d19a/f[…]re/documentmanagement/service/ImageReadPlatformServiceImpl.java">https://github.com/apache/fineract/blob/701cfae60bc70de68e41b9b4345e0c393ec3d19a/f[…]re/documentmanagement/service/ImageReadPlatformServiceImpl.java</a> (&quot;EntityImageIdAdapter&quot;)</span>
+<br><span class="archive-line">... the interface: <a class="archive-link" href="https://github.com/apache/fineract/blob/701cfae60bc70de68e41b9b4345e0c393ec3d19a/f[…]astructure/documentmanagement/adapter/EntityImageIdAdapter.java">https://github.com/apache/fineract/blob/701cfae60bc70de68e41b9b4345e0c393ec3d19a/f[…]astructure/documentmanagement/adapter/EntityImageIdAdapter.java</a> (which is available in finerct-core... visible to every other package in the system)</span>
+<br><span class="archive-line">... and then finally the implementation of this interface:</span>
+<br><br>
+<span class="archive-line"><a class="archive-link" href="https://github.com/apache/fineract/blob/701cfae60bc70de68e41b9b4345e0c393ec3d19a/f[…]che/fineract/portfolio/client/adapter/ClientImageIdAdapter.java">https://github.com/apache/fineract/blob/701cfae60bc70de68e41b9b4345e0c393ec3d19a/f[…]che/fineract/portfolio/client/adapter/ClientImageIdAdapter.java</a></span>
+<br><span class="archive-line"><a class="archive-link" href="https://github.com/apache/fineract/blob/701cfae60bc70de68e41b9b4345e0c393ec3d19a/f[…]he/fineract/organisation/staff/adapter/StaffImageIdAdapter.java">https://github.com/apache/fineract/blob/701cfae60bc70de68e41b9b4345e0c393ec3d19a/f[…]he/fineract/organisation/staff/adapter/StaffImageIdAdapter.java</a></span>
+<br><span class="archive-line">so... what happens here?</span>
+<br><span class="archive-line">well... on the image management side we only need to know that something exists out there that implements the interface &quot;EntityImageIdAdapter&quot;... we don&#39;t know the specific implementations and we don&#39;t need to know them</span>
+<br><span class="archive-line">and because we don&#39;t know them they are injected as a list of beans as you can see</span>
+<br><span class="archive-line">the point here is that every time we upload a new image we need to store it database ID WITH those other domains (client, staff)... so, instead of using directly the client repository or staff repository we iterate over the injected entity image adapters and use the functions exposed there to peek and poke data back and forth between the domains</span>
+<br><span class="archive-line">tomorrow if we add yet another domain that has profile pictures (maybe &quot;external collaborators&quot;... doesn&#39;t matter) then we just have to implement EntityImageIdAdapter for that new domain and nothing needs to change in the document management</span>
+<br><span class="archive-line">that&#39;s in a nutshell the type of solution(s) we need to break all these direct dependencies (where it makes sense)</span>
+<br><span class="archive-line">note: sometimes a direct dependency is perfectly fine... e.g. there is some kind of currency service... obviously that is some kind of &quot;core&quot; service that is needed by a lot of different domains/packages/modules (loans, savings accounts, ledger etc. etc.)</span>
+<br><span class="archive-line">the trick here is to identify the dependencies that tie a otherwise perfectly standalone module unnecessarily to some arbitrary other module... like in the above example with document/image management and client and staff domains```</span>
+</div>
+</article><article class="archive-message">
+<div class="archive-meta">
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1772117720797419" title="Thu, 26 Feb 2026 14:55:20 GMT">Thu 14:55</a><span class="archive-user">Aleksandar Vidakovic</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">might give a little more insight into what happened with the fineract-document example use case related to tight coupling</span>
+</div>
+</article><article class="archive-message">
+<div class="archive-meta">
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1772117884236849" title="Thu, 26 Feb 2026 14:58:04 GMT">Thu 14:58</a><span class="archive-user">Aleksandar Vidakovic</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">ah, and finally: stuff like this needs to be prioritized... we cannot start immediately with the &quot;bread-and-butter&quot; modules (anything transactions, general ledger, loans, accounts...), because there will be - no matter how accurate the planning - a learning curve and improvements that show up when we really do the work... and it&#39;s obviously better to do the learning on &quot;modules&quot; that are not immediately in the critical path</span>
+</div>
+</article><article class="archive-message">
+<div class="archive-meta">
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1772117921238229" title="Thu, 26 Feb 2026 14:58:41 GMT">Thu 14:58</a><span class="archive-user">Aleksandar Vidakovic</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">hope this helps you (and anyone interested) to clarify this a bit more</span>
+</div>
+</article><article class="archive-message">
+<div class="archive-meta">
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1772128806264779" title="Thu, 26 Feb 2026 18:00:06 GMT">Thu 18:00</a><span class="archive-user">Slackbot</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">@A1_ 432_Deepthi joined #fineract. They’re also new to Mifos.</span>
+</div>
+</article><article class="archive-message">
+<div class="archive-meta">
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1772134580570329" title="Thu, 26 Feb 2026 19:36:20 GMT">Thu 19:36</a><span class="archive-user">Slackbot</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">@Ibijola Adetayo joined #fineract. They’re also new to Mifos.</span>
+</div>
+</article></section>
+  </main>
+</body>
+</html>
