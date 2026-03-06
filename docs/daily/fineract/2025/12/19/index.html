@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>#fineract 2025-12-19</title>
+  <link rel="stylesheet" href="../../../../../assets/chat-archive.css">
+</head>
+<body>
+  <main class="archive-page">
+<header class="archive-header">
+<p class="archive-breadcrumb"><a href="../../../../../">Channels</a> / <a href="../../../">#fineract</a> / <a href="../../">2025</a> / <a href="../">12</a> / 19</p><h1>#fineract 2025-12-19</h1></header><section class="archive-log"><article class="archive-message">
+<div class="archive-meta">
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1766169284460759?thread_ts=1766169284.460759&amp;cid=C028634A61L" title="Fri, 19 Dec 2025 18:34:44 GMT">Fri 18:34</a><span class="archive-user">Adam Monsen (meonkeys)</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">Heads-up, I&#39;m using &quot;Affects Version/s:&quot; to indicate a known issue we intend to fix in/for a particular release.</span>
+</div>
+</article><section class="archive-thread" aria-label="Thread replies">
+<article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1766169309846209?thread_ts=1766169284.460759&amp;cid=C028634A61L" title="Fri, 19 Dec 2025 18:35:09 GMT">Fri 18:35</a><span class="archive-user">Adam Monsen (meonkeys)</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">see the <a class="archive-link" href="https://cwiki.apache.org/confluence/display/FINERACT/1.14.0+-+Apache+Fineract">1.14.0 release note</a> to understand what I mean</span>
+</div>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1766169543204819?thread_ts=1766169284.460759&amp;cid=C028634A61L" title="Fri, 19 Dec 2025 18:39:03 GMT">Fri 18:39</a><span class="archive-user">Adam Monsen (meonkeys)</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">see that &quot;Known issues&quot; list? That&#39;s built based on which issues have `affectedVersion = 1.14.0`. If we were trying to be literal/pedantic, we might set the affected version for every open issue to every previous release. Instead, maybe we can use it the way I&#39;m proposing: To indicate a known issue that an admin/user might have to do something about (e.g. implement a workaround themselves).</span>
+</div>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1766169553571269?thread_ts=1766169284.460759&amp;cid=C028634A61L" title="Fri, 19 Dec 2025 18:39:13 GMT">Fri 18:39</a><span class="archive-user">Adam Monsen (meonkeys)</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">Otherwise, why would we bother admins/users with our in-progress work? We have 425 unresolved issues, see `project = FINERACT AND status not in (Resolved, Closed) AND (affectedVersion &amp;lt;= 1.14.0 OR affectedVersion is EMPTY)`</span>
+</div>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1766169580684509?thread_ts=1766169284.460759&amp;cid=C028634A61L" title="Fri, 19 Dec 2025 18:39:40 GMT">Fri 18:39</a><span class="archive-user">Adam Monsen (meonkeys)</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">Feedback welcome, as always. Please let me know if this makes sense and if you&#39;re +1 / -1. I should also send this to the dev list soon for posterity.</span>
+</div>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1766169713600329?thread_ts=1766169284.460759&amp;cid=C028634A61L" title="Fri, 19 Dec 2025 18:41:53 GMT">Fri 18:41</a><span class="archive-user">Adam Monsen (meonkeys)</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">To keep the &quot;Known issues&quot; list brief and useful on the 1.14.0 release note wiki page, I unset `affectedVersion` for FINERACT-2392, FINERACT-2404, FINERACT-2422, and FINERACT-2423.</span>
+</div>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1766170331589739?thread_ts=1766169284.460759&amp;cid=C028634A61L" title="Fri, 19 Dec 2025 18:52:11 GMT">Fri 18:52</a><span class="archive-user">Adam Monsen (meonkeys)</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">Hmm, perhaps we are already doing what I&#39;m proposing. A couple examples were tickets that didn&#39;t make it into 1.13.0 and <a class="archive-link" href="https://mifos.slack.com/archives/C028634A61L/p1762806648663879?thread_ts=1759442977.840989&amp;amp;cid=C028634A61L">we were thinking of releasing in a 1.13.1 patch release</a> (we didn&#39;t end up making that patch release though): FINERACT-2390, FINERACT-2396.</span>
+</div>
+</article></section><article class="archive-message">
+<div class="archive-meta">
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1766171644622489?thread_ts=1766171644.622489&amp;cid=C028634A61L" title="Fri, 19 Dec 2025 19:14:04 GMT">Fri 19:14</a><span class="archive-user">Adam Monsen (meonkeys)</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">w00t, voting underway! <a class="archive-link" href="https://release-test.apache.org/vote/fineract/1.14.0">https://release-test.apache.org/vote/fineract/1.14.0</a> :racing_car:</span>
+</div>
+</article><section class="archive-thread" aria-label="Thread replies">
+<article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1766173665027359?thread_ts=1766171644.622489&amp;cid=C028634A61L" title="Fri, 19 Dec 2025 19:47:45 GMT">Fri 19:47</a><span class="archive-user">Adam Monsen (meonkeys)</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">who&#39;s going to be the first person to vote using this fancy new system? 🙂</span>
+</div>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1766247020423849?thread_ts=1766171644.622489&amp;cid=C028634A61L" title="Sat, 20 Dec 2025 16:10:20 GMT">Sat 16:10</a><span class="archive-user">Adam Monsen (meonkeys)</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">@Terence thx for bug report! ASF is looking into it. I can get the page but can&#39;t download with curl. Will you try rsync?</span>
+<br><br>
+<span class="archive-line"><a class="archive-link" href="https://the-asf.slack.com/archives/C049WADAAQG/p1766246169337129">https://the-asf.slack.com/archives/C049WADAAQG/p1766246169337129</a></span>
+</div>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1766266098955679?thread_ts=1766171644.622489&amp;cid=C028634A61L" title="Sat, 20 Dec 2025 21:28:18 GMT">Sat 21:28</a><span class="archive-user">Adam Monsen (meonkeys)</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">ATR is working now (and we don&#39;t <em>need</em> it):</span>
+<br><span class="archive-line"><a class="archive-link" href="https://lists.apache.org/thread/rxmqbpk623cypt9rggzj06jnwg87blk0">https://lists.apache.org/thread/rxmqbpk623cypt9rggzj06jnwg87blk0</a></span>
+</div>
+</article></section></section>
+  </main>
+</body>
+</html>
