@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>#fineract 2026-03-15</title>
+  <link rel="stylesheet" href="../../../../../assets/chat-archive.css">
+</head>
+<body>
+  <main class="archive-page">
+<header class="archive-header">
+<p class="archive-breadcrumb"><a href="../../../../../">Channels</a> / <a href="../../../">#fineract</a> / <a href="../../">2026</a> / <a href="../">03</a> / 15</p><h1>#fineract 2026-03-15</h1></header><section class="archive-log"><article class="archive-message">
+<div class="archive-meta">
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1773556598815679" title="Sun, 15 Mar 2026 06:36:38 GMT">Sun 06:36</a><span class="archive-user">Slackbot</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">@Suthankan Balenthiran joined #fineract. They’re also new to Mifos.</span>
+</div>
+</article><article class="archive-message">
+<div class="archive-meta">
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1773556776614499?thread_ts=1773556776.614499&amp;cid=C028634A61L" title="Sun, 15 Mar 2026 06:39:36 GMT">Sun 06:39</a><span class="archive-user">Suthankan Balenthiran</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">Hello everyone,</span>
+<br><span class="archive-line">My name is Suthankan. I am an IT undergraduate at the University of Moratuwa with strong full-stack experience in Java, Spring Boot, PostgreSQL, and Docker.</span>
+<br><span class="archive-line">I recently cloned and successfully spun up the Apache Fineract backend locally using Docker and compiled it from source. I am particularly interested in the GSoC 2026 project <strong>“Event-Driven Architecture for Stand-alone Modules.”</strong> I would love to contribute to decoupling the monolithic architecture by implementing event-driven microservices using the Outbox Pattern.</span>
+<br><span class="archive-line">Could someone point me to the relevant modules/packages in the codebase where the current event publishing logic resides, or suggest any introductory issues I could start exploring while I wait for my Apache Jira account approval?</span>
+<br><span class="archive-line">Thanks, and I look forward to contributing! GitHub: <a class="archive-link" href="https://github.com/Suthankan1">https://github.com/Suthankan1</a></span>
+</div>
+</article><section class="archive-thread" aria-label="Thread replies">
+<article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1773590615377059?thread_ts=1773556776.614499&amp;cid=C028634A61L" title="Sun, 15 Mar 2026 16:03:35 GMT">Sun 16:03</a><span class="archive-user">Noel Mugisha</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">@Suthankan Balenthiran hope this helps:</span>
+<br><span class="archive-line">1- The microservices avro schemas are in: `/fineract-avro-schemas/src/main`</span>
+<br><span class="archive-line">`/avro`</span>
+<br><span class="archive-line">2-  Core Business Event Interface: `/fineract-core/src/main/java/org/apache/fineract/infrastructure/event`</span>
+<br><span class="archive-line">3- Message Broker Integration: <strong>`Kafka &amp; ActiveMQ (JMS)`</strong></span>
+<br><br>
+<span class="archive-line"><strong>Happy coding!</strong></span>
+</div>
+</article></section><article class="archive-message">
+<div class="archive-meta">
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1773601909245799" title="Sun, 15 Mar 2026 19:11:49 GMT">Sun 19:11</a><span class="archive-user">Slackbot</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">@Ojaswa joined #fineract. They’re also new to Mifos.</span>
+</div>
+</article></section>
+  </main>
+</body>
+</html>
