@@ -32,6 +32,60 @@
 <div class="archive-text">
 <span class="archive-line">@pranjali goyal 14 joined #fineract. They’re also new to Mifos.</span>
 </div>
+</article><article class="archive-message">
+<div class="archive-meta">
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1773993834557659" title="Fri, 20 Mar 2026 08:03:54 GMT">Fri 08:03</a><span class="archive-user">Deepak</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">Hi everyone! I&#39;m Deepak Kumar S S, a GSoC 2026 applicant for Apache Fineract.</span>
+<br><span class="archive-line">I&#39;m a backend Java/Spring Boot engineer with 4.9 years of experience, most recently</span>
+<br><span class="archive-line">working on the ASX CHESS Replacement project handling millions of trade settlements daily in TCS.</span>
+<br><br>
+<span class="archive-line">I&#39;ve submitted two GSoC proposals:</span>
+<br><ol class="archive-list archive-list-numbered">
+<li>FINERACT-2439 — Self-Service BFF API (Large, 350hrs)</li>
+<li>FINERACT-2485 — Transaction Idempotency for Savings and Loans (Medium, 175hrs)</li>
+</ol>
+<br>
+<span class="archive-line">Just raised my first contribution — migrating integration tests from RestAssured</span>
+<br><span class="archive-line">to fineract-client-feign as part of FINERACT-2441:</span>
+<br><span class="archive-line"><a class="archive-link" href="https://github.com/apache/fineract/pull/5658">https://github.com/apache/fineract/pull/5658</a></span>
+<br><br>
+<span class="archive-line">gsoc-fineract-evidence</span>
+<br><br>
+<span class="archive-line">Happy to be here and looking forward to contributing!</span>
+</div>
+</article><article class="archive-message">
+<div class="archive-meta">
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1773997355712229" title="Fri, 20 Mar 2026 09:02:35 GMT">Fri 09:02</a><span class="archive-user">Deepak</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">Hi everyone! 👋 I&#39;ve raised my second contribution PR for FINERACT-2441 (fineract-client-feign migration for integration tests):</span>
+<br><span class="archive-line"><strong>PR:</strong> <a class="archive-link" href="https://github.com/apache/fineract/pull/5659">https://github.com/apache/fineract/pull/5659</a></span>
+<br><span class="archive-line"><strong>What it does:</strong></span>
+<br><span class="archive-line">Migrates `ClientExternalIdTest` from RestAssured to `fineract-client-feign`</span>
+<br><ul class="archive-list">
+<li>Adds 7 new typed feign methods to `ClientHelper` for external-id operations (`addClientAsPerson`, `getClientByExternalId`, `updateClientByExternalId`, `deleteClientByExternalId`, `getClientAccounts`, `getProposedTransferDate`, `getObligeeData`)</li>
+<li>Removes manual JSON payload construction in tests</li>
+</ul>
+<span class="archive-line">Would appreciate any feedback or review! 🙏</span>
+</div>
+</article><article class="archive-message">
+<div class="archive-meta">
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1774001062580839" title="Fri, 20 Mar 2026 10:04:22 GMT">Fri 10:04</a><span class="archive-user">Adam Saghy</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">This looks good @Deepak but please make sure you are fully finishing the migration, so once the new methods are added to use fineract-client-feign, the old ones to be deleted...</span>
+</div>
+</article><article class="archive-message">
+<div class="archive-meta">
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1774020182759289" title="Fri, 20 Mar 2026 15:23:02 GMT">Fri 15:23</a><span class="archive-user">Adam Monsen (meonkeys)</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">Hi everyone, does <a class="archive-link" href="https://mifos.slack.com/archives/C028634A61L/p1773772117111409">https://mifos.slack.com/archives/C028634A61L/p1773772117111409</a> make sense (react 👍/👎 please)? When you merge something on github, <strong>do not rebase</strong>. Per FSIP-7, <a class="archive-link" href="https://github.com/apache/fineract/pull/5663">I&#39;m going to modify .asf.yaml on Monday to enforce this</a>.</span>
+</div>
+<div class="archive-reactions"><span class="archive-reaction">👍 6</span>
+</div>
 </article></section>
   </main>
 </body>
