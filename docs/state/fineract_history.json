@@ -1,0 +1,214 @@
+[ {
+  "ts" : "1773772117.111409",
+  "user" : "U07ECHYJYD8",
+  "bot_id" : null,
+  "text" : "reminder: <https://cwiki.apache.org/confluence/display/FINERACT/FSIP-7%3A+traditional+merge+strategy|do not squash commits before merging PRs>. Local rebase by contributor is OK, rebasing on github is not. In short, if all commits are verified, we're doing this right. If not, we're missing signatures or we have invalidated them by inappropriately rewriting commits (e.g. squashing)",
+  "subtype" : null,
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : [ {
+    "name" : "+1",
+    "count" : 2
+  } ]
+}, {
+  "ts" : "1773792564.990029",
+  "user" : "U08V28XKKJN",
+  "bot_id" : null,
+  "text" : "<@U08V28XKKJN> has joined the channel",
+  "subtype" : "channel_join",
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1773793216.901119",
+  "user" : "USLACKBOT",
+  "bot_id" : "BSLACKBOT",
+  "text" : "<@U0AMMAUNVLH> joined #fineract. They’re also new to Mifos.",
+  "subtype" : "welcome_party",
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1773807863.413189",
+  "user" : "U0AMNDKD873",
+  "bot_id" : null,
+  "text" : "<@U0AMNDKD873> has joined the channel",
+  "subtype" : "channel_join",
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1773810141.915209",
+  "user" : "USLACKBOT",
+  "bot_id" : "BSLACKBOT",
+  "text" : "<@U0ALTJUTV6F> joined #fineract. They’re also new to Mifos.",
+  "subtype" : "welcome_party",
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1773810382.740109",
+  "user" : "U0ALTJUTV6F",
+  "bot_id" : null,
+  "text" : "Hi everyone, I have run the Docker build and checks locally for FINERACT-2528, and everything is passing on my side. Could someone please guide me on how to reproduce the license/thanks check failures or point me to the specific files that need to be fixed?",
+  "subtype" : null,
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1773821516.350489",
+  "user" : "U013NG99S8P",
+  "bot_id" : null,
+  "text" : "./gradlew :rat",
+  "subtype" : null,
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1773853688.930859",
+  "user" : "USLACKBOT",
+  "bot_id" : "BSLACKBOT",
+  "text" : "<@U0AM6V92J59> joined #fineract. They’re also new to Mifos.",
+  "subtype" : "welcome_party",
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1773857243.774039",
+  "user" : "USLACKBOT",
+  "bot_id" : "BSLACKBOT",
+  "text" : "<@U0ALZNG3R39> joined #fineract. They’re also new to Mifos.",
+  "subtype" : "welcome_party",
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1773922635.316579",
+  "user" : "USLACKBOT",
+  "bot_id" : "BSLACKBOT",
+  "text" : "<@U0AMZPD7B4Z> joined #fineract. They’re also new to Mifos.",
+  "subtype" : "welcome_party",
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1773923485.022909",
+  "user" : "U0AMZPD7B4Z",
+  "bot_id" : null,
+  "text" : "<@U0AMZPD7B4Z> has left the channel",
+  "subtype" : "channel_leave",
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1773925595.670009",
+  "user" : "USLACKBOT",
+  "bot_id" : "BSLACKBOT",
+  "text" : "<@U0ALNEC01HR> joined #fineract. They’re also new to Mifos.",
+  "subtype" : "welcome_party",
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1773928006.878629",
+  "user" : "U07K6V606P5",
+  "bot_id" : null,
+  "text" : "<@U07K6V606P5> has joined the channel",
+  "subtype" : "channel_join",
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1773933904.572999",
+  "user" : "USLACKBOT",
+  "bot_id" : "BSLACKBOT",
+  "text" : "<@U0AMEUMFMJP> joined #fineract. They’re also new to Mifos.",
+  "subtype" : "welcome_party",
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1773963114.479789",
+  "user" : "USLACKBOT",
+  "bot_id" : "BSLACKBOT",
+  "text" : "<@U0AMVAW0Y6Q> joined #fineract. They’re also new to Mifos.",
+  "subtype" : "welcome_party",
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1773972265.747339",
+  "user" : "USLACKBOT",
+  "bot_id" : "BSLACKBOT",
+  "text" : "<@U0AMQ8JKQT0> joined #fineract. They’re also new to Mifos.",
+  "subtype" : "welcome_party",
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1773972506.763419",
+  "user" : "U0AMQ8JKQT0",
+  "bot_id" : null,
+  "text" : "&gt; Hi everyone! I’m Yashasvi, a 2nd-year CSE  student. I am a *Java developer* with experience in *Spring Boot* and building *Maven-based backend projects*.\n&gt; I have my local environment set up and am very interested in contributing to  *Mifos Mobile 8.0 or,Payment Hub EE* for GSoC 2026. I've already signed the Google CLA. Could a mentor point me toward a 'Good First Issue' to help me get familiar with the codebase while I draft my proposal?\n",
+  "subtype" : null,
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1773978596.279879",
+  "user" : "USLACKBOT",
+  "bot_id" : "BSLACKBOT",
+  "text" : "<@U0ALDDB4QPQ> joined #fineract. They’re also new to Mifos.",
+  "subtype" : "welcome_party",
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1773993834.557659",
+  "user" : "U0AMVAW0Y6Q",
+  "bot_id" : null,
+  "text" : "Hi everyone! I'm Deepak Kumar S S, a GSoC 2026 applicant for Apache Fineract.\nI'm a backend Java/Spring Boot engineer with 4.9 years of experience, most recently\nworking on the ASX CHESS Replacement project handling millions of trade settlements daily in TCS.\n\nI've submitted two GSoC proposals:\n1. FINERACT-2439 — Self-Service BFF API (Large, 350hrs)\n2. FINERACT-2485 — Transaction Idempotency for Savings and Loans (Medium, 175hrs)\n\nJust raised my first contribution — migrating integration tests from RestAssured\nto fineract-client-feign as part of FINERACT-2441:\n<https://github.com/apache/fineract/pull/5658>\n\ngsoc-fineract-evidence\n\nHappy to be here and looking forward to contributing!",
+  "subtype" : null,
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1773997355.712229",
+  "user" : "U0AMVAW0Y6Q",
+  "bot_id" : null,
+  "text" : "Hi everyone! :wave: I've raised my second contribution PR for FINERACT-2441 (fineract-client-feign migration for integration tests):\n*PR:* <https://github.com/apache/fineract/pull/5659>\n*What it does:*\nMigrates `ClientExternalIdTest` from RestAssured to `fineract-client-feign`\n• Adds 7 new typed feign methods to `ClientHelper` for external-id operations (`addClientAsPerson`, `getClientByExternalId`, `updateClientByExternalId`, `deleteClientByExternalId`, `getClientAccounts`, `getProposedTransferDate`, `getObligeeData`)\n• Removes manual JSON payload construction in tests\nWould appreciate any feedback or review! :pray:",
+  "subtype" : null,
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1774001062.580839",
+  "user" : "U013NG99S8P",
+  "bot_id" : null,
+  "text" : "This looks good <@U0AMVAW0Y6Q> but please make sure you are fully finishing the migration, so once the new methods are added to use fineract-client-feign, the old ones to be deleted...",
+  "subtype" : null,
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1774020182.759289",
+  "user" : "U07ECHYJYD8",
+  "bot_id" : null,
+  "text" : "Hi everyone, does <https://mifos.slack.com/archives/C028634A61L/p1773772117111409> make sense (react :+1:/:-1: please)? When you merge something on github, *do not rebase*. Per FSIP-7, <https://github.com/apache/fineract/pull/5663|I'm going to modify .asf.yaml on Monday to enforce this>.",
+  "subtype" : null,
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : [ {
+    "name" : "+1",
+    "count" : 7
+  } ]
+}, {
+  "ts" : "1774119710.660809",
+  "user" : "U0AN1JH7LSE",
+  "bot_id" : null,
+  "text" : "<@U0AN1JH7LSE> has joined the channel",
+  "subtype" : "channel_join",
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
+} ]
