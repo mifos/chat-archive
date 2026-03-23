@@ -211,4 +211,13 @@
   "thread_ts" : null,
   "edited" : null,
   "reactions" : null
+}, {
+  "ts" : "1774179107.392449",
+  "user" : "U0AN1AZNT0E",
+  "bot_id" : null,
+  "text" : "<@U0AN1AZNT0E> has joined the channel",
+  "subtype" : "channel_join",
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
 } ]
