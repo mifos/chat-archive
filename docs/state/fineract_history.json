@@ -194,10 +194,12 @@
   "ts" : "1774020182.759289",
   "user" : "U07ECHYJYD8",
   "bot_id" : null,
-  "text" : "Hi everyone, does <https://mifos.slack.com/archives/C028634A61L/p1773772117111409> make sense (react :+1:/:-1: please)? When you merge something on github, *do not rebase*. Per FSIP-7, <https://github.com/apache/fineract/pull/5663|I'm going to modify .asf.yaml on Monday to enforce this>.",
+  "text" : "Hi everyone, does <https://mifos.slack.com/archives/C028634A61L/p1773772117111409> make sense (react :+1:/:-1: please)? When you merge something on github, *do not rebase*. Per <https://cwiki.apache.org/confluence/display/FINERACT/FSIP-7%3A+Traditional+Merge+Strategy|FSIP-7>, <https://github.com/apache/fineract/pull/5663|I'm going to modify .asf.yaml on Monday to enforce this>.",
   "subtype" : null,
   "thread_ts" : null,
-  "edited" : null,
+  "edited" : {
+    "ts" : "1774277014.000000"
+  },
   "reactions" : [ {
     "name" : "+1",
     "count" : 7
