@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>#fineract 2026-03-24</title>
+  <link rel="stylesheet" href="../../../../../assets/chat-archive.css">
+</head>
+<body>
+  <main class="archive-page">
+<header class="archive-header">
+<p class="archive-breadcrumb"><a href="../../../../../">Channels</a> / <a href="../../../">#fineract</a> / <a href="../../">2026</a> / <a href="../">03</a> / 24</p><h1>#fineract 2026-03-24</h1></header><section class="archive-log"><article class="archive-message">
+<div class="archive-meta">
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1774366747202239?thread_ts=1774366747.202239&amp;cid=C028634A61L" title="Tue, 24 Mar 2026 15:39:07 GMT">Tue 15:39</a><span class="archive-user">Adam Monsen (meonkeys)</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">thoughts on merge commit log messages</span>
+</div>
+</article><section class="archive-thread" aria-label="Thread replies">
+<article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1774366871965929?thread_ts=1774366747.202239&amp;cid=C028634A61L" title="Tue, 24 Mar 2026 15:41:11 GMT">Tue 15:41</a><span class="archive-user">Adam Monsen (meonkeys)</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">By default, when using the green &quot;Merge pull request&quot; button in the GitHub web UI, the log message for the merge commit will look something like this:</span>
+<br><br>
+<span class="archive-line"><strong>Commit message</strong></span>
+<br><span class="archive-line">```Merge pull request #5638 from openMF:FINERACT-2541/owner-to-owner-transfer```</span>
+<br><span class="archive-line"><strong>Extended description</strong></span>
+<br><span class="archive-line">```FINERACT-2541: owner to owner transfer functionality```</span>
+</div>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1774366949436279?thread_ts=1774366747.202239&amp;cid=C028634A61L" title="Tue, 24 Mar 2026 15:42:29 GMT">Tue 15:42</a><span class="archive-user">Adam Monsen (meonkeys)</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">Which would result in a git commit log message like this:</span>
+<br><br>
+<span class="archive-line">```Merge pull request #5638 from openMF:FINERACT-2541/owner-to-owner-transfer</span>
+<br><br>
+<span class="archive-line">FINERACT-2541: owner to owner transfer functionality```</span>
+</div>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1774366973040179?thread_ts=1774366747.202239&amp;cid=C028634A61L" title="Tue, 24 Mar 2026 15:42:53 GMT">Tue 15:42</a><span class="archive-user">Adam Monsen (meonkeys)</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">@Adam Saghy @Aleksandar Vidakovic ^ I think that&#39;s how it will work.</span>
+</div>
+<div class="archive-reactions"><span class="archive-reaction">👀 1</span>
+</div>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1774367091136999?thread_ts=1774366747.202239&amp;cid=C028634A61L" title="Tue, 24 Mar 2026 15:44:51 GMT">Tue 15:44</a><span class="archive-user">Adam Monsen (meonkeys)</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">I guess, thinking months/years ahead, if I&#39;m combing through commit log history <strong>I&#39;d rather see something like this</strong>:</span>
+<br><br>
+<span class="archive-line">```FINERACT-2541: owner to owner transfer functionality</span>
+<br><br>
+<span class="archive-line">Merge pull request #5638 from openMF:FINERACT-2541/owner-to-owner-transfer</span>
+<br><br>
+<span class="archive-line">...more detail here, as much as we want, arbitrary long</span>
+<br><span class="archive-line">...credit/thanks</span>
+<br><span class="archive-line">...other related git commit hashes</span>
+<br><span class="archive-line">...links to mailing list discussions, FSIPs, whatever```</span>
+<br><span class="archive-line">not really a strong preference since the critical backreferences are still present (FINERACT-2541 and PR #5638), but that&#39;s just my two cents. I&#39;ll likely be `git log`ging only looking at the `develop` branch, so if we want it to look &quot;linear&quot; like it does today, the first line should probably be `FINERACT-2541: owner to owner transfer functionality`</span>
+</div>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1774367192615089?thread_ts=1774366747.202239&amp;cid=C028634A61L" title="Tue, 24 Mar 2026 15:46:32 GMT">Tue 15:46</a><span class="archive-user">Aleksandar Vidakovic</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">alright... so I leave the defaults... thanks</span>
+</div>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1774367230983699?thread_ts=1774366747.202239&amp;cid=C028634A61L" title="Tue, 24 Mar 2026 15:47:10 GMT">Tue 15:47</a><span class="archive-user">James Dailey</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">is &quot;openMF&quot; here an account ?  or remote outside project fork?</span>
+</div>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1774367283340179?thread_ts=1774366747.202239&amp;cid=C028634A61L" title="Tue, 24 Mar 2026 15:48:03 GMT">Tue 15:48</a><span class="archive-user">Adam Saghy</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">we were using openMF repository to create the feature branches and raise the PRs to apache repo for simplicity.</span>
+</div>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1774367400996089?thread_ts=1774366747.202239&amp;cid=C028634A61L" title="Tue, 24 Mar 2026 15:50:00 GMT">Tue 15:50</a><span class="archive-user">Adam Monsen (meonkeys)</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">yep, that&#39;s just the github org where the PR branch lives, James. Git / GitHub track provenance in this manner.</span>
+</div>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1774367448226969?thread_ts=1774366747.202239&amp;cid=C028634A61L" title="Tue, 24 Mar 2026 15:50:48 GMT">Tue 15:50</a><span class="archive-user">Adam Monsen (meonkeys)</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">@Aleksandar Vidakovic wrote:</span>
+<br><span class="archive-line">&gt; alright... so I leave the defaults... thanks</span>
+<br><span class="archive-line">I mean, you&#39;re welcome to, but that&#39;s not what I suggested.</span>
+</div>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1774367461588949?thread_ts=1774366747.202239&amp;cid=C028634A61L" title="Tue, 24 Mar 2026 15:51:01 GMT">Tue 15:51</a><span class="archive-user">Adam Monsen (meonkeys)</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">again, not a strong preference either way.</span>
+</div>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1774367498923679?thread_ts=1774366747.202239&amp;cid=C028634A61L" title="Tue, 24 Mar 2026 15:51:38 GMT">Tue 15:51</a><span class="archive-user">Aleksandar Vidakovic</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">ok, just needed to know that I&#39;m not doing something that scrambles  the Git history you&#39;d like to see 🙂</span>
+</div>
+<div class="archive-reactions"><span class="archive-reaction">✅ 1</span>
+</div>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1774367532207479?thread_ts=1774366747.202239&amp;cid=C028634A61L" title="Tue, 24 Mar 2026 15:52:12 GMT">Tue 15:52</a><span class="archive-user">Aleksandar Vidakovic</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">... because the first one I merged... was actually the first one since we enforced these new rules... just wasn&#39;t sure</span>
+</div>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1774367582192919?thread_ts=1774366747.202239&amp;cid=C028634A61L" title="Tue, 24 Mar 2026 15:53:02 GMT">Tue 15:53</a><span class="archive-user">Adam Monsen (meonkeys)</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">cool. Keep pinging me anytime with stuff like this. Happy to help!</span>
+</div>
+<div class="archive-reactions"><span class="archive-reaction">:ok_hand: 1</span>
+</div>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1774367614157519?thread_ts=1774366747.202239&amp;cid=C028634A61L" title="Tue, 24 Mar 2026 15:53:34 GMT">Tue 15:53</a><span class="archive-user">Aleksandar Vidakovic</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">thanks for the explanation</span>
+</div>
+<div class="archive-reactions"><span class="archive-reaction">👍 1</span>
+</div>
+</article></section></section>
+  </main>
+</body>
+</html>
