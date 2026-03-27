@@ -231,4 +231,25 @@
   "thread_ts" : "1774366747.202239",
   "edited" : null,
   "reactions" : null
+}, {
+  "ts" : "1774508006.983329",
+  "user" : "U0AKLS03258",
+  "bot_id" : null,
+  "text" : "Hi everyone! :wave: I would love a quick set of eyes on my recent PR if anyone has bandwidth. I am prototyping some infrastructure for the `fineract-client-feign` migration.\n*PR #5646:* <https://github.com/apache/fineract/pull/5646> *What it does:* Adds E2E test scenarios for SavingsAccount insufficient balance withdrawals using Feign directly (including `FeignException` handling).\n*Question for the team:* There is a great point in the PR comments about why I tagged the new tests with `@Skip`. I followed the existing convention pending PS-1088, but I would love the community's guidance on whether the team prefers new E2E tests to be skipped or active right now!\nAny feedback would be greatly appreciated. Thank you! :pray:",
+  "subtype" : null,
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1774549168.889619",
+  "user" : "U07ECHYJYD8",
+  "bot_id" : null,
+  "text" : "<@U013NG99S8P> you're on fire bro!",
+  "subtype" : null,
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : [ {
+    "name" : "star-struck",
+    "count" : 2
+  } ]
 } ]
