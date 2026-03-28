@@ -251,5 +251,35 @@
   "reactions" : [ {
     "name" : "star-struck",
     "count" : 2
+  }, {
+    "name" : "fire",
+    "count" : 3
   } ]
+}, {
+  "ts" : "1774623689.803899",
+  "user" : "U08V28XKKJN",
+  "bot_id" : null,
+  "text" : "Hi All",
+  "subtype" : null,
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1774623717.584889",
+  "user" : "U08V28XKKJN",
+  "bot_id" : null,
+  "text" : "I am running Apache Fineract 1.14. How can I enable customer self-service APIs such as:\n\nLogin → /self/authentication\n→ View accounts → /self/accounts\n→ Check loans → /self/loans\n→ Transfer money → /self/accounttransfers\n\nAdditionally, I would like to enable the following endpoints:\n\n• /self/*\n• /self/beneficiaries\n• /self/charges\n• /self/accounttransfers\n• /self/savingsaccounts\n• /self/savingsaccounts/{id}\n• /self/savingsaccounts/{id}/transactions\n• /self/loans\n• /self/loans/{loanId}\n• /self/loans/{loanId}/transactions\nCould you please guide me on how to enable and configure these for end customers? Thanks in advance",
+  "subtype" : null,
+  "thread_ts" : "1774623717.584889",
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1774633602.317799",
+  "user" : "USLACKBOT",
+  "bot_id" : "BSLACKBOT",
+  "text" : "<@U0AP87GECP4> joined #fineract. They’re also new to Mifos.",
+  "subtype" : "welcome_party",
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
 } ]
