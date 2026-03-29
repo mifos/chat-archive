@@ -282,4 +282,13 @@
   "thread_ts" : null,
   "edited" : null,
   "reactions" : null
+}, {
+  "ts" : "1774726288.272859",
+  "user" : "USLACKBOT",
+  "bot_id" : "BSLACKBOT",
+  "text" : "<@U0APH6AP1B4> joined #fineract. They’re also new to Mifos.",
+  "subtype" : "welcome_party",
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
 } ]
