@@ -291,4 +291,13 @@
   "thread_ts" : null,
   "edited" : null,
   "reactions" : null
+}, {
+  "ts" : "1774780368.568589",
+  "user" : "U0AKLS03258",
+  "bot_id" : null,
+  "text" : "Hi team:wave: — quick update on two open PRs:\nPR #5671 (FINERACT-1659 — optimistic locking fix in savings batch job): <https://github.com/apache/fineract/pull/5671|https://github.com/apache/fineract/pull/5671>\nPR #5646 (FINERACT-2533 — E2E savings test using Feign): <https://github.com/apache/fineract/pull/5646|https://github.com/apache/fineract/pull/5646>\nBoth are ready for review and have 13 workflows awaiting CI approval. Could any maintainer with workflow approval access please unblock the CI? Thank you:pray:.",
+  "subtype" : null,
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
 } ]
