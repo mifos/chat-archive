@@ -300,4 +300,22 @@
   "thread_ts" : null,
   "edited" : null,
   "reactions" : null
+}, {
+  "ts" : "1774886403.201889",
+  "user" : "U07ECHYJYD8",
+  "bot_id" : null,
+  "text" : "how do we update <https://hub.docker.com/r/apache/fineract|the backend's readme on docker hub>? Looks to be out of date",
+  "subtype" : null,
+  "thread_ts" : "1774886403.201889",
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1774890308.346139",
+  "user" : "U0AM36H6K4P",
+  "bot_id" : null,
+  "text" : "<@U0AM36H6K4P> has joined the channel",
+  "subtype" : "channel_join",
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
 } ]
