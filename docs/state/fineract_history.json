@@ -390,4 +390,15 @@
   "thread_ts" : null,
   "edited" : null,
   "reactions" : null
+}, {
+  "ts" : "1776080910.201999",
+  "user" : "U08V28XKKJN",
+  "bot_id" : null,
+  "text" : "Hi All I am configuring <https://github.com/openMF/mifos-reporting-plugin> running Ubuntu 24.04.4 LTS along with Apache Fineract 1.14. I am encountering issues. Please guide me. Thanks in advance\n[INFO] ------------------------------------------------------------------------\n[INFO] BUILD FAILURE\n[INFO] ------------------------------------------------------------------------\n[INFO] Total time:  01:32 min\n[INFO] Finished at: 2026-04-13T17:13:25+05:30\n[INFO] ------------------------------------------------------------------------\n\n[ERROR] Failed to execute goal on project pentaho-plugin: Could not collect dependencies for project community.mifos:pentaho-plugin:jar:1.15.0-SNAPSHOT\n[ERROR] Failed to read artifact descriptor for org.pentaho.reporting.engine:classic-core:jar:9.4.0.0-343\n[ERROR] \tCaused by: The following artifacts could not be resolved: org.pentaho.reporting.engine:classic-core:pom:9.4.0.0-343 (absent): Could not transfer artifact org.pentaho.reporting.engine:classic-core:pom:9.4.0.0-343 from/to hitachivantara (<https://hitachiedge1.jfrog.io/artifactory/pnt-mvn/>): status code: 401, reason phrase:  (401)\n[ERROR] Failed to read artifact descriptor for org.pentaho.reporting.engine:classic-extensions:jar:9.4.0.0-343\n[ERROR] \tCaused by: The following artifacts could not be resolved: org.pentaho.reporting.engine:classic-extensions:pom:9.4.0.0-343 (absent): Could not transfer artifact org.pentaho.reporting.engine:classic-extensions:pom:9.4.0.0-343 from/to hitachivantara (<https://hitachiedge1.jfrog.io/artifactory/pnt-mvn/>): status code: 401, reason phrase:  (401)",
+  "subtype" : null,
+  "thread_ts" : "1776080910.201999",
+  "edited" : {
+    "ts" : "1776081384.000000"
+  },
+  "reactions" : null
 } ]

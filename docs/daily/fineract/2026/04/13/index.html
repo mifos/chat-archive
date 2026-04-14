@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>#fineract 2026-04-13</title>
+  <link rel="stylesheet" href="../../../../../assets/chat-archive.css">
+</head>
+<body>
+  <main class="archive-page">
+<header class="archive-header">
+<p class="archive-breadcrumb"><a href="../../../../../">Channels</a> / <a href="../../../">#fineract</a> / <a href="../../">2026</a> / <a href="../">04</a> / 13</p><h1>#fineract 2026-04-13</h1></header><section class="archive-log"><article class="archive-message">
+<div class="archive-meta">
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1776080910201999?thread_ts=1776080910.201999&amp;cid=C028634A61L" title="Mon, 13 Apr 2026 11:48:30 GMT">Mon 11:48</a><span class="archive-user">Kaushal Shriyan</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">Hi All I am configuring <a class="archive-link" href="https://github.com/openMF/mifos-reporting-plugin">https://github.com/openMF/mifos-reporting-plugin</a> running Ubuntu 24.04.4 LTS along with Apache Fineract 1.14. I am encountering issues. Please guide me. Thanks in advance</span>
+<br><span class="archive-line">[INFO] ------------------------------------------------------------------------</span>
+<br><span class="archive-line">[INFO] BUILD FAILURE</span>
+<br><span class="archive-line">[INFO] ------------------------------------------------------------------------</span>
+<br><span class="archive-line">[INFO] Total time:  01:32 min</span>
+<br><span class="archive-line">[INFO] Finished at: 2026-04-13T17:13:25+05:30</span>
+<br><span class="archive-line">[INFO] ------------------------------------------------------------------------</span>
+<br><br>
+<span class="archive-line">[ERROR] Failed to execute goal on project pentaho-plugin: Could not collect dependencies for project community.mifos:pentaho-plugin:jar:1.15.0-SNAPSHOT</span>
+<br><span class="archive-line">[ERROR] Failed to read artifact descriptor for org.pentaho.reporting.engine:classic-core:jar:9.4.0.0-343</span>
+<br><span class="archive-line">[ERROR] 	Caused by: The following artifacts could not be resolved: org.pentaho.reporting.engine:classic-core:pom:9.4.0.0-343 (absent): Could not transfer artifact org.pentaho.reporting.engine:classic-core:pom:9.4.0.0-343 from/to hitachivantara (<a class="archive-link" href="https://hitachiedge1.jfrog.io/artifactory/pnt-mvn/">https://hitachiedge1.jfrog.io/artifactory/pnt-mvn/</a>): status code: 401, reason phrase:  (401)</span>
+<br><span class="archive-line">[ERROR] Failed to read artifact descriptor for org.pentaho.reporting.engine:classic-extensions:jar:9.4.0.0-343</span>
+<br><span class="archive-line">[ERROR] 	Caused by: The following artifacts could not be resolved: org.pentaho.reporting.engine:classic-extensions:pom:9.4.0.0-343 (absent): Could not transfer artifact org.pentaho.reporting.engine:classic-extensions:pom:9.4.0.0-343 from/to hitachivantara (<a class="archive-link" href="https://hitachiedge1.jfrog.io/artifactory/pnt-mvn/">https://hitachiedge1.jfrog.io/artifactory/pnt-mvn/</a>): status code: 401, reason phrase:  (401)</span>
+</div>
+</article><section class="archive-thread" aria-label="Thread replies">
+<article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1776089818325639?thread_ts=1776080910.201999&amp;cid=C028634A61L" title="Mon, 13 Apr 2026 14:16:58 GMT">Mon 14:16</a><span class="archive-user">Victor Romero</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">The Pentaho repositories are down, you cannot do new builds using those repositories.</span>
+</div>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1776095028005859?thread_ts=1776080910.201999&amp;cid=C028634A61L" title="Mon, 13 Apr 2026 15:43:48 GMT">Mon 15:43</a><span class="archive-user">Kaushal Shriyan</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">Ok</span>
+</div>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1776095055701839?thread_ts=1776080910.201999&amp;cid=C028634A61L" title="Mon, 13 Apr 2026 15:44:15 GMT">Mon 15:44</a><span class="archive-user">Kaushal Shriyan</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">Any other alternative?</span>
+</div>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1776096111609329?thread_ts=1776080910.201999&amp;cid=C028634A61L" title="Mon, 13 Apr 2026 16:01:51 GMT">Mon 16:01</a><span class="archive-user">Victor Romero</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">look for the jar binaries, install them in you local dev env and try to do that, the other is to download the pentaho reporting plugin binary</span>
+</div>
+</article></section></section>
+  </main>
+</body>
+</html>
