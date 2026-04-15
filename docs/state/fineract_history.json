@@ -401,4 +401,13 @@
     "ts" : "1776081384.000000"
   },
   "reactions" : null
+}, {
+  "ts" : "1776158143.672619",
+  "user" : "U050X1MNUE4",
+  "bot_id" : null,
+  "text" : "<@U050X1MNUE4> has joined the channel",
+  "subtype" : "channel_join",
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
 } ]
