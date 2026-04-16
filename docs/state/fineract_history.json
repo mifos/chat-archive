@@ -410,4 +410,22 @@
   "thread_ts" : null,
   "edited" : null,
   "reactions" : null
+}, {
+  "ts" : "1776233681.712219",
+  "user" : "U08V28XKKJN",
+  "bot_id" : null,
+  "text" : "Hi All,",
+  "subtype" : null,
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1776233788.242379",
+  "user" : "U08V28XKKJN",
+  "bot_id" : null,
+  "text" : "I am setting up the latest develop branch of Apache Fineract 1.15. I am following the below steps\n• git clone <https://github.com/apache/fineract.git>\n• cd fineract\n• # git branch\n• * develop\n• #\nIs this correct?",
+  "subtype" : null,
+  "thread_ts" : "1776233788.242379",
+  "edited" : null,
+  "reactions" : null
 } ]

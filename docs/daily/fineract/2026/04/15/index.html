@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>#fineract 2026-04-15</title>
+  <link rel="stylesheet" href="../../../../../assets/chat-archive.css">
+</head>
+<body>
+  <main class="archive-page">
+<header class="archive-header">
+<p class="archive-breadcrumb"><a href="../../../../../">Channels</a> / <a href="../../../">#fineract</a> / <a href="../../">2026</a> / <a href="../">04</a> / 15</p><h1>#fineract 2026-04-15</h1></header><section class="archive-log"><article class="archive-message">
+<div class="archive-meta">
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1776233681712219" title="Wed, 15 Apr 2026 06:14:41 GMT">Wed 06:14</a><span class="archive-user">Kaushal Shriyan</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">Hi All,</span>
+</div>
+</article><article class="archive-message">
+<div class="archive-meta">
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1776233788242379?thread_ts=1776233788.242379&amp;cid=C028634A61L" title="Wed, 15 Apr 2026 06:16:28 GMT">Wed 06:16</a><span class="archive-user">Kaushal Shriyan</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">I am setting up the latest develop branch of Apache Fineract 1.15. I am following the below steps</span>
+<br><ul class="archive-list">
+<li>git clone <a class="archive-link" href="https://github.com/apache/fineract.git">https://github.com/apache/fineract.git</a></li>
+<li>cd fineract</li>
+<li># git branch</li>
+<li>* develop</li>
+<li>#</li>
+</ul>
+<span class="archive-line">Is this correct?</span>
+</div>
+</article><section class="archive-thread" aria-label="Thread replies">
+<article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1776235163556959?thread_ts=1776233788.242379&amp;cid=C028634A61L" title="Wed, 15 Apr 2026 06:39:23 GMT">Wed 06:39</a><span class="archive-user">Francisco Cuandon</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">Hi @Kaushal Shriyan that&#39;s correct!</span>
+</div>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1776236897786379?thread_ts=1776233788.242379&amp;cid=C028634A61L" title="Wed, 15 Apr 2026 07:08:17 GMT">Wed 07:08</a><span class="archive-user">Kaushal Shriyan</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">@Francisco Cuandon Thanks a lot for the clarification.</span>
+</div>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1776255197743549?thread_ts=1776233788.242379&amp;cid=C028634A61L" title="Wed, 15 Apr 2026 12:13:17 GMT">Wed 12:13</a><span class="archive-user">Kaushal Shriyan</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">I ran the below steps</span>
+<br><br>
+<span class="archive-line">git clone <a class="archive-link" href="https://github.com/apache/fineract.git">https://github.com/apache/fineract.git</a></span>
+<br><span class="archive-line">cd fineract</span>
+<br><br>
+<span class="archive-line"># cat /opt/fineract/override.properties</span>
+<br><span class="archive-line">#################################</span>
+<br><span class="archive-line"># PRIMARY DB</span>
+<br><span class="archive-line">#################################</span>
+<br><span class="archive-line">spring.datasource.url=jdbc:mariadb://localhost:3306/fineract_default</span>
+<br><span class="archive-line">spring.datasource.username=fineract</span>
+<br><span class="archive-line">spring.datasource.password=fineract</span>
+<br><br>
+<span class="archive-line">#################################</span>
+<br><span class="archive-line"># TENANT DB</span>
+<br><span class="archive-line">#################################</span>
+<br><span class="archive-line">fineract.tenant.datasource.url=jdbc:mariadb://localhost:3306/fineract_tenants</span>
+<br><span class="archive-line">fineract.tenant.datasource.username=fineract</span>
+<br><span class="archive-line">fineract.tenant.datasource.password=fineract</span>
+<br><br>
+<span class="archive-line">#################################</span>
+<br><span class="archive-line"># MODE</span>
+<br><span class="archive-line">#################################</span>
+<br><span class="archive-line">fineract.mode.enabled=true</span>
+<br><span class="archive-line">fineract.mode.read-only=false</span>
+<br><span class="archive-line">fineract.mode.batch-worker-enabled=false</span>
+<br><br>
+<span class="archive-line">#################################</span>
+<br><span class="archive-line"># JOB</span>
+<br><span class="archive-line">#################################</span>
+<br><span class="archive-line">fineract.job.enabled=true</span>
+<br><span class="archive-line">fineract.job.loan-cob-enabled=false</span>
+<br><br>
+<span class="archive-line">#################################</span>
+<br><span class="archive-line"># EVENTS</span>
+<br><span class="archive-line">#################################</span>
+<br><span class="archive-line">fineract.events.enabled=false</span>
+<br><span class="archive-line">fineract.events.external.enabled=false</span>
+<br><span class="archive-line">fineract.events.external.partition-size=1</span>
+<br><br>
+<span class="archive-line">#################################</span>
+<br><span class="archive-line"># REMOTE JOB HANDLER</span>
+<br><span class="archive-line">#################################</span>
+<br><span class="archive-line">fineract.remote-job-message-handler.enabled=false</span>
+<br><span class="archive-line">fineract.remote-job-message-handler.spring-events.enabled=false</span>
+<br><span class="archive-line">fineract.remote-job-message-handler.jms.enabled=false</span>
+<br><br>
+<span class="archive-line">#################################</span>
+<br><span class="archive-line"># OTHER</span>
+<br><span class="archive-line">#################################</span>
+<br><span class="archive-line">fineract.tenant.identifier=default</span>
+<br><span class="archive-line">fineract.security.basicauth.enabled=true</span>
+<br><br>
+<span class="archive-line">#################################</span>
+<br><span class="archive-line"># SERVER</span>
+<br><span class="archive-line">#################################</span>
+<br><span class="archive-line">server.port=8080</span>
+<br><span class="archive-line">server.ssl.enabled=false</span>
+<br><span class="archive-line">#</span>
+<br><span class="archive-line">I ran gradlew clean build -x test -x rat and encountered an error. Please find the attached log file (build.log) for more details.</span>
+</div>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1776255255801609?thread_ts=1776233788.242379&amp;cid=C028634A61L" title="Wed, 15 Apr 2026 12:14:15 GMT">Wed 12:14</a><span class="archive-user">Kaushal Shriyan</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">Please guide.</span>
+</div>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1776299581452229?thread_ts=1776233788.242379&amp;cid=C028634A61L" title="Thu, 16 Apr 2026 00:33:01 GMT">Thu 00:33</a><span class="archive-user">Kaushal Shriyan</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">Is this the typical Development Cycle flow?</span>
+<br><br>
+<ol class="archive-list archive-list-numbered">
+<li>`1.15.0-SNAPSHOT` (Development phase)</li>
+<li>`1.15.0-RC1` (Release Candidate)</li>
+<li>`1.15.0` (Final stable release)</li>
+</ol>
+<span class="archive-line">Please comment.</span>
+</div>
+</article></section></section>
+  </main>
+</body>
+</html>
