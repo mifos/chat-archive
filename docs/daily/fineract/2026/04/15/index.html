@@ -180,6 +180,238 @@
 <div class="archive-text">
 <span class="archive-line">@Adam Monsen (meonkeys) Thanks a lot for the clarification</span>
 </div>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1776530675407269?thread_ts=1776233788.242379&amp;cid=C028634A61L" title="Sat, 18 Apr 2026 16:44:35 GMT">Sat 16:44</a><span class="archive-user">Kaushal Shriyan</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">```java -jar fineract-provider/build/libs/fineract-provider-1.15.0-SNAPSHOT.jar --spring.config.location=file:/opt/fineract/override.properties</span>
+<br><span class="archive-line">22:12:50,910 |-WARN in ch.qos.logback.core.joran.action.ConversionRuleAction - [converterClass] attribute is deprecated and replaced by [class]. See element [conversionRule] near line 30</span>
+<br><br>
+<span class="archive-line">    _                     _            <em>___</em> _                           _</span>
+<br><span class="archive-line">   / \   _ <em>_   _</em> _  <em>__| |_</em>   <em>__  |  __</em>(<em>)_ _</em>   <em>__ _ _</em> <em>_ _  __</em>| |_</span>
+<br><span class="archive-line">  / _ \ | &#39;_ \ / <em>` |/ _</em>| &#39;_ \ / _ \ | |_  | | &#39;_ \ / _ \ &#39;<em>_/ _` |/ _</em>| __|</span>
+<br><span class="archive-line"> / <em>__ \| |</em>) | (<em>| | (_</em>| | | |  <em>_/ |  _| | | | | |  _</em>/ | | (<em>| | (_</em>| |_</span>
+<br><span class="archive-line">/<em>/   \</em>\ .<em>_/ \_</em>,<em>|\__</em>|<em>| |</em>|\<em>__| |</em>|   |<em>|_| |</em>|\<em>__|</em>|  \<em>_,</em>|\<em>__|\_</em>|</span>
+<br><span class="archive-line">        |_|</span>
+<br><br>
+<span class="archive-line">(c) 2015-2024 Apache Fineract (<a class="archive-link" href="https://fineract.apache.org">https://fineract.apache.org</a>)</span>
+<br><br>
+<span class="archive-line">Powered by Spring Boot 3.5.6</span>
+<br><br>
+<br>
+<span class="archive-line">2026-04-18T22:12:51.394+05:30  INFO 370821 --- [           main] org.apache.fineract.ServerApplication    : Starting ServerApplication v1.15.0-SNAPSHOT using Java 21.0.10 with PID 370821 (/opt/fineract/fineract-provider/build/libs/fineract-provider-1.15.0-SNAPSHOT.jar started by root in /opt/fineract)</span>
+<br><span class="archive-line">2026-04-18T22:12:51.396+05:30  INFO 370821 --- [           main] org.apache.fineract.ServerApplication    : No active profile set, falling back to 1 default profile: &quot;default&quot;</span>
+<br><span class="archive-line">2026-04-18T22:12:52.620+05:30  WARN 370821 --- [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Failed to read candidate component class: URL [jar:nested:/opt/fineract/fineract-provider/build/libs/fineract-provider-1.15.0-SNAPSHOT.jar/!BOOT-INF/classes/!/org/apache/fineract/infrastructure/s3/AmazonS3Config.class]</span>
+<br><span class="archive-line">2026-04-18T22:12:52.629+05:30  INFO 370821 --- [           main] .s.b.a.l.ConditionEvaluationReportLogger :</span>
+<br><br>
+<span class="archive-line">Error starting ApplicationContext. To display the condition evaluation report re-run your application with &#39;debug&#39; enabled.</span>
+<br><span class="archive-line">2026-04-18T22:12:52.690+05:30 ERROR 370821 --- [           main] o.s.boot.SpringApplication               : Application run failed</span>
+<br><br>
+<span class="archive-line">org.springframework.beans.factory.BeanDefinitionStoreException: Failed to read candidate component class: URL [jar:nested:/opt/fineract/fineract-provider/build/libs/fineract-provider-1.15.0-SNAPSHOT.jar/!BOOT-INF/classes/!/org/apache/fineract/infrastructure/s3/AmazonS3Config.class]</span>
+<br><span class="archive-line">	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.scanCandidateComponents(ClassPathScanningCandidateComponentProvider.java:510)</span>
+<br><span class="archive-line">	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.findCandidateComponents(ClassPathScanningCandidateComponentProvider.java:351)</span>
+<br><span class="archive-line">	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.doScan(ClassPathBeanDefinitionScanner.java:277)</span>
+<br><span class="archive-line">	at org.springframework.context.annotation.ComponentScanAnnotationParser.parse(ComponentScanAnnotationParser.java:128)</span>
+<br><span class="archive-line">	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:346)</span>
+<br><span class="archive-line">	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:281)</span>
+<br><span class="archive-line">	at org.springframework.context.annotation.ConfigurationClassParser.processImports(ConfigurationClassParser.java:617)</span>
+<br><span class="archive-line">	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:361)</span>
+<br><span class="archive-line">	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:281)</span>
+<br><span class="archive-line">	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:204)</span>
+<br><span class="archive-line">	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:172)</span>
+<br><span class="archive-line">	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:418)</span>
+<br><span class="archive-line">	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:290)</span>
+<br><span class="archive-line">	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349)</span>
+<br><span class="archive-line">	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:118)</span>
+<br><span class="archive-line">	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:791)</span>
+<br><span class="archive-line">	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:609)</span>
+<br><span class="archive-line">	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)</span>
+<br><span class="archive-line">	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)</span>
+<br><span class="archive-line">	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)</span>
+<br><span class="archive-line">	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)</span>
+<br><span class="archive-line">	at org.springframework.boot.builder.SpringApplicationBuilder.run(SpringApplicationBuilder.java:149)</span>
+<br><span class="archive-line">	at org.apache.fineract.ServerApplication.main(ServerApplication.java:57)</span>
+<br><span class="archive-line">	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)</span>
+<br><span class="archive-line">	at java.base/java.lang.reflect.Method.invoke(Method.java:580)</span>
+<br><span class="archive-line">	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:102)</span>
+<br><span class="archive-line">	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:64)</span>
+<br><span class="archive-line">	at org.springframework.boot.loader.launch.PropertiesLauncher.main(PropertiesLauncher.java:580)</span>
+<br><span class="archive-line">Caused by: java.lang.NullPointerException: Cannot invoke &quot;org.apache.fineract.infrastructure.core.config.FineractProperties$FineractReportProperties.getExport()&quot; because the return value of &quot;org.apache.fineract.infrastructure.core.config.FineractProperties.getReport()&quot; is null</span>
+<br><span class="archive-line">	at org.apache.fineract.infrastructure.s3.AmazonS3ConfigCondition.matches(AmazonS3ConfigCondition.java:31)</span>
+<br><span class="archive-line">	at org.apache.fineract.infrastructure.core.condition.PropertiesCondition.matches(PropertiesCondition.java:31)</span>
+<br><span class="archive-line">	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:99)</span>
+<br><span class="archive-line">	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:88)</span>
+<br><span class="archive-line">	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:71)</span>
+<br><span class="archive-line">	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.isConditionMatch(ClassPathScanningCandidateComponentProvider.java:564)</span>
+<br><span class="archive-line">	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.isCandidateComponent(ClassPathScanningCandidateComponentProvider.java:547)</span>
+<br><span class="archive-line">	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.scanCandidateComponents(ClassPathScanningCandidateComponentProvider.java:471)</span>
+<br><span class="archive-line">	... 27 common frames omitted</span>
+<br><br>
+<span class="archive-line">root@testing-Virtual-Machine:/opt/fineract# jar tf fineract-provider/build/libs/fineract-provider-1.15.0-SNAPSHOT.jar | grep AmazonS3Config</span>
+<br><span class="archive-line">BOOT-INF/classes/org/apache/fineract/infrastructure/s3/AmazonS3Config.class</span>
+<br><span class="archive-line">BOOT-INF/classes/org/apache/fineract/infrastructure/s3/AmazonS3ConfigCondition.class</span>
+<br><span class="archive-line">#cat /opt/fineract/override.properties</span>
+<br><span class="archive-line"># ===============================</span>
+<br><span class="archive-line"># DATABASE CONFIG</span>
+<br><span class="archive-line"># ===============================</span>
+<br><span class="archive-line">spring.datasource.url=jdbc:mariadb://localhost:3306/fineract_tenants</span>
+<br><span class="archive-line">spring.datasource.username=fineract</span>
+<br><span class="archive-line">spring.datasource.password=fineract</span>
+<br><span class="archive-line">spring.datasource.driver-class-name=org.mariadb.jdbc.Driver</span>
+<br><br>
+<span class="archive-line">fineract.datasource.username=fineract</span>
+<br><span class="archive-line">fineract.datasource.password=fineract</span>
+<br><br>
+<span class="archive-line">fineract.tenant.datasource.url=jdbc:mariadb://localhost:3306/fineract_default</span>
+<br><span class="archive-line">fineract.tenant.datasource.username=fineract</span>
+<br><span class="archive-line">fineract.tenant.datasource.password=fineract</span>
+<br><br>
+<span class="archive-line"># ===============================</span>
+<br><span class="archive-line"># CORE SETTINGS</span>
+<br><span class="archive-line"># ===============================</span>
+<br><span class="archive-line">fineract.node-id=1</span>
+<br><br>
+<span class="archive-line"># ===============================</span>
+<br><span class="archive-line"># MODE</span>
+<br><span class="archive-line"># ===============================</span>
+<br><span class="archive-line">fineract.mode.batch-worker-enabled=false</span>
+<br><span class="archive-line">fineract.mode.read-only-enabled=false</span>
+<br><br>
+<span class="archive-line"># ===============================</span>
+<br><span class="archive-line"># JOB</span>
+<br><span class="archive-line"># ===============================</span>
+<br><span class="archive-line">fineract.job.loan-cob-enabled=false</span>
+<br><br>
+<span class="archive-line"># ===============================</span>
+<br><span class="archive-line"># EVENTS</span>
+<br><span class="archive-line"># ===============================</span>
+<br><span class="archive-line">fineract.events.external.enabled=false</span>
+<br><span class="archive-line">fineract.events.external.partition-size=1</span>
+<br><br>
+<span class="archive-line"># ===============================</span>
+<br><span class="archive-line"># REMOTE JOB HANDLER</span>
+<br><span class="archive-line"># ===============================</span>
+<br><span class="archive-line">fineract.remote-job-message-handler.spring-events.enabled=false</span>
+<br><span class="archive-line">fineract.remote-job-message-handler.jms.enabled=false</span>
+<br><br>
+<span class="archive-line"># ===============================</span>
+<br><span class="archive-line"># JPA</span>
+<br><span class="archive-line"># ===============================</span>
+<br><span class="archive-line">fineract.jpa.statement-logging-enabled=false</span>
+<br><br>
+<span class="archive-line"># ===============================</span>
+<br><span class="archive-line"># SAMPLING</span>
+<br><span class="archive-line"># ===============================</span>
+<br><span class="archive-line">fineract.sampling.enabled=false</span>
+<br><br>
+<span class="archive-line"># ===============================</span>
+<br><span class="archive-line"># REPORT (FIXES CURRENT ERROR)</span>
+<br><span class="archive-line"># ===============================</span>
+<br><span class="archive-line">fineract.report.export.enabled=false</span>
+<br><br>
+<span class="archive-line"># ===============================</span>
+<br><span class="archive-line"># S3 (disable)</span>
+<br><span class="archive-line"># ===============================</span>
+<br><span class="archive-line">fineract.s3.enabled=false</span>
+<br><br>
+<span class="archive-line"># ===============================</span>
+<br><span class="archive-line"># LOGGING (optional)</span>
+<br><span class="archive-line"># ===============================</span>
+<br><span class="archive-line">logging.level.root=INFO</span>
+<br><br>
+<span class="archive-line"># ===== REPORT =====</span>
+<br><span class="archive-line">fineract.report.enabled=true</span>
+<br><span class="archive-line">fineract.report.export.enabled=false</span>
+<br><br>
+<span class="archive-line"># ===== S3 =====</span>
+<br><span class="archive-line">fineract.s3.enabled=false</span>
+<br><span class="archive-line">fineract.s3.bucket-name=dummy</span>
+<br><span class="archive-line">fineract.s3.access-key=dummy</span>
+<br><span class="archive-line">fineract.s3.secret-key=dummy</span>
+<br><span class="archive-line">fineract.s3.region=us-east-1```</span>
+</div>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1776530696609549?thread_ts=1776233788.242379&amp;cid=C028634A61L" title="Sat, 18 Apr 2026 16:44:56 GMT">Sat 16:44</a><span class="archive-user">Kaushal Shriyan</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">Please guide me. I am facing with PID 370821 (/opt/fineract/fineract-provider/build/libs/fineract-provider-1.15.0-SNAPSHOT.jar started by root in /opt/fineract)</span>
+<br><span class="archive-line">2026-04-18T22:12:51.396+05:30  INFO 370821 --- [           main] org.apache.fineract.ServerApplication    : No active profile set, falling back to 1 default profile: &quot;default&quot;</span>
+<br><span class="archive-line">2026-04-18T22:12:52.620+05:30  WARN 370821 --- [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Failed to read candidate component class: URL [jar:nested:/opt/fineract/fineract-provider/build/libs/fineract-provider-1.15.0-SNAPSHOT.jar/!BOOT-INF/classes/!/org/apache/fineract/infrastructure/s3/AmazonS3Config.class]</span>
+<br><span class="archive-line">2026-04-18T22:12:52.629+05:30  INFO 370821 --- [           main] .s.b.a.l.ConditionEvaluationReportLogger :</span>
+<br><br>
+<span class="archive-line">Error starting ApplicationContext. To display the condition evaluation report re-run your application with &#39;debug&#39; enabled.</span>
+<br><span class="archive-line">2026-04-18T22:12:52.690+05:30 ERROR 370821 --- [           main] o.s.boot.SpringApplication               : Application run failed</span>
+<br><br>
+<span class="archive-line">org.springframework.beans.factory.BeanDefinitionStoreException: Failed to read candidate component class: URL [jar:nested:/opt/fineract/fineract-provider/build/libs/fineract-provider-1.15.0-SNAPSHOT.jar/!BOOT-INF/classes/!/org/apache/fineract/infrastructure/s3/AmazonS3Config.class]</span>
+<br><span class="archive-line">	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.scanCandidateComponents(ClassPathScanningCandidateComponentProvider.java:510)</span>
+<br><span class="archive-line">	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.findCandidateComponents(ClassPathScanningCandidateComponentProvider.java:351)</span>
+<br><span class="archive-line">	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.doScan(ClassPathBeanDefinitionScanner.java:277)</span>
+<br><span class="archive-line">	at org.springframework.context.annotation.ComponentScanAnnotationParser.parse(ComponentScanAnnotationParser.java:128)</span>
+<br><span class="archive-line">	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:346)</span>
+<br><span class="archive-line">	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:281)</span>
+<br><span class="archive-line">	at org.springframework.context.annotation.ConfigurationClassParser.processImports(ConfigurationClassParser.java:617)</span>
+<br><span class="archive-line">	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:361)</span>
+<br><span class="archive-line">	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:281)</span>
+<br><span class="archive-line">	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:204)</span>
+<br><span class="archive-line">	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:172)</span>
+<br><span class="archive-line">	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:418)</span>
+<br><span class="archive-line">	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:290)</span>
+<br><span class="archive-line">	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349)</span>
+<br><span class="archive-line">	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:118)</span>
+<br><span class="archive-line">	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:791)</span>
+<br><span class="archive-line">	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:609)</span>
+<br><span class="archive-line">	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)</span>
+<br><span class="archive-line">	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)</span>
+<br><span class="archive-line">	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)</span>
+<br><span class="archive-line">	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)</span>
+<br><span class="archive-line">	at org.springframework.boot.builder.SpringApplicationBuilder.run(SpringApplicationBuilder.java:149)</span>
+<br><span class="archive-line">	at org.apache.fineract.ServerApplication.main(ServerApplication.java:57)</span>
+<br><span class="archive-line">	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)</span>
+<br><span class="archive-line">	at java.base/java.lang.reflect.Method.invoke(Method.java:580)</span>
+<br><span class="archive-line">	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:102)</span>
+<br><span class="archive-line">	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:64)</span>
+<br><span class="archive-line">	at org.springframework.boot.loader.launch.PropertiesLauncher.main(PropertiesLauncher.java:580)</span>
+</div>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1776530761412209?thread_ts=1776233788.242379&amp;cid=C028634A61L" title="Sat, 18 Apr 2026 16:46:01 GMT">Sat 16:46</a><span class="archive-user">Kaushal Shriyan</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">Should i raise any Jira issue?</span>
+</div>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1776537041965589?thread_ts=1776233788.242379&amp;cid=C028634A61L" title="Sat, 18 Apr 2026 18:30:41 GMT">Sat 18:30</a><span class="archive-user">Kaushal Shriyan</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">```# ls /opt/security-plugin/target/selfservice-plugin-1.15.0-SNAPSHOT.jar</span>
+<br><span class="archive-line">/opt/security-plugin/target/selfservice-plugin-1.15.0-SNAPSHOT.jar</span>
+<br><span class="archive-line"># ls /opt/fineract/fineract-provider/build/libs/fineract-provider-1.15.0-SNAPSHOT*</span>
+<br><span class="archive-line">/opt/fineract/fineract-provider/build/libs/fineract-provider-1.15.0-SNAPSHOT.jar</span>
+<br><span class="archive-line">/opt/fineract/fineract-provider/build/libs/fineract-provider-1.15.0-SNAPSHOT-javadoc.jar</span>
+<br><span class="archive-line">/opt/fineract/fineract-provider/build/libs/fineract-provider-1.15.0-SNAPSHOT-plain.jar</span>
+<br><span class="archive-line">/opt/fineract/fineract-provider/build/libs/fineract-provider-1.15.0-SNAPSHOT-sources.jar</span>
+<br><span class="archive-line">#```</span>
+</div>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1776537074880269?thread_ts=1776233788.242379&amp;cid=C028634A61L" title="Sat, 18 Apr 2026 18:31:14 GMT">Sat 18:31</a><span class="archive-user">Kaushal Shriyan</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">How to integrate selfservice-plugin-1.15.0-SNAPSHOT.jar in Apache Fineract 1.15?</span>
+</div>
 </article></section></section>
   </main>
 </body>
