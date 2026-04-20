@@ -437,4 +437,13 @@
   "thread_ts" : null,
   "edited" : null,
   "reactions" : null
+}, {
+  "ts" : "1776618133.415439",
+  "user" : "U04QJA5HTHU",
+  "bot_id" : null,
+  "text" : "Hi team, In the past I’ve contributed to Mifos Ecosystem(mobile apps) I’m learning backend so that I can contribute to backend OSS projects as well. Can you suggest me where to start?",
+  "subtype" : null,
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
 } ]
