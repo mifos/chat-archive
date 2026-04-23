@@ -443,7 +443,7 @@
   "bot_id" : null,
   "text" : "Hi team, In the past I’ve contributed to Mifos Ecosystem(mobile apps) I’m learning backend so that I can contribute to backend OSS projects as well. Can you suggest me where to start?",
   "subtype" : null,
-  "thread_ts" : null,
+  "thread_ts" : "1776618133.415439",
   "edited" : null,
   "reactions" : null
 }, {
@@ -462,6 +462,45 @@
   "text" : "<@U0AU8R30TL6> has joined the channel",
   "subtype" : "channel_join",
   "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1776854870.609279",
+  "user" : "U09UU5WL2HX",
+  "bot_id" : null,
+  "text" : "hello team, I have pushed a PR on fineract repo, but a Fineract Signed Commits Check workflow run has failed how do you guys set it up, thank you",
+  "subtype" : null,
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1776855991.206619",
+  "user" : "U013NG99S8P",
+  "bot_id" : null,
+  "text" : "<https://fineract.apache.org/docs/current/#_gpg_2>",
+  "subtype" : null,
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : [ {
+    "name" : "eyes",
+    "count" : 1
+  } ]
+}, {
+  "ts" : "1776873666.313749",
+  "user" : "U08V28XKKJN",
+  "bot_id" : null,
+  "text" : "*Subject:* Issue with Self-Service Plugin Tables in Fineract 1.15\n\nI am using the self-service plugin for user onboarding:\n<https://github.com/openMF/selfservice-plugin>\nI followed the below steps:\n```#git clone <https://github.com/apache/fineract.git>\n#cd /opt/fineract\n# git branch\n* develop\n#./gradlew clean build -x test -x rat\n\n# Verify build\n#ls /opt/fineract/fineract-provider/build/libs/\nfineract-provider-1.15.0-SNAPSHOT.jar```\nThen, I built the self-service plugin:\n```#git clone <https://github.com/openMF/selfservice-plugin.git>\n#cd selfservice-plugin\n#./mvnw -Dmaven.test.skip=true\n#cp /opt/selfservice-plugin/target/selfservice-plugin-1.15.0-SNAPSHOT.jar /opt/fineract/libs/```\nMy systemd configuration is as follows:\n```[Unit]\nDescription= CBS Application Service\nAfter=network.target\nWants=network-online.target\n\n[Service]\nWorkingDirectory=/opt/fineract/fineract-provider\nExecStart=/usr/bin/java -Duser.timezone=UTC \\\n  -Dloader.path=/opt/fineract/libs/ \\\n  -Dspring.config.additional-location=file:/opt/fineract/override.properties \\\n  -jar build/libs/fineract-provider-1.15.0-SNAPSHOT.jar\nSuccessExitStatus=143\nRestart=on-failure\nRestartSec=10\nStandardOutput=append:/var/log/fineract/fineract.log\nStandardError=append:/var/log/fineract/fineract-error.log\n\n[Install]\nWantedBy=multi-user.target```\nAfter startup, I can see the following self-service tables:\n```SHOW TABLES LIKE '%m_selfservice%';\n\nm_selfservice_beneficiaries_tpt\nm_selfservice_user_client_mapping```\nHowever, the following tables are missing:\n• `m_selfservice_user`\n• `m_selfservice_registration`\nI have attached the self-service plugin logs for reference.\nCould you please guide me on why these tables are not being created and how to resolve this issue?",
+  "subtype" : null,
+  "thread_ts" : "1776873666.313749",
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1776874255.128879",
+  "user" : "U09UU5WL2HX",
+  "bot_id" : null,
+  "text" : "I want to create a ticket for fineract where do i go, this page is not loading <https://issues.apache.org/jira/projects>, i failed to find a space for Fineract in mifos jira <https://mifosforge.jira.com/jira/for-you?viewed>, someone to guide me",
+  "subtype" : null,
+  "thread_ts" : "1776874255.128879",
   "edited" : null,
   "reactions" : null
 } ]

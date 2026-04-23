@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>#fineract 2026-04-22</title>
+  <link rel="stylesheet" href="../../../../../assets/chat-archive.css">
+</head>
+<body>
+  <main class="archive-page">
+<header class="archive-header">
+<p class="archive-breadcrumb"><a href="../../../../../">Channels</a> / <a href="../../../">#fineract</a> / <a href="../../">2026</a> / <a href="../">04</a> / 22</p><h1>#fineract 2026-04-22</h1></header><section class="archive-log"><article class="archive-message">
+<div class="archive-meta">
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1776854870609279" title="Wed, 22 Apr 2026 10:47:50 GMT">Wed 10:47</a><span class="archive-user">Edson</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">hello team, I have pushed a PR on fineract repo, but a Fineract Signed Commits Check workflow run has failed how do you guys set it up, thank you</span>
+</div>
+</article><article class="archive-message">
+<div class="archive-meta">
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1776855991206619" title="Wed, 22 Apr 2026 11:06:31 GMT">Wed 11:06</a><span class="archive-user">Adam Saghy</span>
+</div>
+<div class="archive-text">
+<span class="archive-line"><a class="archive-link" href="https://fineract.apache.org/docs/current/#_gpg_2">https://fineract.apache.org/docs/current/#_gpg_2</a></span>
+</div>
+<div class="archive-reactions"><span class="archive-reaction">👀 1</span>
+</div>
+</article><article class="archive-message">
+<div class="archive-meta">
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1776873666313749?thread_ts=1776873666.313749&amp;cid=C028634A61L" title="Wed, 22 Apr 2026 16:01:06 GMT">Wed 16:01</a><span class="archive-user">Kaushal Shriyan</span>
+</div>
+<div class="archive-text">
+<span class="archive-line"><strong>Subject:</strong> Issue with Self-Service Plugin Tables in Fineract 1.15</span>
+<br><br>
+<span class="archive-line">I am using the self-service plugin for user onboarding:</span>
+<br><span class="archive-line"><a class="archive-link" href="https://github.com/openMF/selfservice-plugin">https://github.com/openMF/selfservice-plugin</a></span>
+<br><span class="archive-line">I followed the below steps:</span>
+<br><span class="archive-line">```#git clone <a class="archive-link" href="https://github.com/apache/fineract.git">https://github.com/apache/fineract.git</a></span>
+<br><span class="archive-line">#cd /opt/fineract</span>
+<br><span class="archive-line"># git branch</span>
+<br><ul class="archive-list">
+<li>develop</li>
+</ul>
+<span class="archive-line">#./gradlew clean build -x test -x rat</span>
+<br><br>
+<span class="archive-line"># Verify build</span>
+<br><span class="archive-line">#ls /opt/fineract/fineract-provider/build/libs/</span>
+<br><span class="archive-line">fineract-provider-1.15.0-SNAPSHOT.jar```</span>
+<br><span class="archive-line">Then, I built the self-service plugin:</span>
+<br><span class="archive-line">```#git clone <a class="archive-link" href="https://github.com/openMF/selfservice-plugin.git">https://github.com/openMF/selfservice-plugin.git</a></span>
+<br><span class="archive-line">#cd selfservice-plugin</span>
+<br><span class="archive-line">#./mvnw -Dmaven.test.skip=true</span>
+<br><span class="archive-line">#cp /opt/selfservice-plugin/target/selfservice-plugin-1.15.0-SNAPSHOT.jar /opt/fineract/libs/```</span>
+<br><span class="archive-line">My systemd configuration is as follows:</span>
+<br><span class="archive-line">```[Unit]</span>
+<br><span class="archive-line">Description= CBS Application Service</span>
+<br><span class="archive-line">After=network.target</span>
+<br><span class="archive-line">Wants=network-online.target</span>
+<br><br>
+<span class="archive-line">[Service]</span>
+<br><span class="archive-line">WorkingDirectory=/opt/fineract/fineract-provider</span>
+<br><span class="archive-line">ExecStart=/usr/bin/java -Duser.timezone=UTC \</span>
+<br><span class="archive-line">  -Dloader.path=/opt/fineract/libs/ \</span>
+<br><span class="archive-line">  -Dspring.config.additional-location=file:/opt/fineract/override.properties \</span>
+<br><span class="archive-line">  -jar build/libs/fineract-provider-1.15.0-SNAPSHOT.jar</span>
+<br><span class="archive-line">SuccessExitStatus=143</span>
+<br><span class="archive-line">Restart=on-failure</span>
+<br><span class="archive-line">RestartSec=10</span>
+<br><span class="archive-line">StandardOutput=append:/var/log/fineract/fineract.log</span>
+<br><span class="archive-line">StandardError=append:/var/log/fineract/fineract-error.log</span>
+<br><br>
+<span class="archive-line">[Install]</span>
+<br><span class="archive-line">WantedBy=multi-user.target```</span>
+<br><span class="archive-line">After startup, I can see the following self-service tables:</span>
+<br><span class="archive-line">```SHOW TABLES LIKE &#39;%m_selfservice%&#39;;</span>
+<br><br>
+<span class="archive-line">m_selfservice_beneficiaries_tpt</span>
+<br><span class="archive-line">m_selfservice_user_client_mapping```</span>
+<br><span class="archive-line">However, the following tables are missing:</span>
+<br><ul class="archive-list">
+<li>`m_selfservice_user`</li>
+<li>`m_selfservice_registration`</li>
+</ul>
+<span class="archive-line">I have attached the self-service plugin logs for reference.</span>
+<br><span class="archive-line">Could you please guide me on why these tables are not being created and how to resolve this issue?</span>
+</div>
+</article><section class="archive-thread" aria-label="Thread replies">
+<article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1776875282087559?thread_ts=1776873666.313749&amp;cid=C028634A61L" title="Wed, 22 Apr 2026 16:28:02 GMT">Wed 16:28</a><span class="archive-user">Krishna Mewara (DeathGun44)</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">Hi, i don&#39;t think these are plugin issues, tables are actually there ,they just have different names than what you&#39;re expecting! Try this `SHOW TABLES LIKE &#39;%appselfservice%&#39;;` also `SHOW TABLES LIKE &#39;request_audit_table&#39;;`</span>
+</div>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1776875945438899?thread_ts=1776873666.313749&amp;cid=C028634A61L" title="Wed, 22 Apr 2026 16:39:05 GMT">Wed 16:39</a><span class="archive-user">Kaushal Shriyan</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">Ok</span>
+</div>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1776876032973189?thread_ts=1776873666.313749&amp;cid=C028634A61L" title="Wed, 22 Apr 2026 16:40:32 GMT">Wed 16:40</a><span class="archive-user">Kaushal Shriyan</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">```Database changed</span>
+<br><span class="archive-line">MariaDB [fineract_default]&amp;gt; SHOW TABLES LIKE &#39;%appselfservice%&#39;;</span>
+<br><span class="archive-line">+-----------------------------------------------+</span>
+<br><span class="archive-line">| Tables_in_fineract_default (%appselfservice%) |</span>
+<br><span class="archive-line">+-----------------------------------------------+</span>
+<br><span class="archive-line">| m_appselfservice_user                         |</span>
+<br><span class="archive-line">| m_appselfservice_user_role                    |</span>
+<br><span class="archive-line">+-----------------------------------------------+</span>
+<br><span class="archive-line">2 rows in set (0.001 sec)</span>
+<br><br>
+<span class="archive-line">MariaDB [fineract_default]&amp;gt; SHOW TABLES LIKE &#39;request_audit_table&#39;;</span>
+<br><span class="archive-line">+--------------------------------------------------+</span>
+<br><span class="archive-line">| Tables_in_fineract_default (request_audit_table) |</span>
+<br><span class="archive-line">+--------------------------------------------------+</span>
+<br><span class="archive-line">| request_audit_table                              |</span>
+<br><span class="archive-line">+--------------------------------------------------+</span>
+<br><span class="archive-line">1 row in set (0.001 sec)</span>
+<br><br>
+<span class="archive-line">MariaDB [fineract_default]&amp;gt;```</span>
+</div>
+<div class="archive-reactions"><span class="archive-reaction">👍 1</span>
+</div>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1776877300741889?thread_ts=1776873666.313749&amp;cid=C028634A61L" title="Wed, 22 Apr 2026 17:01:40 GMT">Wed 17:01</a><span class="archive-user">Kaushal Shriyan</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">so what all tables are created by the self service plugins?</span>
+<br><br>
+<ul class="archive-list">
+<li>`m_appselfservice_user`</li>
+<li>`m_appselfservice_user_role`</li>
+<li>`m_selfservice_user_client_mapping`</li>
+</ul>
+<span class="archive-line">Please comment</span>
+</div>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1776877330944249?thread_ts=1776873666.313749&amp;cid=C028634A61L" title="Wed, 22 Apr 2026 17:02:10 GMT">Wed 17:02</a><span class="archive-user">Kaushal Shriyan</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">```MariaDB [fineract_default]&amp;gt; show tables like &#39;%selfservice%&#39;;</span>
+<br><span class="archive-line">+--------------------------------------------+</span>
+<br><span class="archive-line">| Tables_in_fineract_default (%selfservice%) |</span>
+<br><span class="archive-line">+--------------------------------------------+</span>
+<br><span class="archive-line">| m_appselfservice_user                      |</span>
+<br><span class="archive-line">| m_appselfservice_user_role                 |</span>
+<br><span class="archive-line">| m_selfservice_beneficiaries_tpt            |</span>
+<br><span class="archive-line">| m_selfservice_user_client_mapping          |</span>
+<br><span class="archive-line">+--------------------------------------------+</span>
+<br><span class="archive-line">4 rows in set (0.001 sec)</span>
+<br><br>
+<span class="archive-line">MariaDB [fineract_default]&amp;gt;```</span>
+</div>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1776877451163589?thread_ts=1776873666.313749&amp;cid=C028634A61L" title="Wed, 22 Apr 2026 17:04:11 GMT">Wed 17:04</a><span class="archive-user">Krishna Mewara (DeathGun44)</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">yes, all 4 tables in your query are created by the self-service plugin</span>
+</div>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1776877481378379?thread_ts=1776873666.313749&amp;cid=C028634A61L" title="Wed, 22 Apr 2026 17:04:41 GMT">Wed 17:04</a><span class="archive-user">Kaushal Shriyan</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">ok</span>
+</div>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1776877543096819?thread_ts=1776873666.313749&amp;cid=C028634A61L" title="Wed, 22 Apr 2026 17:05:43 GMT">Wed 17:05</a><span class="archive-user">Kaushal Shriyan</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">Do you have sample API calls to create a self service users? map savings account, deposit money and withdraw money , beneficiaries etc..</span>
+</div>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1776877633936049?thread_ts=1776873666.313749&amp;cid=C028634A61L" title="Wed, 22 Apr 2026 17:07:13 GMT">Wed 17:07</a><span class="archive-user">Kaushal Shriyan</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">Thanks in advance</span>
+</div>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1776902449960429?thread_ts=1776873666.313749&amp;cid=C028634A61L" title="Thu, 23 Apr 2026 00:00:49 GMT">Thu 00:00</a><span class="archive-user">Kaushal Shriyan</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">```2026-04-22 23:57:41.442 - WARN 11297  [      no-tenant] --- [nio-8080-exec-5] o.g.jersey.internal.inject.Providers     : A provider org.apache.fineract.selfservice.account.api.SelfAccountTransferApiResource registered in SERVER runtime does not implement any provider interfaces applicable in the SERVER runtime. Due to constraint configuration problems the provider org.apache.fineract.selfservice.account.api.SelfAccountTransferApiResource will be ignored.</span>
+<br><span class="archive-line">2026-04-22 23:57:41.443 - WARN 11297  [      no-tenant] --- [nio-8080-exec-5] o.g.jersey.internal.inject.Providers     : A provider org.apache.fineract.selfservice.account.api.SelfBeneficiariesTPTApiResource registered in SERVER runtime does not implement any provider interfaces applicable in the SERVER runtime. Due to constraint configuration problems the provider org.apache.fineract.selfservice.account.api.SelfBeneficiariesTPTApiResource will be ignored.</span>
+<br><span class="archive-line">2026-04-22 23:57:41.443 - WARN 11297  [      no-tenant] --- [nio-8080-exec-5] o.g.jersey.internal.inject.Providers     : A provider org.apache.fineract.selfservice.client.api.SelfClientsApiResource registered in SERVER runtime does not implement any provider interfaces applicable in the SERVER runtime. Due to constraint configuration problems the provider org.apache.fineract.selfservice.client.api.SelfClientsApiResource will be ignored.</span>
+<br><span class="archive-line">2026-04-22 23:57:41.443 - WARN 11297  [      no-tenant] --- [nio-8080-exec-5] o.g.jersey.internal.inject.Providers     : A provider org.apache.fineract.selfservice.loanaccount.api.SelfLoansApiResource registered in SERVER runtime does not implement any provider interfaces applicable in the SERVER runtime. Due to constraint configuration problems the provider org.apache.fineract.selfservice.loanaccount.api.SelfLoansApiResource will be ignored.</span>
+<br><span class="archive-line">2026-04-22 23:57:41.443 - WARN 11297  [      no-tenant] --- [nio-8080-exec-5] o.g.jersey.internal.inject.Providers     : A provider org.apache.fineract.selfservice.products.api.SelfLoanProductsApiResource registered in SERVER runtime does not implement any provider interfaces applicable in the SERVER runtime. Due to constraint configuration problems the provider org.apache.fineract.selfservice.products.api.SelfLoanProductsApiResource will be ignored.</span>
+<br><span class="archive-line">2026-04-22 23:57:41.443 - WARN 11297  [      no-tenant] --- [nio-8080-exec-5] o.g.jersey.internal.inject.Providers     : A provider org.apache.fineract.selfservice.products.api.SelfSavingsProductsApiResource registered in SERVER runtime does not implement any provider interfaces applicable in the SERVER runtime. Due to constraint configuration problems the provider org.apache.fineract.selfservice.products.api.SelfSavingsProductsApiResource will be ignored.</span>
+<br><span class="archive-line">2026-04-22 23:57:41.443 - WARN 11297  [      no-tenant] --- [nio-8080-exec-5] o.g.jersey.internal.inject.Providers     : A provider org.apache.fineract.selfservice.products.api.SelfShareProductsApiResource registered in SERVER runtime does not implement any provider interfaces applicable in the SERVER runtime. Due to constraint configuration problems the provider org.apache.fineract.selfservice.products.api.SelfShareProductsApiResource will be ignored.</span>
+<br><span class="archive-line">2026-04-22 23:57:41.443 - WARN 11297  [      no-tenant] --- [nio-8080-exec-5] o.g.jersey.internal.inject.Providers     : A provider org.apache.fineract.selfservice.registration.api.SelfServiceRegistrationApiResource registered in SERVER runtime does not implement any provider interfaces applicable in the SERVER runtime. Due to constraint configuration problems the provider org.apache.fineract.selfservice.registration.api.SelfServiceRegistrationApiResource will be ignored.</span>
+<br><span class="archive-line">2026-04-22 23:57:41.443 - WARN 11297  [      no-tenant] --- [nio-8080-exec-5] o.g.jersey.internal.inject.Providers     : A provider org.apache.fineract.selfservice.runreport.SelfRunReportApiResource registered in SERVER runtime does not implement any provider interfaces applicable in the SERVER runtime. Due to constraint configuration problems the provider org.apache.fineract.selfservice.runreport.SelfRunReportApiResource will be ignored.</span>
+<br><span class="archive-line">2026-04-22 23:57:41.443 - WARN 11297  [      no-tenant] --- [nio-8080-exec-5] o.g.jersey.internal.inject.Providers     : A provider org.apache.fineract.selfservice.savings.api.SelfSavingsAccountApiResource registered in SERVER runtime does not implement any provider interfaces applicable in the SERVER runtime. Due to constraint configuration problems the provider org.apache.fineract.selfservice.savings.api.SelfSavingsAccountApiResource will be ignored.</span>
+<br><span class="archive-line">2026-04-22 23:57:41.443 - WARN 11297  [      no-tenant] --- [nio-8080-exec-5] o.g.jersey.internal.inject.Providers     : A provider org.apache.fineract.selfservice.security.api.SelfAuthenticationApiResource registered in SERVER runtime does not implement any provider interfaces applicable in the SERVER runtime. Due to constraint configuration problems the provider org.apache.fineract.selfservice.security.api.SelfAuthenticationApiResource will be ignored.</span>
+<br><span class="archive-line">2026-04-22 23:57:41.443 - WARN 11297  [      no-tenant] --- [nio-8080-exec-5] o.g.jersey.internal.inject.Providers     : A provider org.apache.fineract.selfservice.security.api.SelfForgotPasswordApiResource registered in SERVER runtime does not implement any provider interfaces applicable in the SERVER runtime. Due to constraint configuration problems the provider org.apache.fineract.selfservice.security.api.SelfForgotPasswordApiResource will be ignored.</span>
+<br><span class="archive-line">2026-04-22 23:57:41.443 - WARN 11297  [      no-tenant] --- [nio-8080-exec-5] o.g.jersey.internal.inject.Providers     : A provider org.apache.fineract.selfservice.security.api.SelfUserApiResource registered in SERVER runtime does not implement any provider interfaces applicable in the SERVER runtime. Due to constraint configuration problems the provider org.apache.fineract.selfservice.security.api.SelfUserApiResource will be ignored.</span>
+<br><span class="archive-line">2026-04-22 23:57:41.443 - WARN 11297  [      no-tenant] --- [nio-8080-exec-5] o.g.jersey.internal.inject.Providers     : A provider org.apache.fineract.selfservice.shareaccounts.api.SelfShareAccountsApiResource registered in SERVER runtime does not implement any provider interfaces applicable in the SERVER runtime. Due to constraint configuration problems the provider org.apache.fineract.selfservice.shareaccounts.api.SelfShareAccountsApiResource will be ignored.</span>
+<br><span class="archive-line">2026-04-22 23:57:41.443 - WARN 11297  [      no-tenant] --- [nio-8080-exec-5] o.g.jersey.internal.inject.Providers     : A provider org.apache.fineract.selfservice.spm.api.SelfScorecardApiResource$$SpringCGLIB$$0 registered in SERVER runtime does not implement any provider interfaces applicable in the SERVER runtime. Due to constraint configuration problems the provider org.apache.fineract.selfservice.spm.api.SelfScorecardApiResource$$SpringCGLIB$$0 will be ignored.</span>
+<br><span class="archive-line">2026-04-22 23:57:41.443 - WARN 11297  [      no-tenant] --- [nio-8080-exec-5] o.g.jersey.internal.inject.Providers     : A provider org.apache.fineract.selfservice.spm.api.SelfSpmApiResource$$SpringCGLIB$$0 registered in SERVER runtime does not implement any provider interfaces applicable in the SERVER runtime. Due to constraint configuration problems the provider org.apache.fineract.selfservice.spm.api.SelfSpmApiResource$$SpringCGLIB$$0 will be ignored.</span>
+<br><span class="archive-line">2026-04-22 23:57:42.514 - WARN 11297  [        default] --- [nio-8080-exec-5] o.g.j.server.ServerRuntime$Responder     : An exception mapping did not successfully produce and processed a response. Logging the exception propagated to the default exception mapper.</span>
+<br><span class="archive-line">java.lang.NullPointerException: Cannot invoke &quot;String.equalsIgnoreCase(String)&quot; because &quot;authenticationMode&quot; is null</span>
+<br><span class="archive-line">	at org.apache.fineract.selfservice.registration.service.SelfServiceRegistrationWritePlatformServiceImpl.createRegistrationRequest(SelfServiceRegistrationWritePlatformServiceImpl.java:179)</span>
+<br><span class="archive-line">	at org.apache.fineract.selfservice.registration.service.SelfServiceRegistrationWritePlatformServiceImpl$$SpringCGLIB$$0.createRegistrationRequest(&amp;lt;generated&amp;gt;)</span>
+<br><span class="archive-line">	at org.apache.fineract.selfservice.registration.api.SelfServiceRegistrationApiResource.createSelfServiceRegistrationRequest(SelfServiceRegistrationApiResource.java:59)</span>
+<br><span class="archive-line">	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:248)</span>
+<br><span class="archive-line">	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:244)</span>
+<br><span class="archive-line">	at org.glassfish.jersey.internal.Errors.process(Errors.java:292)</span>
+<br><span class="archive-line">	at org.glassfish.jersey.internal.Errors.process(Errors.java:274)</span>
+<br><span class="archive-line">	at org.glassfish.jersey.internal.Errors.process(Errors.java:244)</span>
+<br><span class="archive-line">	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:125)</span>
+<br><span class="archive-line">	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:119)</span>
+<br><span class="archive-line">	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)</span>
+<br><span class="archive-line">2026-04-22 23:57:42.535 -ERROR 11297  [      no-tenant] --- [nio-8080-exec-5] .a.c.c.C.[.[.[.[.a.f.i.c.j.JerseyConfig] : Servlet.service() for servlet [org.apache.fineract.infrastructure.core.jersey.JerseyConfig] in context with path [/fineract-provider] threw exception [java.lang.NullPointerException: Cannot invoke &quot;String.equalsIgnoreCase(String)&quot; because &quot;authenticationMode&quot; is null] with root cause</span>
+<br><span class="archive-line">java.lang.NullPointerException: Cannot invoke &quot;String.equalsIgnoreCase(String)&quot; because &quot;authenticationMode&quot; is null</span>
+<br><span class="archive-line">	at org.apache.fineract.selfservice.registration.service.SelfServiceRegistrationWritePlatformServiceImpl.createRegistrationRequest(SelfServiceRegistrationWritePlatformServiceImpl.java:179)</span>
+<br><span class="archive-line">	at org.apache.fineract.selfservice.registration.service.SelfServiceRegistrationWritePlatformServiceImpl$$SpringCGLIB$$0.createRegistrationRequest(&amp;lt;generated&amp;gt;)</span>
+<br><span class="archive-line">	at org.apache.fineract.selfservice.registration.api.SelfServiceRegistrationApiResource.createSelfServiceRegistrationRequest(SelfServiceRegistrationApiResource.java:59)</span>
+<br><span class="archive-line">	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:248)</span>
+<br><span class="archive-line">	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:244)</span>
+<br><span class="archive-line">	at org.glassfish.jersey.internal.Errors.process(Errors.java:292)</span>
+<br><span class="archive-line">	at org.glassfish.jersey.internal.Errors.process(Errors.java:274)</span>
+<br><span class="archive-line">	at org.glassfish.jersey.internal.Errors.process(Errors.java:244)</span>
+<br><span class="archive-line">	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:125)</span>
+<br><span class="archive-line">	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:119)</span>
+<br><span class="archive-line">	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)```</span>
+</div>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1776902458519529?thread_ts=1776873666.313749&amp;cid=C028634A61L" title="Thu, 23 Apr 2026 00:00:58 GMT">Thu 00:00</a><span class="archive-user">Kaushal Shriyan</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">`cat /opt/fineract/override.properties`</span>
+<br><span class="archive-line"># ===============================</span>
+<br><span class="archive-line"># DATABASE CONFIG</span>
+<br><span class="archive-line"># ===============================</span>
+<br><span class="archive-line">spring.datasource.url=jdbc:mariadb://localhost:3306/fineract_tenants</span>
+<br><span class="archive-line">spring.datasource.username=fineract</span>
+<br><span class="archive-line">spring.datasource.password=fineract</span>
+<br><span class="archive-line">spring.datasource.driver-class-name=org.mariadb.jdbc.Driver</span>
+<br><br>
+<span class="archive-line">fineract.datasource.username=fineract</span>
+<br><span class="archive-line">fineract.datasource.password=fineract</span>
+<br><br>
+<span class="archive-line">fineract.tenant.datasource.url=jdbc:mariadb://localhost:3306/fineract_default</span>
+<br><span class="archive-line">fineract.tenant.datasource.username=fineract</span>
+<br><span class="archive-line">fineract.tenant.datasource.password=fineract</span>
+<br><br>
+<br>
+<span class="archive-line"># Fineract Tenant/Master Specific Overrides</span>
+<br><span class="archive-line">fineract.tenant.username=fineract</span>
+<br><span class="archive-line">fineract.tenant.password=fineract</span>
+<br><span class="archive-line">fineract.tenant.master.username=fineract</span>
+<br><span class="archive-line">fineract.tenant.master.password=fineract</span>
+<br><br>
+<span class="archive-line"># Force Hikari to use these</span>
+<br><span class="archive-line">spring.datasource.hikari.username=fineract</span>
+<br><span class="archive-line">spring.datasource.hikari.password=fineract</span>
+<br><br>
+<span class="archive-line"># Server Settings</span>
+<br><span class="archive-line">server.port=8080</span>
+<br><span class="archive-line">server.ssl.enabled=false</span>
+<br><br>
+<span class="archive-line"># ===============================</span>
+<br><span class="archive-line"># CORE SETTINGS</span>
+<br><span class="archive-line"># ===============================</span>
+<br><span class="archive-line">fineract.node-id=1</span>
+<br><br>
+<span class="archive-line"># ===============================</span>
+<br><span class="archive-line"># MODE</span>
+<br><span class="archive-line"># ===============================</span>
+<br><span class="archive-line">fineract.mode.batch-worker-enabled=false</span>
+<br><span class="archive-line">fineract.mode.read-only-enabled=false</span>
+<br><br>
+<span class="archive-line"># ===============================</span>
+<br><span class="archive-line"># JOB</span>
+<br><span class="archive-line"># ===============================</span>
+<br><span class="archive-line">fineract.job.loan-cob-enabled=false</span>
+<br><br>
+<span class="archive-line"># ===============================</span>
+<br><span class="archive-line"># EVENTS</span>
+<br><span class="archive-line"># ===============================</span>
+<br><span class="archive-line">fineract.events.external.enabled=false</span>
+<br><span class="archive-line">fineract.events.external.partition-size=1</span>
+<br><br>
+<span class="archive-line"># ===============================</span>
+<br><span class="archive-line"># REMOTE JOB HANDLER</span>
+<br><span class="archive-line"># ===============================</span>
+<br><span class="archive-line">fineract.remote-job-message-handler.spring-events.enabled=false</span>
+<br><span class="archive-line">fineract.remote-job-message-handler.jms.enabled=false</span>
+<br><br>
+<span class="archive-line"># ===============================</span>
+<br><span class="archive-line"># JPA</span>
+<br><span class="archive-line"># ===============================</span>
+<br><span class="archive-line">fineract.jpa.statement-logging-enabled=false</span>
+<br><br>
+<span class="archive-line"># ===============================</span>
+<br><span class="archive-line"># SAMPLING</span>
+<br><span class="archive-line"># ===============================</span>
+<br><span class="archive-line">fineract.sampling.enabled=false</span>
+<br><br>
+<span class="archive-line"># ===============================</span>
+<br><span class="archive-line"># REPORT (FIXES CURRENT ERROR)</span>
+<br><span class="archive-line"># ===============================</span>
+<br><span class="archive-line">fineract.report.export.enabled=false</span>
+<br><br>
+<span class="archive-line"># ===============================</span>
+<br><span class="archive-line"># S3 (disable)</span>
+<br><span class="archive-line"># ===============================</span>
+<br><span class="archive-line">fineract.s3.enabled=false</span>
+<br><br>
+<span class="archive-line"># ===============================</span>
+<br><span class="archive-line"># LOGGING (optional)</span>
+<br><span class="archive-line"># ===============================</span>
+<br><span class="archive-line">logging.level.root=INFO</span>
+<br><br>
+<span class="archive-line"># ===== REPORT =====</span>
+<br><span class="archive-line">fineract.report.enabled=true</span>
+<br><span class="archive-line">fineract.report.export.enabled=false</span>
+<br><br>
+<span class="archive-line"># ===== S3 =====</span>
+<br><span class="archive-line">fineract.s3.enabled=false</span>
+<br><span class="archive-line">fineract.s3.bucket-name=dummy</span>
+<br><span class="archive-line">fineract.s3.access-key=dummy</span>
+<br><span class="archive-line">fineract.s3.secret-key=dummy</span>
+<br><span class="archive-line">fineract.s3.region=us-east-1</span>
+<br><br>
+<span class="archive-line">logging.level.liquibase=DEBUG</span>
+<br><span class="archive-line"><a class="archive-link" href="http://logging.level.org">logging.level.org</a>.apache.fineract.selfservice=DEBUG</span>
+<br><br>
+<span class="archive-line"># ===============================</span>
+<br><br>
+<span class="archive-line"># SELF SERVICE (CLEAN CONFIG)</span>
+<br><br>
+<span class="archive-line"># ===============================</span>
+<br><span class="archive-line"># Enable self-service plugin</span>
+<br><span class="archive-line">fineract.self-service.enabled=true</span>
+<br><span class="archive-line">fineract.self-service.registration.enabled=true</span>
+<br><br>
+<span class="archive-line"># Use only basic auth (required)</span>
+<br><span class="archive-line">fineract.security.basicauth.enabled=true</span>
+<br><br>
+<span class="archive-line"># Disable OAuth (avoid conflicts)</span>
+<br><span class="archive-line">fineract.security.oauth.enabled=false</span>
+<br><span class="archive-line">fineract.selfservice.authentication-mode=USERNAME</span>
+</div>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1776902476493559?thread_ts=1776873666.313749&amp;cid=C028634A61L" title="Thu, 23 Apr 2026 00:01:16 GMT">Thu 00:01</a><span class="archive-user">Kaushal Shriyan</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">```curl -X POST &quot;<a class="archive-link" href="http://192.168.200.32:8080/fineract-provider/api/v1/self/registration">http://192.168.200.32:8080/fineract-provider/api/v1/self/registration</a>&quot; \</span>
+<br><span class="archive-line">-H &quot;Content-Type: application/json&quot; \</span>
+<br><span class="archive-line">-H &quot;Fineract-Platform-TenantId: default&quot; \</span>
+<br><span class="archive-line">-d &#39;{</span>
+<br><span class="archive-line">  &quot;username&quot;: &quot;self_user_1&quot;,</span>
+<br><span class="archive-line">  &quot;password&quot;: &quot;Xcel@2026Secure!&quot;,</span>
+<br><span class="archive-line">  &quot;email&quot;: &quot;<a class="archive-link" href="mailto:self1@example.com">self1@example.com</a>&quot;</span>
+<br><span class="archive-line">}&#39;</span>
+<br><span class="archive-line">{&quot;timestamp&quot;:&quot;2026-04-22T23:57:42.591Z&quot;,&quot;status&quot;:500,&quot;error&quot;:&quot;Internal Server Error&quot;,&quot;path&quot;:&quot;/fineract-provider/api/v1/self/registration&quot;}```</span>
+</div>
+</article></section><article class="archive-message">
+<div class="archive-meta">
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1776874255128879?thread_ts=1776874255.128879&amp;cid=C028634A61L" title="Wed, 22 Apr 2026 16:10:55 GMT">Wed 16:10</a><span class="archive-user">Edson</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">I want to create a ticket for fineract where do i go, this page is not loading <a class="archive-link" href="https://issues.apache.org/jira/projects">https://issues.apache.org/jira/projects</a>, i failed to find a space for Fineract in mifos jira <a class="archive-link" href="https://mifosforge.jira.com/jira/for-you?viewed">https://mifosforge.jira.com/jira/for-you?viewed</a>, someone to guide me</span>
+</div>
+</article><section class="archive-thread" aria-label="Thread replies">
+<article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1776880338578169?thread_ts=1776874255.128879&amp;cid=C028634A61L" title="Wed, 22 Apr 2026 17:52:18 GMT">Wed 17:52</a><span class="archive-user">Francisco Cuandon</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">Hi @Edson Fineract tickets are created in <a class="archive-link" href="https://issues.apache.org/jira/projects/FINERACT/issues/">https://issues.apache.org/jira/projects/FINERACT/issues/</a></span>
+</div>
+</article></section></section>
+  </main>
+</body>
+</html>
