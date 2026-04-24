@@ -503,4 +503,16 @@
   "thread_ts" : "1776874255.128879",
   "edited" : null,
   "reactions" : null
+}, {
+  "ts" : "1776949625.514859",
+  "user" : "USLACKBOT",
+  "bot_id" : "BSLACKBOT",
+  "text" : "<@U0AUS5XQ8Q6> joined #fineract. They’re also new to Mifos.",
+  "subtype" : "welcome_party",
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : [ {
+    "name" : "wave",
+    "count" : 1
+  } ]
 } ]
