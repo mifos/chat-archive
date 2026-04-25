@@ -515,4 +515,13 @@
     "name" : "wave",
     "count" : 1
   } ]
+}, {
+  "ts" : "1777044763.352919",
+  "user" : "U08V28XKKJN",
+  "bot_id" : null,
+  "text" : "<@U0A4U7234GM> I have updated the issue details in <https://mifosforge.jira.com/browse/MX-168>\ncc <@U01B6J5FGET>",
+  "subtype" : "thread_broadcast",
+  "thread_ts" : "1776873666.313749",
+  "edited" : null,
+  "reactions" : null
 } ]
