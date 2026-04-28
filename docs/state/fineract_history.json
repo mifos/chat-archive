@@ -532,5 +532,8 @@
   "subtype" : "welcome_party",
   "thread_ts" : null,
   "edited" : null,
-  "reactions" : null
+  "reactions" : [ {
+    "name" : "wave",
+    "count" : 1
+  } ]
 } ]
