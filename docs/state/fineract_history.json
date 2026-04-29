@@ -536,4 +536,31 @@
     "name" : "wave",
     "count" : 1
   } ]
+}, {
+  "ts" : "1777359684.626999",
+  "user" : "U09C1BVTFMX",
+  "bot_id" : null,
+  "text" : "Hi Abhishek sorry for late reply, for backend. Fineract is maintained by apache software foundation. You are requested to join the dev list. And there is dedicated jira from asf to get started with beginners issue.  There is dedicated beginners friendly tag",
+  "subtype" : "thread_broadcast",
+  "thread_ts" : "1776618133.415439",
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1777379758.671119",
+  "user" : "U09C1BVTFMX",
+  "bot_id" : null,
+  "text" : "<@U09UU5WL2HX> I have reviewed your PR. I have initiated a discussion at fineract dev mail list. Regarding your usecase. <https://lists.apache.org/thread/cmlw0lcl2xzdlbc292gk0qrymzs64kz2|https://lists.apache.org/thread/cmlw0lcl2xzdlbc292gk0qrymzs64kz2>\n\nPlease subscribe to apache fineract dev mail list to get involved in conversation. If not already.",
+  "subtype" : "thread_broadcast",
+  "thread_ts" : "1776874255.128879",
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1777435549.946809",
+  "user" : "USLACKBOT",
+  "bot_id" : "BSLACKBOT",
+  "text" : "<@U0B1953CW2C> joined #fineract. They’re also new to Mifos.",
+  "subtype" : "welcome_party",
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
 } ]
