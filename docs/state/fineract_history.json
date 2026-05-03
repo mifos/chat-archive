@@ -563,4 +563,31 @@
   "thread_ts" : null,
   "edited" : null,
   "reactions" : null
+}, {
+  "ts" : "1777698040.456049",
+  "user" : "USLACKBOT",
+  "bot_id" : "BSLACKBOT",
+  "text" : "<@U0AV5VDK59C> joined #fineract. They’re also new to Mifos.",
+  "subtype" : "welcome_party",
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1777750244.743409",
+  "user" : "U030D3U7DB9",
+  "bot_id" : null,
+  "text" : "How to have access to fineract jira board?",
+  "subtype" : null,
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1777761058.302879",
+  "user" : "U08E785L6Q1",
+  "bot_id" : null,
+  "text" : "<@U08E785L6Q1> has joined the channel",
+  "subtype" : "channel_join",
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
 } ]
