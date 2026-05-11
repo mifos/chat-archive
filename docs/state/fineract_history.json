@@ -599,4 +599,22 @@
   "thread_ts" : null,
   "edited" : null,
   "reactions" : null
+}, {
+  "ts" : "1778436446.882929",
+  "user" : "U08V28XKKJN",
+  "bot_id" : null,
+  "text" : "Hi All",
+  "subtype" : null,
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1778436457.544659",
+  "user" : "U08V28XKKJN",
+  "bot_id" : null,
+  "text" : "What version of Java is used to develop Apache Fineract (<https://fineract.apache.org/>)?",
+  "subtype" : null,
+  "thread_ts" : "1778436457.544659",
+  "edited" : null,
+  "reactions" : null
 } ]
