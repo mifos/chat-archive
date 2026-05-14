@@ -76,6 +76,89 @@
 <div class="archive-text">
 <span class="archive-line">Thanks for updating the README.md file, very helpful.</span>
 </div>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1778731175511749?thread_ts=1776618133.415439&amp;cid=C028634A61L" title="Thu, 14 May 2026 03:59:35 GMT">Thu 03:59</a><span class="archive-user">Abhishek Gururani</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">@Krishna Mewara (DeathGun44)/@Victor Romero</span>
+<br><span class="archive-line">Following the readme.md I’m able to generate the selfservice-plugin.</span>
+<br><span class="archive-line">I run fineract through the provided yml file that comes with it.</span>
+<br><br>
+<span class="archive-line">docker compose -f docker-compose-development.yml up -d</span>
+<br><span class="archive-line">However the selfservice-plugin readme.md mentions,</span>
+<br><span class="archive-line">```# Start Fineract with the plugin on the classpath</span>
+<br><span class="archive-line">java -Dloader.path=/opt/fineract/plugins/ -jar fineract-provider.jar```</span>
+<br><span class="archive-line">I’m not able to run fineract through this command successfully.</span>
+<br><span class="archive-line">Any idea how can I run fineract in docker using the docker command and also make it pick selfservice-plugin?</span>
+</div>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1778731801605589?thread_ts=1776618133.415439&amp;cid=C028634A61L" title="Thu, 14 May 2026 04:10:01 GMT">Thu 04:10</a><span class="archive-user">Victor Romero</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">add in the volumes section - ./plugins/libs/:/app/plugins/</span>
+</div>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1778731807032139?thread_ts=1776618133.415439&amp;cid=C028634A61L" title="Thu, 14 May 2026 04:10:07 GMT">Thu 04:10</a><span class="archive-user">Victor Romero</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">then in the variables</span>
+</div>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1778731849720339?thread_ts=1776618133.415439&amp;cid=C028634A61L" title="Thu, 14 May 2026 04:10:49 GMT">Thu 04:10</a><span class="archive-user">Victor Romero</span>
+</div>
+<div class="archive-text">
+<ul class="archive-list">
+<li>FINERACT_MODULE_SELF_SERVICE_ENABLED=true</li>
+<li>FINERACT_PENTAHO_REPORTS_LOCALE=en</li>
+<li>SPRINGDOC_SHOW_ACTUATOR=true</li>
+<li>MIFOS_SELF_SERVICE_TOKEN_LENGTH=6</li>
+<li>MIFOS_SELF_SERVICE_TOKEN_TYPE=numeric</li>
+<li>MIFOS_SELF_SERVICE_TOKEN_EXPIRY_TIME=120</li>
+<li>MIFOS_SELF_SERVICE_PLUGIN_EMAIL_ENABLED=false</li>
+<li>MIFOS_SELF_SERVICE_EXTERNAL_IDENTITY_SYSTEM_ENABLED=false</li>
+<li>MIFOS_SELF_SERVICE_EXTERNAL_SMS_SYSTEM_ENABLED=false</li>
+</ul>
+</div>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1778731864753149?thread_ts=1776618133.415439&amp;cid=C028634A61L" title="Thu, 14 May 2026 04:11:04 GMT">Thu 04:11</a><span class="archive-user">Victor Romero</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">all of them under the fineract service</span>
+</div>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1778734676244829?thread_ts=1776618133.415439&amp;cid=C028634A61L" title="Thu, 14 May 2026 04:57:56 GMT">Thu 04:57</a><span class="archive-user">Abhishek Gururani</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">Seems to be working.</span>
+<br><span class="archive-line">But while I’m trying out some dummy hits, I’m getting the below error.</span>
+</div>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1778734818486239?thread_ts=1776618133.415439&amp;cid=C028634A61L" title="Thu, 14 May 2026 05:00:18 GMT">Thu 05:00</a><span class="archive-user">Abhishek Gururani</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">What initial setup needs to be done?</span>
+</div>
 </article></section></section>
   </main>
 </body>
