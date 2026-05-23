@@ -626,4 +626,13 @@
   "thread_ts" : null,
   "edited" : null,
   "reactions" : null
+}, {
+  "ts" : "1779514526.540499",
+  "user" : "U089AKLMRRA",
+  "bot_id" : null,
+  "text" : "Would someone mind reviewing when you have a chance ?\n<https://github.com/apache/fineract/pull/5881|FINERACT-9: Repayment-Transactions-allocated-to-FINANCIAL_ACTIVITY.LIABILITY_TRANSFER by a7med3del1973 · Pull Request #5881 · apache/fineract>",
+  "subtype" : null,
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
 } ]
