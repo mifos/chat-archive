@@ -635,4 +635,13 @@
   "thread_ts" : null,
   "edited" : null,
   "reactions" : null
+}, {
+  "ts" : "1779556351.683189",
+  "user" : "U5UFA8XQD",
+  "bot_id" : null,
+  "text" : "You may also want to join Fineract dev email and the matrix channel.  \n\n<mailto:Dev@fineract.apache.org|Dev@fineract.apache.org> \n\n<https://matrix.to/#/%23apache-fineract-dev:matrix.org|https://matrix.to/#/%23apache-fineract-dev:matrix.org> \n",
+  "subtype" : null,
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
 } ]
