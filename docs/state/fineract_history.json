@@ -644,4 +644,22 @@
   "thread_ts" : null,
   "edited" : null,
   "reactions" : null
+}, {
+  "ts" : "1779682888.465209",
+  "user" : "U08V28XKKJN",
+  "bot_id" : null,
+  "text" : "Hi All",
+  "subtype" : null,
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1779683125.237899",
+  "user" : "U08V28XKKJN",
+  "bot_id" : null,
+  "text" : "Is there any tentative timeline for the Apache Fineract 1.15 release? Thanks in advance",
+  "subtype" : null,
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
 } ]
