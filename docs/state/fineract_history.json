@@ -662,4 +662,13 @@
   "thread_ts" : null,
   "edited" : null,
   "reactions" : null
+}, {
+  "ts" : "1779775285.573969",
+  "user" : "U0ALLUS5K1C",
+  "bot_id" : null,
+  "text" : "<@U0ALLUS5K1C> has left the channel",
+  "subtype" : "channel_leave",
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
 } ]
