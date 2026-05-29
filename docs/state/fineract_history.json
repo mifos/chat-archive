@@ -671,4 +671,13 @@
   "thread_ts" : null,
   "edited" : null,
   "reactions" : null
+}, {
+  "ts" : "1779987935.544429",
+  "user" : "U050X1MNUE4",
+  "bot_id" : null,
+  "text" : "Hi, is someone available to check this PR, please?\n<https://github.com/apache/fineract/pull/5895>",
+  "subtype" : null,
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
 } ]
