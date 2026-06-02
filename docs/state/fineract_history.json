@@ -689,4 +689,34 @@
   "thread_ts" : null,
   "edited" : null,
   "reactions" : null
+}, {
+  "ts" : "1780317559.354129",
+  "user" : "U0B7BJBBQ9K",
+  "bot_id" : null,
+  "text" : "<@U0B7BJBBQ9K> has joined the channel",
+  "subtype" : "channel_join",
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1780317706.328209",
+  "user" : "U0B7BJBBQ9K",
+  "bot_id" : null,
+  "text" : "Hi chat, what's the easiest way to add a new tenant to a fineract installation?",
+  "subtype" : null,
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1780322496.924619",
+  "user" : "U013NG99S8P",
+  "bot_id" : null,
+  "text" : "Well, there is only 1 one at the moment:\n• Add 2 entries\n    ◦ 1 into the `tenant connections` table\n    ◦ 1 into the `tenants` table\n• Restart backend\n    ◦ It will initialized the new tenant\n",
+  "subtype" : null,
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : [ {
+    "name" : "white_check_mark",
+    "count" : 1
+  } ]
 } ]
