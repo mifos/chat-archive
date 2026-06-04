@@ -718,12 +718,24 @@
   "reactions" : [ {
     "name" : "white_check_mark",
     "count" : 1
+  }, {
+    "name" : "+1",
+    "count" : 1
   } ]
 }, {
   "ts" : "1780399200.431269",
   "user" : "U0B7HEAMHPV",
   "bot_id" : null,
   "text" : "<@U0B7HEAMHPV> has joined the channel",
+  "subtype" : "channel_join",
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1780493766.046949",
+  "user" : "U0B7X0P497F",
+  "bot_id" : null,
+  "text" : "<@U0B7X0P497F> has joined the channel",
   "subtype" : "channel_join",
   "thread_ts" : null,
   "edited" : null,
