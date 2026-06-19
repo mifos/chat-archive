@@ -776,4 +776,13 @@
   "thread_ts" : null,
   "edited" : null,
   "reactions" : null
+}, {
+  "ts" : "1781769375.539469",
+  "user" : "U0BB8DPNAM9",
+  "bot_id" : null,
+  "text" : "<@U0BB8DPNAM9> has joined the channel",
+  "subtype" : "channel_join",
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
 } ]
