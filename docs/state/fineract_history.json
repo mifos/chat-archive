@@ -785,4 +785,13 @@
   "thread_ts" : null,
   "edited" : null,
   "reactions" : null
+}, {
+  "ts" : "1782076653.436369",
+  "user" : "U07R5DV4UHZ",
+  "bot_id" : null,
+  "text" : "Hi team , Is someone available to help check this ticket . PR attached\n<https://issues.apache.org/jira/browse/FINERACT-2653>\ncc: <@U013NG99S8P>",
+  "subtype" : null,
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
 } ]
