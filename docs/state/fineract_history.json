@@ -800,7 +800,7 @@
   "bot_id" : null,
   "text" : "Folks, please see <https://lists.apache.org/thread/7mvvxs20r3n9oqkbncm74wfxlyq92ll1|Matrix experiment thread on dev mailing list> and add your +1/0/-1 if you haven't already.",
   "subtype" : null,
-  "thread_ts" : null,
+  "thread_ts" : "1782147926.628839",
   "edited" : null,
   "reactions" : null
 }, {
@@ -809,7 +809,7 @@
   "bot_id" : null,
   "text" : "Hi team\n<https://issues.apache.org/jira/browse/FINERACT-2651>\nI have raised ticket and PR is attached with it. Looking forward for review!",
   "subtype" : null,
-  "thread_ts" : null,
+  "thread_ts" : "1782225685.462819",
   "edited" : null,
   "reactions" : null
 }, {
@@ -830,4 +830,36 @@
   "thread_ts" : null,
   "edited" : null,
   "reactions" : null
+}, {
+  "ts" : "1782327789.265019",
+  "user" : "U04PVU38B9D",
+  "bot_id" : null,
+  "text" : "set the channel description: Mifos channel for discussion around one of our integrations Apache Fineract (R).  This channel is for getting Mifos Community support and collaboration.   The channel by Apache Fineract (R) is here <https://app.element.io/#/room/%23fineract:matrix.org>",
+  "subtype" : "channel_purpose",
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1782328097.199329",
+  "user" : "U07ECHYJYD8",
+  "bot_id" : null,
+  "text" : "Hi all! Please see the updated description. *This chat is now _unofficial_ for Apache Fineract*. This channel will remain the *official _Mifos-side chat_* for collaboration with the substantial <https://mifos.org|Mifos> community. For chatting about <https://fineract.apache.org/|Fineract>, please go to <https://matrix.to/#/#apache-fineract-home:matrix.org> . See also: <https://issues.apache.org/jira/browse/FINERACT-2660|FINERACT-2660>. <https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=91554327#FAQ(frequentlyaskedquestions)-IsthisMifos?|Here's a FAQ> about the difference Mifos and Fineract.",
+  "subtype" : null,
+  "thread_ts" : null,
+  "edited" : {
+    "ts" : "1782328364.000000"
+  },
+  "reactions" : null
+}, {
+  "ts" : "1782329640.434119",
+  "user" : "U04PVU38B9D",
+  "bot_id" : null,
+  "text" : "Thank you <@U07ECHYJYD8> Mifos wishes the Apache Fineract (R) Community success with their new channel it is great to see the momentum and expertise that Apache Fineract has already within that community in such a short period of time.\n\nWe will of course continue to collaborate strongly as we do with all key integrations, and hopefully this channel will give a clearer space for the Mifos Community to discuss and innovate around that integration and support each other before bringing ideas to the Fineract Community.  It will also provide support within Mifos for this integration as we have similar channels for other integrations.",
+  "subtype" : null,
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : [ {
+    "name" : "raised_hands",
+    "count" : 1
+  } ]
 } ]
