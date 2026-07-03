@@ -871,4 +871,24 @@
   "thread_ts" : null,
   "edited" : null,
   "reactions" : null
+}, {
+  "ts" : "1782998032.752079",
+  "user" : "U0BFL13DMUG",
+  "bot_id" : null,
+  "text" : "<@U0BFL13DMUG> has joined the channel",
+  "subtype" : "channel_join",
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1783022228.589279",
+  "user" : "U08HC3VH08H",
+  "bot_id" : null,
+  "text" : "<@U01B6J5FGET> is there have self service api for create user and authenticate user ?",
+  "subtype" : null,
+  "thread_ts" : "1783022228.589279",
+  "edited" : {
+    "ts" : "1783022250.000000"
+  },
+  "reactions" : null
 } ]
