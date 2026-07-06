@@ -891,4 +891,13 @@
     "ts" : "1783022250.000000"
   },
   "reactions" : null
+}, {
+  "ts" : "1783280256.233639",
+  "user" : "U0BF7AP3NLW",
+  "bot_id" : null,
+  "text" : "<@U0BF7AP3NLW> has joined the channel",
+  "subtype" : "channel_join",
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
 } ]
