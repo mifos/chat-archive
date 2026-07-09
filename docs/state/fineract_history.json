@@ -909,4 +909,13 @@
   "thread_ts" : null,
   "edited" : null,
   "reactions" : null
+}, {
+  "ts" : "1783547687.591059",
+  "user" : "U07V2KY4124",
+  "bot_id" : null,
+  "text" : "Hello I have a question,\n\nwhy is the reporting not working properly in fineract especially the client listing report  for postgres db ??\nalso where can I get the appropriate pentaho files for the latest fineract docker build ??\n\n<@U04PVU38B9D>",
+  "subtype" : null,
+  "thread_ts" : "1783547687.591059",
+  "edited" : null,
+  "reactions" : null
 } ]
