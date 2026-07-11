@@ -927,4 +927,34 @@
   "thread_ts" : null,
   "edited" : null,
   "reactions" : null
+}, {
+  "ts" : "1783677350.793649",
+  "user" : "U013NG99S8P",
+  "bot_id" : null,
+  "text" : "Dear Community,\n\nI’ve made my best efforts to mark stories as fixed and update the version of 1.15.0 where I found PR evidence.\n\nHowever, given the high volume of stories and PRs, there’s a chance of honest mistakes.\n\nI kindly request the community’s assistance in reviewing the stories that are marked as fixed and whose fixed version is 1.15.0:\n\n<https://issues.apache.org/jira/browse/FINERACT-248?jql=project%20%3D%20FINERACT%20and%20fixVersion%20%3D%201.15.0%20ORDER%20BY%20updated%20DESC|issues.apache.org/jira/browse/FINERACT-248?jql=…>\n\nThank you very much in advance,\n\nAdam Saghy",
+  "subtype" : null,
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : [ {
+    "name" : "thumbsup_all",
+    "count" : 4
+  } ]
+}, {
+  "ts" : "1783693650.526349",
+  "user" : "U09TF7LE5NX",
+  "bot_id" : null,
+  "text" : "Hey good day everyone!\n\nI think the <https://sandbox.mifos.community|https://sandbox.mifos.community> is no longer going through. Can anybody confirm that? :face_exhaling:",
+  "subtype" : null,
+  "thread_ts" : "1783693650.526349",
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1783700583.853159",
+  "user" : "U09TF7LE5NX",
+  "bot_id" : null,
+  "text" : "Hi <@U01B6J5FGET> hope you're having a great day :wave: \nDo you have an idea what the issue might be, could you help out with it? :pray:",
+  "subtype" : "thread_broadcast",
+  "thread_ts" : "1783693650.526349",
+  "edited" : null,
+  "reactions" : null
 } ]
