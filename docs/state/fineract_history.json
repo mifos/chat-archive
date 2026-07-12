@@ -957,4 +957,22 @@
   "thread_ts" : "1783693650.526349",
   "edited" : null,
   "reactions" : null
+}, {
+  "ts" : "1783753472.734409",
+  "user" : "U0B1WTCRQPQ",
+  "bot_id" : null,
+  "text" : "<@U0B1WTCRQPQ> has joined the channel",
+  "subtype" : "channel_join",
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1783778416.847939",
+  "user" : "U09C1BVTFMX",
+  "bot_id" : null,
+  "text" : "<https://lists.apache.org/thread/3f20qlz5hnx8yxko9pnyg3p1bzlnbbov|lists.apache.org/thread/3f20qlz5hnx8yxko9pnyg3p1bzlnbbov> [VOTE] Release Fineract 1.15.0 at fineract dev list",
+  "subtype" : null,
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
 } ]
