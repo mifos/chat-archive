@@ -972,7 +972,19 @@
   "bot_id" : null,
   "text" : "<https://lists.apache.org/thread/3f20qlz5hnx8yxko9pnyg3p1bzlnbbov|lists.apache.org/thread/3f20qlz5hnx8yxko9pnyg3p1bzlnbbov> [VOTE] Release Fineract 1.15.0 at fineract dev list",
   "subtype" : null,
-  "thread_ts" : null,
+  "thread_ts" : "1783778416.847939",
   "edited" : null,
   "reactions" : null
+}, {
+  "ts" : "1783931817.720909",
+  "user" : "U09C1BVTFMX",
+  "bot_id" : null,
+  "text" : "You have to subscribe via apache dev list. First and then reply here with your email client.",
+  "subtype" : "thread_broadcast",
+  "thread_ts" : "1783778416.847939",
+  "edited" : null,
+  "reactions" : [ {
+    "name" : "thumbsup_all",
+    "count" : 1
+  } ]
 } ]
