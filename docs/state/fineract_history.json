@@ -987,4 +987,13 @@
     "name" : "thumbsup_all",
     "count" : 1
   } ]
+}, {
+  "ts" : "1784130213.522289",
+  "user" : "U0BHNMMTSTW",
+  "bot_id" : null,
+  "text" : "<@U0BHNMMTSTW> has joined the channel",
+  "subtype" : "channel_join",
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
 } ]
