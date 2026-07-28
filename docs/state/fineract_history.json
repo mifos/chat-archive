@@ -1032,4 +1032,49 @@
   "thread_ts" : null,
   "edited" : null,
   "reactions" : null
+}, {
+  "ts" : "1785147551.445439",
+  "user" : "U0BL2JG9Y6M",
+  "bot_id" : null,
+  "text" : "<@U0BL2JG9Y6M> has joined the channel",
+  "subtype" : "channel_join",
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1785194024.131289",
+  "user" : "U08V28XKKJN",
+  "bot_id" : null,
+  "text" : "Hi",
+  "subtype" : null,
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1785194085.993839",
+  "user" : "U08V28XKKJN",
+  "bot_id" : null,
+  "text" : "I am encountering the below issue while starting fineract service in Apache Fineract 1.15 version",
+  "subtype" : null,
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1785194140.941679",
+  "user" : "U08V28XKKJN",
+  "bot_id" : null,
+  "text" : "",
+  "subtype" : null,
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1785194192.275419",
+  "user" : "U08V28XKKJN",
+  "bot_id" : null,
+  "text" : "",
+  "subtype" : null,
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
 } ]
