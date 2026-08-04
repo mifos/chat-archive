@@ -1077,4 +1077,34 @@
   "thread_ts" : null,
   "edited" : null,
   "reactions" : null
+}, {
+  "ts" : "1785742211.317749",
+  "user" : "U01B6J5FGET",
+  "bot_id" : null,
+  "text" : "*Hello Apache Fineract community,*\n\n*I would like to propose upgrading the project from Java 21 LTS to Java 25 LTS (it is a NFR change). This change is proposed because the following reasons:*\n- Java 25 is the current LTS (it was released September 2025).\n- Java 25 has improvements about performance, language features, security, longer support window, alignment with Spring Boot upgrades or dependencies.\n- Java 21 will eventually move out of free support and it will become less convenient for new contributors and adopters.\n- Evergreening compliance is required by Institutions that run the software on production environments\n- It is a best practice for having the technology aligned to the EOL of the base framework/product.\n\n*The changes that contains the PR are:* \n- Gradle toolchain languageVersion = 25\n- Jib base image update (azul/zulu-openjdk-alpine:25) so then the Docker Hub images dev tag will be updated to java 25 (arm and amd64).\n- Modernizer module and ResolutionHelperTest required fixes\n- CI / GitHub Actions updates\n- Documentation (MD files).\n- Existing functionalities are working (green flag/checks after running the Github Actions)\n\n*As any technology upgrade there are risks and compatibility issues that must be highlighted*\n- Requires JDK 25 to build and run (The developer will require to upgrade the Java version and also the running environment will require the upgrade)\n- If you have developed third-party libraries and plugins they may need to be upgraded to Java 25\n\n*These are the tickets for your review:*\nJIRA ticket: FINERACT-2734 <https://issues.apache.org/jira/browse/FINERACT-2734|issues.apache.org/jira/browse/FINERACT-2734>\nPR ticket:   <https://github.com/apache/fineract/pull/6215|github.com/apache/fineract/pull/6215>\n\n*I welcome feedback about any concerns and especially your help with testing on different environments (MariaDB, PostgreSQL, different Operating Systems and/or multi-tenant setups).*\n*Thank you in advance!*\n*Victor Romero*",
+  "subtype" : null,
+  "thread_ts" : "1785742211.317749",
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1785745062.393069",
+  "user" : "U5JRP3L6N",
+  "bot_id" : null,
+  "text" : "Hi Victor... first: :+1: :+1: :+1: for  this change... the whole ecosystem is moving fast (JDK releases every 6 months, Spring/Boot pretty much the same in the future), so we should too... other benefits I see:\n• there are really considerable performance improvements between JDK releases and Oracle is paranoid about testing backwards compatibility; this should be in general low risk\n• we could upgrade Gradle to the latest (upcoming) 9.7 release with some major caching and performance improvements (compared to our 8.x use)\n• we can move away from our JDK 8 compatible Java syntax style and gradually adopt a more modern use of Java (e.g. just the \"var\" keyword is such a great boilerplate saver!)\n... on the counter side the only thing that comes to mind: there could be community members who have internal company policies that prevent them to just nilly willy switch JDK versions... but maybe we can come up with a solution for this... I think we shouldn't hold back with these updates for too long, we don't have to follow every release cycle of Oracle and/or Spring, but it should not be 5 years (exaggeration) apart either...\n\nMy 2 cents",
+  "subtype" : null,
+  "thread_ts" : "1785745062.393069",
+  "edited" : null,
+  "reactions" : [ {
+    "name" : "+1",
+    "count" : 1
+  } ]
+}, {
+  "ts" : "1785751003.157769",
+  "user" : "U0BB8DPNAM9",
+  "bot_id" : null,
+  "text" : "Hi team,\n\nSubject: Bug in ph-ee-connector-ams-mifos: NullPointerException on all account-lookup routes (confirmed in v1.17.3)\n\nWe're implementing a payment engine on PH-EE and, as part of our Phase 1 validation, are running the reference ph-ee-connector-ams-mifos connector against Fineract before building our own AMS connector.\n\nIssue\nAll five account-lookup REST routes in AccountsRouteBuilder fail with a NullPointerException:\n\nGET /ams/accounts/{IdentifierType}/{IdentifierId}/status\nGET /ams/accounts/{IdentifierType}/{IdentifierId}/accountname\nGET /ams/accounts/{IdentifierType}/{IdentifierId}/balance\nGET /ams/accounts/{IdentifierType}/{IdentifierId}/transactions\nGET /ams/accounts/{IdentifierType}/{IdentifierId}/statemententries\n\nStack trace (balance endpoint, representative of all five):\njava.lang.NullPointerException\n at java.base/java.lang.String.replace(String.java:2165)\n at org.mifos.connector.ams.interop.AmsFinXService.getSavingsAccount(AmsFinXService.java:53)\n ...\n\nRoot cause\nAccountsRouteBuilder sets the inbound identifier as an exchange property named PARTY_ID:\ne.setProperty(PARTY_ID, IdentifierId);\n\nBut AmsFinXService.getSavingsAccount reads a differently-named property:\nheaders.put(HTTP_PATH, amsInteropAccountsPath.replace(\"{externalAccountId}\", e.getProperty(EXTERNAL_ACCOUNT_ID, String.class)));\n\nSince PARTY_ID and EXTERNAL_ACCOUNT_ID are never the same property, the value is always null when getSavingsAccount runs, and String.replace() throws on the null argument. The same pattern affects getSavingsAccountsTransactions as well.\n\nConfirmed scope\nWe verified this is not specific to an unreleased build on our end — we reproduced it both on the :latest / 1.0.0-SNAPSHOT image and, after checking out the official v1.17.3 tag directly, confirmed the same property mismatch exists there too.\n\n<@U0844VB2BJB>, <@U5JRP3L6N>, could you please help us fix this or point us where we are going wrong.",
+  "subtype" : null,
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
 } ]
