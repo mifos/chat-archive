@@ -1134,4 +1134,13 @@
   "thread_ts" : null,
   "edited" : null,
   "reactions" : null
+}, {
+  "ts" : "1786333339.448989",
+  "user" : "U01B6J5FGET",
+  "bot_id" : null,
+  "text" : "Hello Mifos Community,\n\nHere you can find the latest schema generated and published by the SchemaSpy tool which is used by the Apache Fineract  <https://sandbox.mifos.community/schemaspy/|sandbox.mifos.community/schemaspy>",
+  "subtype" : null,
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
 } ]
