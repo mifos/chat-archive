@@ -1140,6 +1140,27 @@
   "bot_id" : null,
   "text" : "Hello Mifos Community,\n\nHere you can find the latest schema generated and published by the SchemaSpy tool which is used by the Apache Fineract  <https://sandbox.mifos.community/schemaspy/|sandbox.mifos.community/schemaspy>",
   "subtype" : null,
+  "thread_ts" : "1786333339.448989",
+  "edited" : null,
+  "reactions" : [ {
+    "name" : "+1",
+    "count" : 4
+  } ]
+}, {
+  "ts" : "1786379379.917159",
+  "user" : "U0BNSE71VD5",
+  "bot_id" : null,
+  "text" : "<@U0BNSE71VD5> has joined the channel",
+  "subtype" : "channel_join",
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1786402257.977719",
+  "user" : "U04C05JJFU3",
+  "bot_id" : null,
+  "text" : "<@U04C05JJFU3> has joined the channel",
+  "subtype" : "channel_join",
   "thread_ts" : null,
   "edited" : null,
   "reactions" : null
