@@ -1182,4 +1182,13 @@
   "thread_ts" : null,
   "edited" : null,
   "reactions" : null
+}, {
+  "ts" : "1787201326.960509",
+  "user" : "U0AHC8E7YSC",
+  "bot_id" : null,
+  "text" : "hey everyone, just wanted to give a small update on what i am doing with the interoperation transfer work after the discussion on mailing list.\n\ni think one thing i should clarify first, i am not trying to redesign the interoperation flow or bring a new payment architecture inside fineract.\n\nthe flow already exists in fineract. while looking into it i found some small issues in the current implementation, mainly around the transfer query, permissions, persisted data and how the transfer state is represented.\n\nFINERACT-2751 is mainly about fixing those existing issues, not introducing a new prepare -&gt; commit system.\n\nafter the concerns raised on the mailing list, before continuing i am checking a few things:\n• whether Payment Hub or any other current consumer is still using the existing interoperation transfer APIs\n• whether the GET transfer endpoint is currently used anywhere\n• what the intended lifecycle of prepare and commit actually is\n• why both currently return ACCEPTED and whether that is intentional\n• how transactionCode and transferCode are currently stored/retrieved\n• whether current tests or deployment examples still depend on this functionality\nabout the security concern, i am not planning to move authentication, authorization or payment orchestration into fineract or introduce another payment flow.\n\nif Payment Hub is supposed to handle those responsibilities, i want to keep that boundary as it is.\n\nmy goal here is much smaller: understand how the existing functionality is supposed to work and fix the current inconsistencies without unnecessarily changing the architecture.\n\nif during this investigation i find that some part of FINERACT-2751 requires a bigger architectural or security change, i will not include that in this PR. i will bring that separately for discussion first.\n\nonce i finish checking the existing consumers and lifecycle, i will share what i found.",
+  "subtype" : null,
+  "thread_ts" : "1787201326.960509",
+  "edited" : null,
+  "reactions" : null
 } ]

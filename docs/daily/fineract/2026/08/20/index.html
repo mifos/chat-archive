@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>#fineract 2026-08-20</title>
+  <link rel="stylesheet" href="../../../../../assets/chat-archive.css">
+</head>
+<body>
+  <main class="archive-page">
+<header class="archive-header">
+<p class="archive-breadcrumb"><a href="../../../../../">Channels</a> / <a href="../../../">#fineract</a> / <a href="../../">2026</a> / <a href="../">08</a> / 20</p><h1>#fineract 2026-08-20</h1></header><section class="archive-log"><article class="archive-message">
+<div class="archive-meta">
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1787201326960509?thread_ts=1787201326.960509&amp;cid=C028634A61L" title="Thu, 20 Aug 2026 04:48:46 GMT">Thu 04:48</a><span class="archive-user">Shubham</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">hey everyone, just wanted to give a small update on what i am doing with the interoperation transfer work after the discussion on mailing list.</span>
+<br><br>
+<span class="archive-line">i think one thing i should clarify first, i am not trying to redesign the interoperation flow or bring a new payment architecture inside fineract.</span>
+<br><br>
+<span class="archive-line">the flow already exists in fineract. while looking into it i found some small issues in the current implementation, mainly around the transfer query, permissions, persisted data and how the transfer state is represented.</span>
+<br><br>
+<span class="archive-line">FINERACT-2751 is mainly about fixing those existing issues, not introducing a new prepare -&amp;gt; commit system.</span>
+<br><br>
+<span class="archive-line">after the concerns raised on the mailing list, before continuing i am checking a few things:</span>
+<br><ul class="archive-list">
+<li>whether Payment Hub or any other current consumer is still using the existing interoperation transfer APIs</li>
+<li>whether the GET transfer endpoint is currently used anywhere</li>
+<li>what the intended lifecycle of prepare and commit actually is</li>
+<li>why both currently return ACCEPTED and whether that is intentional</li>
+<li>how transactionCode and transferCode are currently stored/retrieved</li>
+<li>whether current tests or deployment examples still depend on this functionality</li>
+</ul>
+<span class="archive-line">about the security concern, i am not planning to move authentication, authorization or payment orchestration into fineract or introduce another payment flow.</span>
+<br><br>
+<span class="archive-line">if Payment Hub is supposed to handle those responsibilities, i want to keep that boundary as it is.</span>
+<br><br>
+<span class="archive-line">my goal here is much smaller: understand how the existing functionality is supposed to work and fix the current inconsistencies without unnecessarily changing the architecture.</span>
+<br><br>
+<span class="archive-line">if during this investigation i find that some part of FINERACT-2751 requires a bigger architectural or security change, i will not include that in this PR. i will bring that separately for discussion first.</span>
+<br><br>
+<span class="archive-line">once i finish checking the existing consumers and lifecycle, i will share what i found.</span>
+</div>
+</article><section class="archive-thread" aria-label="Thread replies">
+<article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1787201754509929?thread_ts=1787201326.960509&amp;cid=C028634A61L" title="Thu, 20 Aug 2026 04:55:54 GMT">Thu 04:55</a><span class="archive-user">Victor Romero</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">@Shubham please join the #CKLFV1R1C and #C059L7BQMMH for further feedback</span>
+</div>
+</article></section></section>
+  </main>
+</body>
+</html>
