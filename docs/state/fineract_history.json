@@ -1200,4 +1200,13 @@
   "thread_ts" : null,
   "edited" : null,
   "reactions" : null
+}, {
+  "ts" : "1787411873.033139",
+  "user" : "U0BR2J15LBV",
+  "bot_id" : null,
+  "text" : "<@U0BR2J15LBV> has joined the channel",
+  "subtype" : "channel_join",
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
 } ]
