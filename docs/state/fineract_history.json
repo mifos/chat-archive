@@ -1209,4 +1209,25 @@
   "thread_ts" : null,
   "edited" : null,
   "reactions" : null
+}, {
+  "ts" : "1787856686.122789",
+  "user" : "U01B6J5FGET",
+  "bot_id" : null,
+  "text" : "Hello Apache Fineract Community,\n\nHead ups! Thank you all for your involvement and participation. The PR has been merged  <https://github.com/apache/fineract/pull/6222|github.com/apache/fineract/pull/6222> so then you can follow the advice previously shared and this only has impact on the latest develop branch. We expect that this JDK upgrade could be included in the following stable release.\n\nBest regards,\n\nVictor Romero",
+  "subtype" : null,
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : [ {
+    "name" : "raised_hands",
+    "count" : 1
+  } ]
+}, {
+  "ts" : "1787858312.505869",
+  "user" : "U5JRP3L6N",
+  "bot_id" : null,
+  "text" : "great! :+1: ... now we can upgrade Gradle to version 9.7.x",
+  "subtype" : null,
+  "thread_ts" : "1787858312.505869",
+  "edited" : null,
+  "reactions" : null
 } ]
