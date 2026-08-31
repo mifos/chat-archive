@@ -1239,4 +1239,13 @@
   "thread_ts" : null,
   "edited" : null,
   "reactions" : null
+}, {
+  "ts" : "1788116340.703589",
+  "user" : "U09S6NNKPAP",
+  "bot_id" : null,
+  "text" : "<@U09S6NNKPAP> has joined the channel",
+  "subtype" : "channel_join",
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
 } ]
