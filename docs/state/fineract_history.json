@@ -1248,4 +1248,31 @@
   "thread_ts" : null,
   "edited" : null,
   "reactions" : null
+}, {
+  "ts" : "1788269241.192439",
+  "user" : "U0BU79L724R",
+  "bot_id" : null,
+  "text" : "<@U0BU79L724R> has joined the channel",
+  "subtype" : "channel_join",
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1788276005.150579",
+  "user" : "U0BU6FJ7AR0",
+  "bot_id" : null,
+  "text" : "<@U0BU6FJ7AR0> has joined the channel",
+  "subtype" : "channel_join",
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1788277814.787559",
+  "user" : "U0BU6FJ7AR0",
+  "bot_id" : null,
+  "text" : "Hi team, I am an aspiring GSoC contributor and would like to pick up <https://issues.apache.org/jira/browse/FINERACT-817|FINERACT-817> as my first backend issue. Could someone please add my Apache Jira account to the contributors group so I can assign tickets to myself?",
+  "subtype" : null,
+  "thread_ts" : "1788277814.787559",
+  "edited" : null,
+  "reactions" : null
 } ]
