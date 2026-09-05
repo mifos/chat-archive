@@ -1275,4 +1275,13 @@
   "thread_ts" : "1788277814.787559",
   "edited" : null,
   "reactions" : null
+}, {
+  "ts" : "1788516535.504689",
+  "user" : "U08GRESPRE2",
+  "bot_id" : null,
+  "text" : "<https://lokta.ai/|https://lokta.ai/> they are also building on fineract platform",
+  "subtype" : null,
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
 } ]
