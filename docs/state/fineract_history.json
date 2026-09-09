@@ -1302,4 +1302,13 @@
   "thread_ts" : null,
   "edited" : null,
   "reactions" : null
+}, {
+  "ts" : "1788920188.114699",
+  "user" : "U0AHC8E7YSC",
+  "bot_id" : null,
+  "text" : "Hey everyone, I was looking through the issues to find something to work on, but couldn't really find anything suitable right now.\n\nIs there any existing issue I can pick up, or any future direction/area where I could start contributing?",
+  "subtype" : null,
+  "thread_ts" : "1788920188.114699",
+  "edited" : null,
+  "reactions" : null
 } ]
