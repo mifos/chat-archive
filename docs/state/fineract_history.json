@@ -1311,4 +1311,31 @@
   "thread_ts" : "1788920188.114699",
   "edited" : null,
   "reactions" : null
+}, {
+  "ts" : "1788954074.066419",
+  "user" : "U0B2CEN53U7",
+  "bot_id" : null,
+  "text" : "<@U0B2CEN53U7> has joined the channel",
+  "subtype" : "channel_join",
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1788964758.980829",
+  "user" : "U08V28XKKJN",
+  "bot_id" : null,
+  "text" : "Hi All,",
+  "subtype" : null,
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1788964891.233439",
+  "user" : "U08V28XKKJN",
+  "bot_id" : null,
+  "text" : "I am checking in Request for Postman Collections – Self-Service and Savings Plugins. I was able to locate the Self-Service Plugin's collection myself — it appears the postman folder has moved to a new path in the repo:\n\n<https://github.com/openMF/selfservice-plugin/tree/develop/api-reference/postman|github.com/openMF/selfservice-plugin/…/postman>\n\nI also noticed the repo now maintains a Bruno collection alongside it:\n\n<https://github.com/openMF/selfservice-plugin/tree/develop/api-reference/bruno|github.com/openMF/selfservice-plugin/…/bruno>\n\nHowever, I am still unable to locate an equivalent postman (or bruno) directory for the Savings Plugin repository. Could you please confirm whether its collection has moved to a similar api-reference path, or if it's maintained elsewhere?",
+  "subtype" : null,
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
 } ]
