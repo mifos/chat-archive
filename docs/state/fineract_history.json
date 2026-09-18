@@ -1365,4 +1365,34 @@
   "thread_ts" : null,
   "edited" : null,
   "reactions" : null
+}, {
+  "ts" : "1789630583.719969",
+  "user" : "U01B6J5FGET",
+  "bot_id" : null,
+  "text" : "Hello,\n\nIn the \"dev\" branch in Apache Fineract there is a major non-functional upgrade of the platform dependencies, it is targeting for being included in the next stable release. So then if you are developing using the \"dev\" branch, make sure to pull the latest changes and make the proper configuration on your development environment,\n*Pull Request:* <https://github.com/apache/fineract/pull/6069|FINERACT-2621: Upgrade dependencies to Spring Boot 4.1>\n\n*JIRA:* <https://issues.apache.org/jira/browse/FINERACT-2621|FINERACT-2621>\nSpring Boot Migration Guide: <https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide|github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide>\nThis upgrade keeps Fineract on a supported, modern stack and positions the project for continued improvements in security, performance and maintainability.\nThank you to the contributors who made this possible, especially to Avinash Vijayvargiya, Aleks Adam Saghy, Aman Mittal, Aleksandar Vidakovic.",
+  "subtype" : null,
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : [ {
+    "name" : "tada",
+    "count" : 2
+  } ]
+}, {
+  "ts" : "1789655598.206559",
+  "user" : "U0C3ENU7GUQ",
+  "bot_id" : null,
+  "text" : "<@U0C3ENU7GUQ> has joined the channel",
+  "subtype" : "channel_join",
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1789662699.239249",
+  "user" : "U0C2GSP6F5K",
+  "bot_id" : null,
+  "text" : "<@U0C2GSP6F5K> has joined the channel",
+  "subtype" : "channel_join",
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
 } ]
