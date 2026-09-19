@@ -1376,6 +1376,9 @@
   "reactions" : [ {
     "name" : "tada",
     "count" : 2
+  }, {
+    "name" : "heart",
+    "count" : 1
   } ]
 }, {
   "ts" : "1789655598.206559",
@@ -1395,4 +1398,16 @@
   "thread_ts" : null,
   "edited" : null,
   "reactions" : null
+}, {
+  "ts" : "1789738544.239209",
+  "user" : "U013NG99S8P",
+  "bot_id" : null,
+  "text" : "*Community Over Code Glasgow is coming up soon!*\n\nFrom October 11–14, the Apache community will gather in Glasgow for four days of talks, keynotes, community discussions, and a hackathon with 25+ projects taking part across 20 tracks, including Apache Fineract topics such as:\n\n- How AI is reshaping fintechs using open source\n- AI, Refactoring, and the Future of Apache Fineract (panel)\n- Apache Fineract in Motion: From 2025 Decisions to Future Direction\n- Building an EMI in Europe\n- From Skepticism to Scale: Making Open Source Bankable Beyond Cost Savings\n- Modularity and Standardization in Apache Fineract\n- Apache Fineract Progressive Loan management (workshop)\n\nIt’s a great opportunity to meet people from across the Apache ecosystem, learn more about the projects behind the technology we use, and connect with others in the open-source community.\n\nI’ll be there speaking about Apache Fineract, so if Fineract is something you’re working with or curious about, come and say hi.\n\nRegistration is still open – hope to see many of you in Glasgow!\n\n<https://communityovercode.apache.org/events/glasgow-2026/|communityovercode.apache.org/events/glasgow-2026>",
+  "subtype" : null,
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : [ {
+    "name" : "raised_hands",
+    "count" : 1
+  } ]
 } ]
