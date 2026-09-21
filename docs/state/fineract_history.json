@@ -1408,6 +1408,9 @@
   "edited" : null,
   "reactions" : [ {
     "name" : "raised_hands",
+    "count" : 2
+  }, {
+    "name" : "heart",
     "count" : 1
   } ]
 } ]
