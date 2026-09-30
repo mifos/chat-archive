@@ -1413,4 +1413,31 @@
     "name" : "heart",
     "count" : 1
   } ]
+}, {
+  "ts" : "1790671916.320749",
+  "user" : "U07KUR610S2",
+  "bot_id" : null,
+  "text" : "<@U07KUR610S2> has joined the channel",
+  "subtype" : "channel_join",
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1790681615.580589",
+  "user" : "U0BMD6Y90CA",
+  "bot_id" : null,
+  "text" : "<@U0BMD6Y90CA> has joined the channel",
+  "subtype" : "channel_join",
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1790701569.201019",
+  "user" : "U0C670S7AM6",
+  "bot_id" : null,
+  "text" : "<@U0C670S7AM6> has joined the channel",
+  "subtype" : "channel_join",
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
 } ]
