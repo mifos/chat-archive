@@ -1503,4 +1503,22 @@
   "thread_ts" : null,
   "edited" : null,
   "reactions" : null
+}, {
+  "ts" : "1791882564.783349",
+  "user" : "U0C8R7KMUTY",
+  "bot_id" : null,
+  "text" : "<@U0C8R7KMUTY> has joined the channel",
+  "subtype" : "channel_join",
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1791900925.725649",
+  "user" : "U0C7U1K6JTC",
+  "bot_id" : null,
+  "text" : "<@U0C7U1K6JTC> has joined the channel",
+  "subtype" : "channel_join",
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
 } ]
