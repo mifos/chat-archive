@@ -1530,4 +1530,13 @@
   "thread_ts" : null,
   "edited" : null,
   "reactions" : null
+}, {
+  "ts" : "1792271445.110879",
+  "user" : "U0C8801HLJF",
+  "bot_id" : null,
+  "text" : "Hi all,\nI requested an ASF Jira account for Fineract on 13 Oct and it's still pending. Could someone on the PMC approve it when they have a moment?\ni'd like to file two bugs I found while testing on PostgreSQL: adding a savings account charge with feeOnMonthDay but no monthDayFormat or locale returns HTTP 500 (fix ready with tests),\nand a native query using a 'count' alias.\nthanks!",
+  "subtype" : null,
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
 } ]
