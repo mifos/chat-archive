@@ -1539,4 +1539,33 @@
   "thread_ts" : null,
   "edited" : null,
   "reactions" : null
+}, {
+  "ts" : "1792363951.735239",
+  "user" : "U013NG99S8P",
+  "bot_id" : null,
+  "text" : "hi <@U0C8801HLJF>\n\ncan you help me with the username, please? i\ndont find the request yet",
+  "subtype" : null,
+  "thread_ts" : null,
+  "edited" : {
+    "ts" : "1792364678.000000"
+  },
+  "reactions" : null
+}, {
+  "ts" : "1792364360.832259",
+  "user" : "U013NG99S8P",
+  "bot_id" : null,
+  "text" : "have you got confirmation mail to\ncheck your email address after your request? we\nwont see your request if the email address is not confirmed.",
+  "subtype" : null,
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1792376630.996049",
+  "user" : "U0CA9KH827K",
+  "bot_id" : null,
+  "text" : "<@U0CA9KH827K> has joined the channel",
+  "subtype" : "channel_join",
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
 } ]
