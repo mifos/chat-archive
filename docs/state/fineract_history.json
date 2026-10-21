@@ -1577,4 +1577,40 @@
   "thread_ts" : null,
   "edited" : null,
   "reactions" : null
+}, {
+  "ts" : "1792493742.949339",
+  "user" : "U0CBFRU9RNC",
+  "bot_id" : null,
+  "text" : "<@U0CBFRU9RNC> has joined the channel",
+  "subtype" : "channel_join",
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1792496435.144299",
+  "user" : "U0C8801HLJF",
+  "bot_id" : null,
+  "text" : "Thanks <@U013NG99S8P>! You were right, I hadn't confirmed the email. Just confirmed it now, so the request should show up for you. It's under <mailto:aartipanchal539@gmail.com|aartipanchal539@gmail.com>",
+  "subtype" : null,
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1792530820.940129",
+  "user" : "U0CB0DBME56",
+  "bot_id" : null,
+  "text" : "<@U0CB0DBME56> has joined the channel",
+  "subtype" : "channel_join",
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1792562804.747949",
+  "user" : "U0C8801HLJF",
+  "bot_id" : null,
+  "text" : "Hi <@U013NG99S8P>, hi <@U02V8DDRNLX>,\n\nAfter the two PostgreSQL fixes I opened (FINERACT-1821 cashier TIME(): <https://github.com/apache/fineract/pull/6660> and FINERACT-2973 search alias: <https://github.com/apache/fineract/pull/6701>), I went looking for more of the same. I scanned all the hand-written SQL in src/main and replayed the Liquibase changelog to get the report SQL a PostgreSQL tenant actually runs.\n\nThe Java side is in good shape, almost everything goes through DatabaseSpecificSQLGenerator. The problems are mostly in the PostgreSQL copies of the stretchy reports from 0003_postgresql_specific_initial_data.xml, plus one in the helper itself:\n\n1. CAST(... AS CHAR) means char(1) on PostgreSQL, so \"Portfolio at Risk %\" shows only the first digit (12.34 becomes 1). It is in 5 core reports (Portfolio at Risk, PAR by Branch, Active Loans Summary and two maturity summaries), no error, just a wrong number.\n2. castChar() in DatabaseSpecificSQLGenerator returns x::CHAR for PostgreSQL, same truncation. It breaks the code value join for interest rate chart incentives (4 call sites).\n3. The Happy Birthday SMS report fails on PostgreSQL (EXTRACT on an integer), and its port also compares the full date with the year and drops the loanOfficerId filter.\n4. Smaller ones: TxnRunningBalances (DATE ? syntax error, loan officer hard-coded to 9), integer division in the staff dashboard reports, and m_tenant_oidc_config.enabled is SMALLINT on PostgreSQL while the repository binds a boolean.\nI confirmed the casts, the EXTRACT error and the SMALLINT column on a local PostgreSQL 18 Fineract. None of these have a ticket yet. Two questions before I file anything:\n\n• Would you like one umbrella ticket with a PR per area (reports, the castChar helper, OIDC), or separate tickets? For the report fixes, do you prefer full report_sql rewrites in a postgresql-context changeset like FINERACT-2436, or one regexp_replace changeset for the AS CHAR cases?\n• None of these is covered by a test that runs a report. Would you accept a smoke integration test that runs every use_report=true Table report on the PG/MySQL/MariaDB shards and checks it returns headers? It would have caught most of these, and I think it is a better guard than trying to lint SQL strings.\nI would start with the PAR reports and castChar unless you think something else matters more.",
+  "subtype" : null,
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
 } ]

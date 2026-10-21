@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>#fineract 2026-10-21</title>
+  <link rel="stylesheet" href="../../../../../assets/chat-archive.css">
+</head>
+<body>
+  <main class="archive-page">
+<header class="archive-header">
+<p class="archive-breadcrumb"><a href="../../../../../">Channels</a> / <a href="../../../">#fineract</a> / <a href="../../">2026</a> / <a href="../">10</a> / 21</p><h1>#fineract 2026-10-21</h1></header><section class="archive-log"><article class="archive-message">
+<div class="archive-meta">
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1792562804747949" title="Wed, 21 Oct 2026 06:06:44 GMT">Wed 06:06</a><span class="archive-user">Aarti Panchal</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">Hi @Adam Saghy, hi @Arnold Galovics,</span>
+<br><br>
+<span class="archive-line">After the two PostgreSQL fixes I opened (FINERACT-1821 cashier TIME(): <a class="archive-link" href="https://github.com/apache/fineract/pull/6660">https://github.com/apache/fineract/pull/6660</a> and FINERACT-2973 search alias: <a class="archive-link" href="https://github.com/apache/fineract/pull/6701">https://github.com/apache/fineract/pull/6701</a>), I went looking for more of the same. I scanned all the hand-written SQL in src/main and replayed the Liquibase changelog to get the report SQL a PostgreSQL tenant actually runs.</span>
+<br><br>
+<span class="archive-line">The Java side is in good shape, almost everything goes through DatabaseSpecificSQLGenerator. The problems are mostly in the PostgreSQL copies of the stretchy reports from 0003_postgresql_specific_initial_data.xml, plus one in the helper itself:</span>
+<br><br>
+<ol class="archive-list archive-list-numbered">
+<li>CAST(... AS CHAR) means char(1) on PostgreSQL, so &quot;Portfolio at Risk %&quot; shows only the first digit (12.34 becomes 1). It is in 5 core reports (Portfolio at Risk, PAR by Branch, Active Loans Summary and two maturity summaries), no error, just a wrong number.</li>
+<li>castChar() in DatabaseSpecificSQLGenerator returns x::CHAR for PostgreSQL, same truncation. It breaks the code value join for interest rate chart incentives (4 call sites).</li>
+<li>The Happy Birthday SMS report fails on PostgreSQL (EXTRACT on an integer), and its port also compares the full date with the year and drops the loanOfficerId filter.</li>
+<li>Smaller ones: TxnRunningBalances (DATE ? syntax error, loan officer hard-coded to 9), integer division in the staff dashboard reports, and m_tenant_oidc_config.enabled is SMALLINT on PostgreSQL while the repository binds a boolean.</li>
+</ol>
+<span class="archive-line">I confirmed the casts, the EXTRACT error and the SMALLINT column on a local PostgreSQL 18 Fineract. None of these have a ticket yet. Two questions before I file anything:</span>
+<br><br>
+<ul class="archive-list">
+<li>Would you like one umbrella ticket with a PR per area (reports, the castChar helper, OIDC), or separate tickets? For the report fixes, do you prefer full report_sql rewrites in a postgresql-context changeset like FINERACT-2436, or one regexp_replace changeset for the AS CHAR cases?</li>
+<li>None of these is covered by a test that runs a report. Would you accept a smoke integration test that runs every use_report=true Table report on the PG/MySQL/MariaDB shards and checks it returns headers? It would have caught most of these, and I think it is a better guard than trying to lint SQL strings.</li>
+</ul>
+<span class="archive-line">I would start with the PAR reports and castChar unless you think something else matters more.</span>
+</div>
+</article></section>
+  </main>
+</body>
+</html>
