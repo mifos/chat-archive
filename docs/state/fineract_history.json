@@ -1613,4 +1613,88 @@
   "thread_ts" : null,
   "edited" : null,
   "reactions" : null
+}, {
+  "ts" : "1792571035.638499",
+  "user" : "U013NG99S8P",
+  "bot_id" : null,
+  "text" : "thank you for the thorough debugging and review!\n\nGo ahead with the fix, i dont mind if the report fixes are done in one umbrella PR.\n\nRegarding postgres specific syntax or generic: can you please share some PRO vs CON? so we can make a better judgment call here",
+  "subtype" : null,
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1792572125.178719",
+  "user" : "U0C8801HLJF",
+  "bot_id" : null,
+  "text" : "Thanks Adam! Here's how I see the options for the report fixes. The cast to char is there because the CASE mixes numbers with the text 'invalid PAR Type', so every branch has to be a string. MySQL's CAST(x AS CHAR) has no length; on PostgreSQL it's char(1).\n\n1. PostgreSQL-only, targeted: one changeset with context=\"postgresql\" that does UPDATE stretchy_report SET report_sql = REPLACE(report_sql, 'AS CHAR)', 'AS VARCHAR)') WHERE report_name IN (the 5 reports + TxnRunningBalances)\n• small diff, easy to review, zero risk for MySQL/MariaDB\n• only touches the cast, so a tenant who customised one of these reports keeps their other edits\n• relies on the exact text; if a tenant changed that part it silently doesn't apply\n• keeps the two copies (0002 vs 0003) apart, which is how these bugs got in\n1. PostgreSQL-only, full rewrite (like FINERACT-2436): replace the whole report_sql in a postgresql-context changeset\n• explicit, the final SQL is right there in the changeset\n• same pattern the project already accepted\n• long XML diffs, harder to review\n• overwrites any tenant customisation of these reports\n• still two copies to keep in sync\n1. Generic, one SQL for all DBs\n• one source of truth, all three CI shards test the same SQL\n• not a small change: the MySQL copies use backtick identifiers (\"x.`Principal Overdue`\"), PostgreSQL needs double quotes, so the inner aliases would need renaming to plain names first\n• MySQL doesn't accept CAST(... AS VARCHAR), and CAST(... AS CHAR(20)) pads with spaces on PostgreSQL, so we'd need something like CONCAT(round(...), '') or returning NULL instead of 'invalid PAR Type', which changes output on MySQL\n• touches reports that work today on most installs (MySQL), so more regression risk\nMy suggestion: 1 for the AS CHAR cases, 2 only where the logic itself has to change (Happy Birthday, TxnRunningBalances), all in the one umbrella PR, plus the report smoke test so it runs on all three shards. If you'd rather start converging on generic SQL, I'd do that as a separate follow-up per report.\n\nFor castChar I'll file the ticket and open the PR today.",
+  "subtype" : null,
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1792574807.074709",
+  "user" : "U0C8801HLJF",
+  "bot_id" : null,
+  "text" : "castChar PR is up: <https://github.com/apache/fineract/pull/6705|github.com/apache/fineract/pull/6705> (FINERACT-2975)",
+  "subtype" : null,
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1792574821.433639",
+  "user" : "U0C8801HLJF",
+  "bot_id" : null,
+  "text" : "<@U013NG99S8P>",
+  "subtype" : null,
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1792575943.540309",
+  "user" : "U0C8801HLJF",
+  "bot_id" : null,
+  "text" : "*Quick update before I file*: while testing the report fixes on a real PostgreSQL tenant I found a bigger one. The currencyIdSelectAll parameter is registered with parameter_FormatType 'number', but its values are currency codes (the reports do l.currency_code = '${currencyId}'). Since FINERACT-2624 a number parameter is bound as a Long, so with the default \"-1\" (All) 22 of the 34 enabled table reports fail on PostgreSQL with \"operator does not exist: character varying = bigint\", including Portfolio at Risk, all Active Loans and Aging reports. On every database a real code like R_currencyId=USD is rejected as not numeric. The fix is one row: set its format to 'string'.\n\nI've put it in the same umbrella PR as its own changeset (all databases), next to the PostgreSQL-only ones, so it's easy to split out if you'd rather have it as a separate ticket. OK to keep it together?",
+  "subtype" : null,
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1792576043.409099",
+  "user" : "U013NG99S8P",
+  "bot_id" : null,
+  "text" : "Sound like a good plan",
+  "subtype" : null,
+  "thread_ts" : "1792576043.409099",
+  "edited" : null,
+  "reactions" : [ {
+    "name" : "+1",
+    "count" : 1
+  } ]
+}, {
+  "ts" : "1792576200.897109",
+  "user" : "U09C1BVTFMX",
+  "bot_id" : null,
+  "text" : "Release vote for Apache Fineract 1.16.0 is live at <https://lists.apache.org/thread.html/kzrp3q5opn746gpvh60sjnwwch8n1tlb|https://lists.apache.org/thread.html/kzrp3q5opn746gpvh60sjnwwch8n1tlb>\n\nPlease reply directly in the dev list for the vote.",
+  "subtype" : null,
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1792576846.963609",
+  "user" : "U0C8801HLJF",
+  "bot_id" : null,
+  "text" : "Thanks! It's up as a draft: <https://github.com/apache/fineract/pull/6706|github.com/apache/fineract/pull/6706> (FINERACT-2976). I'll mark it ready once the new report smoke test is green on all three DB shards.",
+  "subtype" : "thread_broadcast",
+  "thread_ts" : "1792576043.409099",
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1792602393.174449",
+  "user" : "U0CB5NS2952",
+  "bot_id" : null,
+  "text" : "<@U0CB5NS2952> has joined the channel",
+  "subtype" : "channel_join",
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
 } ]

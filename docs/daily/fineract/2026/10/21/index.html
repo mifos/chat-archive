@@ -34,6 +34,114 @@
 </ul>
 <span class="archive-line">I would start with the PAR reports and castChar unless you think something else matters more.</span>
 </div>
+</article><article class="archive-message">
+<div class="archive-meta">
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1792571035638499" title="Wed, 21 Oct 2026 08:23:55 GMT">Wed 08:23</a><span class="archive-user">Adam Saghy</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">thank you for the thorough debugging and review!</span>
+<br><br>
+<span class="archive-line">Go ahead with the fix, i dont mind if the report fixes are done in one umbrella PR.</span>
+<br><br>
+<span class="archive-line">Regarding postgres specific syntax or generic: can you please share some PRO vs CON? so we can make a better judgment call here</span>
+</div>
+</article><article class="archive-message">
+<div class="archive-meta">
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1792572125178719" title="Wed, 21 Oct 2026 08:42:05 GMT">Wed 08:42</a><span class="archive-user">Aarti Panchal</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">Thanks Adam! Here&#39;s how I see the options for the report fixes. The cast to char is there because the CASE mixes numbers with the text &#39;invalid PAR Type&#39;, so every branch has to be a string. MySQL&#39;s CAST(x AS CHAR) has no length; on PostgreSQL it&#39;s char(1).</span>
+<br><br>
+<ol class="archive-list archive-list-numbered">
+<li>PostgreSQL-only, targeted: one changeset with context=&quot;postgresql&quot; that does UPDATE stretchy_report SET report_sql = REPLACE(report_sql, &#39;AS CHAR)&#39;, &#39;AS VARCHAR)&#39;) WHERE report_name IN (the 5 reports + TxnRunningBalances)</li>
+</ol>
+<ul class="archive-list">
+<li>small diff, easy to review, zero risk for MySQL/MariaDB</li>
+<li>only touches the cast, so a tenant who customised one of these reports keeps their other edits</li>
+<li>relies on the exact text; if a tenant changed that part it silently doesn&#39;t apply</li>
+<li>keeps the two copies (0002 vs 0003) apart, which is how these bugs got in</li>
+</ul>
+<ol class="archive-list archive-list-numbered">
+<li>PostgreSQL-only, full rewrite (like FINERACT-2436): replace the whole report_sql in a postgresql-context changeset</li>
+</ol>
+<ul class="archive-list">
+<li>explicit, the final SQL is right there in the changeset</li>
+<li>same pattern the project already accepted</li>
+<li>long XML diffs, harder to review</li>
+<li>overwrites any tenant customisation of these reports</li>
+<li>still two copies to keep in sync</li>
+</ul>
+<ol class="archive-list archive-list-numbered">
+<li>Generic, one SQL for all DBs</li>
+</ol>
+<ul class="archive-list">
+<li>one source of truth, all three CI shards test the same SQL</li>
+<li>not a small change: the MySQL copies use backtick identifiers (&quot;x.`Principal Overdue`&quot;), PostgreSQL needs double quotes, so the inner aliases would need renaming to plain names first</li>
+<li>MySQL doesn&#39;t accept CAST(... AS VARCHAR), and CAST(... AS CHAR(20)) pads with spaces on PostgreSQL, so we&#39;d need something like CONCAT(round(...), &#39;&#39;) or returning NULL instead of &#39;invalid PAR Type&#39;, which changes output on MySQL</li>
+<li>touches reports that work today on most installs (MySQL), so more regression risk</li>
+</ul>
+<span class="archive-line">My suggestion: 1 for the AS CHAR cases, 2 only where the logic itself has to change (Happy Birthday, TxnRunningBalances), all in the one umbrella PR, plus the report smoke test so it runs on all three shards. If you&#39;d rather start converging on generic SQL, I&#39;d do that as a separate follow-up per report.</span>
+<br><br>
+<span class="archive-line">For castChar I&#39;ll file the ticket and open the PR today.</span>
+</div>
+</article><article class="archive-message">
+<div class="archive-meta">
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1792574807074709" title="Wed, 21 Oct 2026 09:26:47 GMT">Wed 09:26</a><span class="archive-user">Aarti Panchal</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">castChar PR is up: <a class="archive-link" href="https://github.com/apache/fineract/pull/6705">github.com/apache/fineract/pull/6705</a> (FINERACT-2975)</span>
+</div>
+</article><article class="archive-message">
+<div class="archive-meta">
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1792574821433639" title="Wed, 21 Oct 2026 09:27:01 GMT">Wed 09:27</a><span class="archive-user">Aarti Panchal</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">@Adam Saghy</span>
+</div>
+</article><article class="archive-message">
+<div class="archive-meta">
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1792575943540309" title="Wed, 21 Oct 2026 09:45:43 GMT">Wed 09:45</a><span class="archive-user">Aarti Panchal</span>
+</div>
+<div class="archive-text">
+<span class="archive-line"><strong>Quick update before I file</strong>: while testing the report fixes on a real PostgreSQL tenant I found a bigger one. The currencyIdSelectAll parameter is registered with parameter_FormatType &#39;number&#39;, but its values are currency codes (the reports do l.currency_code = &#39;${currencyId}&#39;). Since FINERACT-2624 a number parameter is bound as a Long, so with the default &quot;-1&quot; (All) 22 of the 34 enabled table reports fail on PostgreSQL with &quot;operator does not exist: character varying = bigint&quot;, including Portfolio at Risk, all Active Loans and Aging reports. On every database a real code like R_currencyId=USD is rejected as not numeric. The fix is one row: set its format to &#39;string&#39;.</span>
+<br><br>
+<span class="archive-line">I&#39;ve put it in the same umbrella PR as its own changeset (all databases), next to the PostgreSQL-only ones, so it&#39;s easy to split out if you&#39;d rather have it as a separate ticket. OK to keep it together?</span>
+</div>
+</article><article class="archive-message">
+<div class="archive-meta">
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1792576043409099?thread_ts=1792576043.409099&amp;cid=C028634A61L" title="Wed, 21 Oct 2026 09:47:23 GMT">Wed 09:47</a><span class="archive-user">Adam Saghy</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">Sound like a good plan</span>
+</div>
+<div class="archive-reactions"><span class="archive-reaction">👍 1</span>
+</div>
+</article><section class="archive-thread" aria-label="Thread replies">
+<article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1792576846963609?thread_ts=1792576043.409099&amp;cid=C028634A61L" title="Wed, 21 Oct 2026 10:00:46 GMT">Wed 10:00</a><span class="archive-user">Aarti Panchal</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">Thanks! It&#39;s up as a draft: <a class="archive-link" href="https://github.com/apache/fineract/pull/6706">github.com/apache/fineract/pull/6706</a> (FINERACT-2976). I&#39;ll mark it ready once the new report smoke test is green on all three DB shards.</span>
+</div>
+</article></section><article class="archive-message">
+<div class="archive-meta">
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1792576200897109" title="Wed, 21 Oct 2026 09:50:00 GMT">Wed 09:50</a><span class="archive-user">Aman-Mittal</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">Release vote for Apache Fineract 1.16.0 is live at <a class="archive-link" href="https://lists.apache.org/thread.html/kzrp3q5opn746gpvh60sjnwwch8n1tlb">https://lists.apache.org/thread.html/kzrp3q5opn746gpvh60sjnwwch8n1tlb</a></span>
+<br><br>
+<span class="archive-line">Please reply directly in the dev list for the vote.</span>
+</div>
+</article><article class="archive-message">
+<div class="archive-meta">
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1792602393174449" title="Wed, 21 Oct 2026 17:06:33 GMT">Wed 17:06</a><span class="archive-user">Dharani</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">@Dharani has joined the channel</span>
+</div>
 </article></section>
   </main>
 </body>
