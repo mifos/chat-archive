@@ -1697,4 +1697,25 @@
   "thread_ts" : null,
   "edited" : null,
   "reactions" : null
+}, {
+  "ts" : "1792656392.150389",
+  "user" : "U0C8801HLJF",
+  "bot_id" : null,
+  "text" : "Hi!\nCould someone approve the CI runs on #6706, #6709 and #6710 when you get a moment? #6706 now fixes the MySQL INT UNSIGNED report failure, and #6709/#6710 just need a rerun (the last runs hit a Maven Central download error and a likely flaky E2E scenario).\nthanks!",
+  "subtype" : null,
+  "thread_ts" : "1792656392.150389",
+  "edited" : null,
+  "reactions" : [ {
+    "name" : "white_check_mark",
+    "count" : 1
+  } ]
+}, {
+  "ts" : "1792656831.952199",
+  "user" : "U09C1BVTFMX",
+  "bot_id" : null,
+  "text" : "Expect failure in ci as some services are down (eclipse foundation) due to php2shell mitigation.",
+  "subtype" : "thread_broadcast",
+  "thread_ts" : "1792656392.150389",
+  "edited" : null,
+  "reactions" : null
 } ]
