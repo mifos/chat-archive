@@ -1736,4 +1736,22 @@
   "thread_ts" : null,
   "edited" : null,
   "reactions" : null
+}, {
+  "ts" : "1793295068.614199",
+  "user" : "U0CDC6GJ2KT",
+  "bot_id" : null,
+  "text" : "<@U0CDC6GJ2KT> has joined the channel",
+  "subtype" : "channel_join",
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1793299314.322479",
+  "user" : "U0BGA5GKJ5U",
+  "bot_id" : null,
+  "text" : "Hi everyone, I'm Forrest and I'm working on migrating my database into Mifos, but it's been a slow and painful process. I've gotten most of my data imported, but over the months it's been 3 steps forward and 2 steps back. Let me give you guys an update on what's happening. I've been stalled in progress because I've been using claude to assist with the data migration. This worked fine for a while but I've hit a wall. The transactions want to post when I run a new transaction, so I haven't been able to get my transaction history in without also breaking the deployment. I can get it in and looking good, but once I post a new transaction it recalculates and forces everything off again. Is this an issue you have faced in the past? How can I import payments as purely historical without throwing fineract off?",
+  "subtype" : null,
+  "thread_ts" : "1793299314.322479",
+  "edited" : null,
+  "reactions" : null
 } ]
