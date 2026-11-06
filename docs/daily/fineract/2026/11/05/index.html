@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>#fineract 2026-11-05</title>
+  <link rel="stylesheet" href="../../../../../assets/chat-archive.css">
+</head>
+<body>
+  <main class="archive-page">
+<header class="archive-header">
+<p class="archive-breadcrumb"><a href="../../../../../">Channels</a> / <a href="../../../">#fineract</a> / <a href="../../">2026</a> / <a href="../">11</a> / 05</p><h1>#fineract 2026-11-05</h1></header><section class="archive-log"><article class="archive-message">
+<div class="archive-meta">
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1793871473882169?thread_ts=1793871473.882169&amp;cid=C028634A61L" title="Thu, 5 Nov 2026 09:37:53 GMT">Thu 09:37</a><span class="archive-user">YUVADITYA</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">Hi everyone! I&#39;m Yuvaditya, a final-year B.Tech CS student with Java and Spring Boot experience. I&#39;ve set up Apache Fineract locally (backend running with PostgreSQL) and I&#39;m looking for a beginner-friendly first contribution, such as tests, docs or a small bug fix. I&#39;ve also requested a JIRA account. Could someone suggest an unassigned ticket that is still relevant? Thanks!</span>
+</div>
+</article><section class="archive-thread" aria-label="Thread replies">
+<article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1793871676355649?thread_ts=1793871473.882169&amp;cid=C028634A61L" title="Thu, 5 Nov 2026 09:41:16 GMT">Thu 09:41</a><span class="archive-user">Aman-Mittal</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">See dev email // Quoting Adam Saghy mail</span>
+<br><br>
+<span class="archive-line">Hi all,</span>
+<br><br>
+<span class="archive-line">We have opened a large batch of well-scoped tickets aimed at new and</span>
+<br><span class="archive-line">returning contributors. (Thank you Aleks!).</span>
+<br><br>
+<span class="archive-line">Each one is small enough for a single pull request and describes where to look and when it is done. </span>
+<br><span class="archive-line">They are all labelled &quot;beginner&quot; and &quot;beginner-friendly&quot;, so you can find them with:</span>
+<br><br>
+<span class="archive-line"><a class="archive-link" href="https://issues.apache.org/jira/issues/?jql=project%3DFINERACT%20AND%20labels%3Dbeginner-friendly%20AND%20statusCategory%3D%22To%20Do%22">https://issues.apache.org/jira/issues/?jql=project%3DFINERACT%20AND%20labels%3Dbeginner-friendly%20AND%20statusCategory%3D%22To%20Do%22</a></span>
+<br><br>
+<span class="archive-line">The stories were built from a clean build of develop and a review of the codebase. The warning counts, module and file lists in each sub-task come straight from the build output.</span>
+<br><br>
+<br>
+<ol class="archive-list archive-list-numbered">
+<li>Fix compiler, Error Prone and Gradle warnings in the build</li>
+</ol>
+<span class="archive-line">   <a class="archive-link" href="https://issues.apache.org/jira/browse/FINERACT-3092">https://issues.apache.org/jira/browse/FINERACT-3092</a> (15 sub-tasks)</span>
+<br><br>
+<span class="archive-line">   A clean build prints about 2,280 unique warnings. They hide new</span>
+<br><span class="archive-line">   problems, and most of them are mechanical to fix. One sub-task per</span>
+<br><span class="archive-line">   warning category: EffectivelyPrivate, arrow switches, BooleanLiteral,</span>
+<br><span class="archive-line">   Javadoc, deprecated APIs, unchecked casts, Locale in toLowerCase,</span>
+<br><span class="archive-line">   pattern-matching instanceof, the generated Feign client templates</span>
+<br><span class="archive-line">   and Gradle 10 deprecations.</span>
+<br><br>
+<br>
+<ol class="archive-list archive-list-numbered">
+<li>Re-enable the Error Prone checks disabled in build.gradle</li>
+</ol>
+<span class="archive-line">   <a class="archive-link" href="https://issues.apache.org/jira/browse/FINERACT-3108">https://issues.apache.org/jira/browse/FINERACT-3108</a> (8 sub-tasks)</span>
+<br><br>
+<span class="archive-line">   build.gradle disables several checks with a &quot;TODO fix remaining</span>
+<br><span class="archive-line">   usages&quot; note (UnusedVariable, EmptyBlockTag, MissingSummary,</span>
+<br><span class="archive-line">   DirectInvocationOnMock, ReturnValueIgnored, ...). Fix the usages,</span>
+<br><span class="archive-line">   then switch the check back on so the problem can&#39;t come back. One</span>
+<br><span class="archive-line">   sub-task covers a crash in Error Prone 2.49 that the UnusedVariable</span>
+<br><span class="archive-line">   check hits on two of our classes.</span>
+<br><br>
+<br>
+<ol class="archive-list archive-list-numbered">
+<li>Move shared code out of fineract-provider so feature modules can be split</li>
+</ol>
+<span class="archive-line">   <a class="archive-link" href="https://issues.apache.org/jira/browse/FINERACT-3117">https://issues.apache.org/jira/browse/FINERACT-3117</a> (6 sub-tasks)</span>
+<br><br>
+<span class="archive-line">   Loan and savings code can&#39;t leave fineract-provider while it depends</span>
+<br><span class="archive-line">   on notes, calendars, holidays, working days, account transfers and</span>
+<br><span class="archive-line">   interest rate charts that live only there. These sub-tasks move them</span>
+<br><span class="archive-line">   to fineract-core, or put interfaces in core.</span>
+<br><br>
+<br>
+<ol class="archive-list archive-list-numbered">
+<li>Move loan code out of fineract-provider</li>
+</ol>
+<span class="archive-line">   <a class="archive-link" href="https://issues.apache.org/jira/browse/FINERACT-3124">https://issues.apache.org/jira/browse/FINERACT-3124</a> (13 sub-tasks)</span>
+<br><br>
+<span class="archive-line">   208 loan classes are still in fineract-provider. About 160 of them</span>
+<br><span class="archive-line">   don&#39;t depend on anything else in provider, so they can move first:</span>
+<br><span class="archive-line">   product mix, COB steps, jobs, external event serializers, batch</span>
+<br><span class="archive-line">   strategies, read and write services, API resources. Targets are</span>
+<br><span class="archive-line">   fineract-loan, fineract-progressive-loan and fineract-cob.</span>
+<br><br>
+<br>
+<ol class="archive-list archive-list-numbered">
+<li>Move savings, deposit and charge code out of fineract-provider and fineract-core</li>
+</ol>
+<span class="archive-line">   <a class="archive-link" href="https://issues.apache.org/jira/browse/FINERACT-3138">https://issues.apache.org/jira/browse/FINERACT-3138</a> (8 sub-tasks)</span>
+<br><br>
+<span class="archive-line">   170 savings and deposit classes are still in fineract-provider,</span>
+<br><span class="archive-line">   including 86 command handlers, plus savings and charge classes in</span>
+<br><span class="archive-line">   fineract-core. Targets are fineract-savings and fineract-charge.</span>
+<br><br>
+<br>
+<ol class="archive-list archive-list-numbered">
+<li>Split large service classes by functionality</li>
+</ol>
+<span class="archive-line">   <a class="archive-link" href="https://issues.apache.org/jira/browse/FINERACT-3147">https://issues.apache.org/jira/browse/FINERACT-3147</a> (15 sub-tasks)</span>
+<br><br>
+<span class="archive-line">   Fifteen sub-tasks across 13 services of 1,000 to 3,700 lines.</span>
+<br><span class="archive-line">   LoanWritePlatformServiceJpaRepositoryImpl (3,735 lines, 44 public</span>
+<br><span class="archive-line">   methods) is split into 3 sub-tasks: disbursement, repayments and</span>
+<br><span class="archive-line">   adjustments, and closing/write-off/transfer. Each sub-task suggests</span>
+<br><span class="archive-line">   how to split the class. The rule is extract, don&#39;t rewrite: no</span>
+<br><span class="archive-line">   behaviour change.</span>
+<br><br>
+<br>
+<ol class="archive-list archive-list-numbered">
+<li>Move business logic out of JPA entities</li>
+</ol>
+<span class="archive-line">   <a class="archive-link" href="https://issues.apache.org/jira/browse/FINERACT-3163">https://issues.apache.org/jira/browse/FINERACT-3163</a> (11 sub-tasks)</span>
+<br><br>
+<span class="archive-line">   66 of our 253 entities take a JsonCommand, 23 run request validation</span>
+<br><span class="archive-line">   themselves, and SavingsAccount (3,840 lines) and Loan (1,884 lines)</span>
+<br><span class="archive-line">   contain calculations. Entities should only hold state and the</span>
+<br><span class="archive-line">   methods that change it. Parsing, validation and calculations move to</span>
+<br><span class="archive-line">   services, validators and calculators.</span>
+<br><br>
+<br>
+<ol class="archive-list archive-list-numbered">
+<li>Return typed objects from API resources instead of serialized Strings</li>
+</ol>
+<span class="archive-line">   <a class="archive-link" href="https://issues.apache.org/jira/browse/FINERACT-3175">https://issues.apache.org/jira/browse/FINERACT-3175</a> (14 sub-tasks)</span>
+<br><br>
+<span class="archive-line">   449 methods in 75 *ApiResource classes build their JSON by hand and</span>
+<br><span class="archive-line">   return a String. They should return the response DTO and let</span>
+<br><span class="archive-line">   JAX-RS/Jackson serialize it, as the fineract-accounting resources</span>
+<br><span class="archive-line">   already do. The JSON clients receive, the OpenAPI spec and the</span>
+<br><span class="archive-line">   generated client method names must not change.</span>
+<br><br>
+<br>
+<ol class="archive-list archive-list-numbered">
+<li>Type-safe native SQL queries (QueryDSL)</li>
+</ol>
+<span class="archive-line">   <a class="archive-link" href="https://issues.apache.org/jira/browse/FINERACT-2022">https://issues.apache.org/jira/browse/FINERACT-2022</a> (51 sub-tasks so far)</span>
+<br><br>
+<span class="archive-line">   Fineract builds about 500 native SQL queries as strings, so a</span>
+<br><span class="archive-line">   renamed or dropped column only fails at runtime. FINERACT-2022 (see</span>
+<br><span class="archive-line">   also FSIP-6) replaces them with QueryDSL SQL queries, whose query</span>
+<br><span class="archive-line">   classes are generated from the schema. A broken column reference</span>
+<br><span class="archive-line">   then fails the build instead of production.</span>
+<br><br>
+<ul class="archive-list">
+<li>The first 50 sub-tasks (SQL 001 to SQL 050) each cover one query.</li>
+</ul>
+<span class="archive-line">     They start with the accounting module, which is the pilot, and</span>
+<br><span class="archive-line">     continue into locking, currencies, tenants, external events,</span>
+<br><span class="archive-line">     arrears ageing and loan reschedule.</span>
+<br><ul class="archive-list">
+<li>Each sub-task names the class and line, for example</li>
+</ul>
+<span class="archive-line">     &quot;[SQL 001] Retrieve all GL closures (GLClosureReadPlatformServiceImpl:78)&quot;.</span>
+<br><ul class="archive-list">
+<li>The QueryDSL infrastructure (dependencies, Q-type generation, a</li>
+</ul>
+<span class="archive-line">     short developer guide) is not on develop yet. Please follow</span>
+<br><span class="archive-line">     FINERACT-2022 and wait for it to land before you pick up an SQL</span>
+<br><span class="archive-line">     sub-task.</span>
+<br><ul class="archive-list">
+<li>More sub-tasks will be added as the migration moves on module by</li>
+</ul>
+<span class="archive-line">     module.</span>
+<br><br>
+<br>
+<span class="archive-line">How to get started</span>
+<br><br>
+<ul class="archive-list">
+<li>Pick a sub-task and comment on it to say you are working on it.</li>
+<li>Please don&#39;t pick up more than 3 at the same time</li>
+<li>One sub-task per pull request. Start the PR title with the ticket</li>
+</ul>
+<span class="archive-line">  key, e.g. &quot;FINERACT-3093: Fix EffectivelyPrivate warnings in</span>
+<br><span class="archive-line">  DepositAccountReadPlatformServiceImpl&quot;.</span>
+<br><ul class="archive-list">
+<li>Behaviour must not change. Run ./gradlew build -x test before you</li>
+</ul>
+<span class="archive-line">  push, and the tests that cover your change. CONTRIBUTING.md and the</span>
+<br><span class="archive-line">  skills under .agents/skills explain how to test.</span>
+<br><ul class="archive-list">
+<li>Some tickets depend on others (the modularisation ones on the shared</li>
+</ul>
+<span class="archive-line">  code story, for example). The ticket says so where it matters.</span>
+<br><ul class="archive-list">
+<li>Questions are welcome here on the list or on the ticket.</li>
+</ul>
+<br>
+<span class="archive-line">These are good first contributions. Each one makes the codebase safer and easier to work on for everyone who comes after you.</span>
+<br><br>
+<span class="archive-line">Thanks,</span>
+<br><span class="archive-line">Adam S</span>
+</div>
+</article></section><article class="archive-message">
+<div class="archive-meta">
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1793872185581659?thread_ts=1793872185.581659&amp;cid=C028634A61L" title="Thu, 5 Nov 2026 09:49:45 GMT">Thu 09:49</a><span class="archive-user">YUVADITYA</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">@Aman-Mittal @Victor Romero I requested an Apache JIRA account a few days ago but haven&#39;t received the approval email yet.</span>
+<br><span class="archive-line">Could someone please help check the status or point me to the right person? My details:</span>
+<br><span class="archive-line">Email: yuva8954@gmail.comGitHub: yuvnotcode</span>
+<br><br>
+<span class="archive-line">I&#39;ve forked the repo, have Fineract running locally, and want to start with a beginner-friendly sub-tasks. I need the account to comment on a ticket and claim it.</span>
+<br><br>
+<span class="archive-line">Thank you!</span>
+</div>
+</article><section class="archive-thread" aria-label="Thread replies">
+<article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1793874151343189?thread_ts=1793872185.581659&amp;cid=C028634A61L" title="Thu, 5 Nov 2026 10:22:31 GMT">Thu 10:22</a><span class="archive-user">Rohan Krishna</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">@YUVADITYA In case it helps: I requested my Apache Jira account through <a class="archive-link" href="https://selfserve.apache.org/jira-account.html">selfserve.apache.org/jira-account.html</a> and it was approved. If yours is still pending, the contributing guide says to ask on the dev mailing list with your username and the email you used. Good luck with your first ticket!</span>
+</div>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1793881064581469?thread_ts=1793872185.581659&amp;cid=C028634A61L" title="Thu, 5 Nov 2026 12:17:44 GMT">Thu 12:17</a><span class="archive-user">YUVADITYA</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">thanks @Rohan Krishna but i have done it already but didn&#39;t get yet!</span>
+</div>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1793882989231369?thread_ts=1793872185.581659&amp;cid=C028634A61L" title="Thu, 5 Nov 2026 12:49:49 GMT">Thu 12:49</a><span class="archive-user">Rohan Krishna</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">&amp;gt; @YUVADITYA You’re welcome, and sorry the link didn’t work for you. Since it’s been a few days, it might be worth writing to the Fineract dev mailing list with your Jira username and email.</span>
+<br><br>
+</div>
+</article></section><article class="archive-message">
+<div class="archive-meta">
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1793873505640809?thread_ts=1793873505.640809&amp;cid=C028634A61L" title="Thu, 5 Nov 2026 10:11:45 GMT">Thu 10:11</a><span class="archive-user">YUVADITYA</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">@Victor Romero @David Higgins @Aman-Mittal</span>
+<br><span class="archive-line">I&#39;d like to work on FINERACT-3098 (Fix Javadoc problems: NotJavadoc comments and broken references), under FINERACT-3092.</span>
+<br><br>
+<span class="archive-line">Since the sub-task covers 207 warnings in 60 files, I&#39;d like to start with just the fineract-savings module (6 warnings) so the PR stays small and easy to review. The other modules stay open for anyone else to pick up.</span>
+<br><br>
+<span class="archive-line">My jira account is still pending approval, so I can&#39;t comment on the ticket yet.</span>
+<br><span class="archive-line">Thanks!</span>
+</div>
+</article><section class="archive-thread" aria-label="Thread replies">
+<article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1793876741360829?thread_ts=1793873505.640809&amp;cid=C028634A61L" title="Thu, 5 Nov 2026 11:05:41 GMT">Thu 11:05</a><span class="archive-user">David Higgins</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">hi @YUVADITYA that is a fineract Jira run by Apache not controlled by Mifos.  If you are interested in Mifos GSOC I suggest you look at Mifos backend projects.</span>
+</div>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1793876799244409?thread_ts=1793873505.640809&amp;cid=C028634A61L" title="Thu, 5 Nov 2026 11:06:39 GMT">Thu 11:06</a><span class="archive-user">David Higgins</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">also join our GSOC channels where we provide more guidance #C5KKAMQCW #C04KS4L1RL6</span>
+</div>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1793880587625319?thread_ts=1793873505.640809&amp;cid=C028634A61L" title="Thu, 5 Nov 2026 12:09:47 GMT">Thu 12:09</a><span class="archive-user">YUVADITYA</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">Thanks @David Higgins for guiding!</span>
+</div>
+</article></section><article class="archive-message">
+<div class="archive-meta">
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1793883252111689" title="Thu, 5 Nov 2026 12:54:12 GMT">Thu 12:54</a><span class="archive-user">Ali Mohamed</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">@Ali Mohamed has joined the channel</span>
+</div>
+</article><article class="archive-message">
+<div class="archive-meta">
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1793890510486149?thread_ts=1793890510.486149&amp;cid=C028634A61L" title="Thu, 5 Nov 2026 14:55:10 GMT">Thu 14:55</a><span class="archive-user">Ali Mohamed</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">Hey everyone , I want to start contributing to mifos backend projects , but i don’t know where to start . could someone help me ? I’m ready to understand the codebase and start with begineer issues to get familiar with the projects.</span>
+</div>
+</article><section class="archive-thread" aria-label="Thread replies">
+<article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1793895260757849?thread_ts=1793890510.486149&amp;cid=C028634A61L" title="Thu, 5 Nov 2026 16:14:20 GMT">Thu 16:14</a><span class="archive-user">David Higgins</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">Hi Ali, if you want Mifos Backend project please reach out to @Aleksandar Vidakovic as Fineract is an Apache project not Mifos.</span>
+</div>
+<div class="archive-reactions"><span class="archive-reaction">:100: 1</span>
+</div>
+</article><article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1793895322111379?thread_ts=1793890510.486149&amp;cid=C028634A61L" title="Thu, 5 Nov 2026 16:15:22 GMT">Thu 16:15</a><span class="archive-user">Aleksandar Vidakovic</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">we connected... session early next week with 2 more students</span>
+</div>
+<div class="archive-reactions"><span class="archive-reaction">✅ 2</span>
+</div>
+</article></section><article class="archive-message">
+<div class="archive-meta">
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1793892060711129?thread_ts=1793892060.711129&amp;cid=C028634A61L" title="Thu, 5 Nov 2026 15:21:00 GMT">Thu 15:21</a><span class="archive-user">Adam Saghy</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">@Ali Mohamed</span>
+<br><span class="archive-line"><a class="archive-link" href="https://mifos.slack.com/archives/C028634A61L/p1793871676355649?thread_ts=1793871473.882169&amp;cid=C028634A61L">https://mifos.slack.com/archives/C028634A61L/p1793871676355649?thread_ts=1793871473.882169&amp;cid=C028634A61L</a> and</span>
+<br><br>
+<span class="archive-line">Dear newcomer,</span>
+<br><br>
+<span class="archive-line">we kindly request that you begin your onboarding by reviewing our curated, helpful information under this link: <a class="archive-link" href="https://issues.apache.org/jira/browse/FINERACT-2135">issues.apache.org/jira/browse/FINERACT-2135</a></span>
+<br><br>
+<span class="archive-line">Every contribution that enhances the codebase’s safety, effectiveness, or readability is valuable! :)</span>
+<br><br>
+<span class="archive-line">Considering your availability and willingness to contribute, there are several areas where improvements are needed:</span>
+<br><br>
+<span class="archive-line">Bug tickets</span>
+<br><span class="archive-line"><a class="archive-link" href="https://issues.apache.org/jira/browse/FINERACT-2492?filter=-1&amp;jql=project%20%3D%20%22Apache%20Fineract%22%20%20AND%20type%20%3D%20Bug%20%20%20AND%20resolution%20%3D%20Unresolved%20order%20by%20created%20DESC">issues.apache.org/jira/browse/FINERACT-2492?jql=project%20%3D%20%22A…&amp;filter=-1</a></span>
+<br><br>
+<span class="archive-line">Code maintainability / readability</span>
+<br><span class="archive-line">We have a significant number of compilation warnings due to various reasons. I believe at least half of these warnings could be easily fixed. As we work on resolving these warnings, the codebase could become safer and easier to maintain.</span>
+<br><br>
+<span class="archive-line">All the rest of the stories</span>
+<br><span class="archive-line"><a class="archive-link" href="https://issues.apache.org/jira/browse/FINERACT-2494?filter=-1&amp;jql=project%20%3D%20%22Apache%20Fineract%22%20%20AND%20resolution%20%3D%20Unresolved%20order%20by%20created%20DESC">issues.apache.org/jira/browse/FINERACT-2494?jql=project%20%3D%20%22A…&amp;filter=-1</a></span>
+<br><br>
+<span class="archive-line">All the rest of the stories that are considered beginner friendly</span>
+<br><span class="archive-line"><a class="archive-link" href="https://issues.apache.org/jira/browse/FINERACT-2489?filter=-1&amp;jql=project%20%3D%20%22Apache%20Fineract%22%20and%20labels%20IN%20(beginner-friendly%2C%20beginner%2C%20begineer%2C%20beginners%2C%20Beginner)%20%20AND%20resolution%20%3D%20Unresolved%20order%20by%20created%20DESC">issues.apache.org/jira/browse/FINERACT-2489?jql=project%20%3D%20%22A…&amp;filter=-1</a></span>
+<br><br>
+<span class="archive-line">Hopefully, this gives you some ideas!</span>
+<br><br>
+<span class="archive-line">P.S.: Before you pick up a story that describes a new feature to be introduced, please send an email to the Fineract DEV email list to discuss whether it’s something we really want to include in Fineract.</span>
+<br><br>
+<span class="archive-line">Regards,</span>
+<br><span class="archive-line">Adam</span>
+</div>
+</article><section class="archive-thread" aria-label="Thread replies">
+<article class="archive-message archive-message-reply">
+<div class="archive-meta">
+<span class="archive-reply-indicator" aria-hidden="true">&rarr;</span>
+<span class="archive-reply-label">reply</span>
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1793894697736279?thread_ts=1793892060.711129&amp;cid=C028634A61L" title="Thu, 5 Nov 2026 16:04:57 GMT">Thu 16:04</a><span class="archive-user">Ali Mohamed</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">thank you very much for your help , i will start contributing as soon as possible</span>
+</div>
+</article></section></section>
+  </main>
+</body>
+</html>

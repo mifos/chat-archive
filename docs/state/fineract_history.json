@@ -1799,4 +1799,71 @@
   "thread_ts" : null,
   "edited" : null,
   "reactions" : null
+}, {
+  "ts" : "1793871473.882169",
+  "user" : "U0CEZC88QTA",
+  "bot_id" : null,
+  "text" : "Hi everyone! I'm Yuvaditya, a final-year B.Tech CS student with Java and Spring Boot experience. I've set up Apache Fineract locally (backend running with PostgreSQL) and I'm looking for a beginner-friendly first contribution, such as tests, docs or a small bug fix. I've also requested a JIRA account. Could someone suggest an unassigned ticket that is still relevant? Thanks!",
+  "subtype" : null,
+  "thread_ts" : "1793871473.882169",
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1793871676.355649",
+  "user" : "U09C1BVTFMX",
+  "bot_id" : null,
+  "text" : "See dev email // Quoting Adam Saghy mail\n\nHi all,\n\nWe have opened a large batch of well-scoped tickets aimed at new and\nreturning contributors. (Thank you Aleks!).\n\nEach one is small enough for a single pull request and describes where to look and when it is done. \nThey are all labelled \"beginner\" and \"beginner-friendly\", so you can find them with:\n\n<https://issues.apache.org/jira/issues/?jql=project%3DFINERACT%20AND%20labels%3Dbeginner-friendly%20AND%20statusCategory%3D%22To%20Do%22|https://issues.apache.org/jira/issues/?jql=project%3DFINERACT%20AND%20labels%3Dbeginner-friendly%20AND%20statusCategory%3D%22To%20Do%22>\n\nThe stories were built from a clean build of develop and a review of the codebase. The warning counts, module and file lists in each sub-task come straight from the build output.\n\n\n1. Fix compiler, Error Prone and Gradle warnings in the build\n   <https://issues.apache.org/jira/browse/FINERACT-3092|https://issues.apache.org/jira/browse/FINERACT-3092> (15 sub-tasks)\n\n   A clean build prints about 2,280 unique warnings. They hide new\n   problems, and most of them are mechanical to fix. One sub-task per\n   warning category: EffectivelyPrivate, arrow switches, BooleanLiteral,\n   Javadoc, deprecated APIs, unchecked casts, Locale in toLowerCase,\n   pattern-matching instanceof, the generated Feign client templates\n   and Gradle 10 deprecations.\n\n\n2. Re-enable the Error Prone checks disabled in build.gradle\n   <https://issues.apache.org/jira/browse/FINERACT-3108|https://issues.apache.org/jira/browse/FINERACT-3108> (8 sub-tasks)\n\n   build.gradle disables several checks with a \"TODO fix remaining\n   usages\" note (UnusedVariable, EmptyBlockTag, MissingSummary,\n   DirectInvocationOnMock, ReturnValueIgnored, ...). Fix the usages,\n   then switch the check back on so the problem can't come back. One\n   sub-task covers a crash in Error Prone 2.49 that the UnusedVariable\n   check hits on two of our classes.\n\n\n3. Move shared code out of fineract-provider so feature modules can be split\n   <https://issues.apache.org/jira/browse/FINERACT-3117|https://issues.apache.org/jira/browse/FINERACT-3117> (6 sub-tasks)\n\n   Loan and savings code can't leave fineract-provider while it depends\n   on notes, calendars, holidays, working days, account transfers and\n   interest rate charts that live only there. These sub-tasks move them\n   to fineract-core, or put interfaces in core.\n\n\n4. Move loan code out of fineract-provider\n   <https://issues.apache.org/jira/browse/FINERACT-3124|https://issues.apache.org/jira/browse/FINERACT-3124> (13 sub-tasks)\n\n   208 loan classes are still in fineract-provider. About 160 of them\n   don't depend on anything else in provider, so they can move first:\n   product mix, COB steps, jobs, external event serializers, batch\n   strategies, read and write services, API resources. Targets are\n   fineract-loan, fineract-progressive-loan and fineract-cob.\n\n\n5. Move savings, deposit and charge code out of fineract-provider and fineract-core\n   <https://issues.apache.org/jira/browse/FINERACT-3138|https://issues.apache.org/jira/browse/FINERACT-3138> (8 sub-tasks)\n\n   170 savings and deposit classes are still in fineract-provider,\n   including 86 command handlers, plus savings and charge classes in\n   fineract-core. Targets are fineract-savings and fineract-charge.\n\n\n6. Split large service classes by functionality\n   <https://issues.apache.org/jira/browse/FINERACT-3147|https://issues.apache.org/jira/browse/FINERACT-3147> (15 sub-tasks)\n\n   Fifteen sub-tasks across 13 services of 1,000 to 3,700 lines.\n   LoanWritePlatformServiceJpaRepositoryImpl (3,735 lines, 44 public\n   methods) is split into 3 sub-tasks: disbursement, repayments and\n   adjustments, and closing/write-off/transfer. Each sub-task suggests\n   how to split the class. The rule is extract, don't rewrite: no\n   behaviour change.\n\n\n7. Move business logic out of JPA entities\n   <https://issues.apache.org/jira/browse/FINERACT-3163|https://issues.apache.org/jira/browse/FINERACT-3163> (11 sub-tasks)\n\n   66 of our 253 entities take a JsonCommand, 23 run request validation\n   themselves, and SavingsAccount (3,840 lines) and Loan (1,884 lines)\n   contain calculations. Entities should only hold state and the\n   methods that change it. Parsing, validation and calculations move to\n   services, validators and calculators.\n\n\n8. Return typed objects from API resources instead of serialized Strings\n   <https://issues.apache.org/jira/browse/FINERACT-3175|https://issues.apache.org/jira/browse/FINERACT-3175> (14 sub-tasks)\n\n   449 methods in 75 *ApiResource classes build their JSON by hand and\n   return a String. They should return the response DTO and let\n   JAX-RS/Jackson serialize it, as the fineract-accounting resources\n   already do. The JSON clients receive, the OpenAPI spec and the\n   generated client method names must not change.\n\n\n9. Type-safe native SQL queries (QueryDSL)\n   <https://issues.apache.org/jira/browse/FINERACT-2022|https://issues.apache.org/jira/browse/FINERACT-2022> (51 sub-tasks so far)\n\n   Fineract builds about 500 native SQL queries as strings, so a\n   renamed or dropped column only fails at runtime. FINERACT-2022 (see\n   also FSIP-6) replaces them with QueryDSL SQL queries, whose query\n   classes are generated from the schema. A broken column reference\n   then fails the build instead of production.\n\n   - The first 50 sub-tasks (SQL 001 to SQL 050) each cover one query.\n     They start with the accounting module, which is the pilot, and\n     continue into locking, currencies, tenants, external events,\n     arrears ageing and loan reschedule.\n   - Each sub-task names the class and line, for example\n     \"[SQL 001] Retrieve all GL closures (GLClosureReadPlatformServiceImpl:78)\".\n   - The QueryDSL infrastructure (dependencies, Q-type generation, a\n     short developer guide) is not on develop yet. Please follow\n     FINERACT-2022 and wait for it to land before you pick up an SQL\n     sub-task.\n   - More sub-tasks will be added as the migration moves on module by\n     module.\n\n\nHow to get started\n\n- Pick a sub-task and comment on it to say you are working on it.\n- Please don't pick up more than 3 at the same time\n- One sub-task per pull request. Start the PR title with the ticket\n  key, e.g. \"FINERACT-3093: Fix EffectivelyPrivate warnings in\n  DepositAccountReadPlatformServiceImpl\".\n- Behaviour must not change. Run ./gradlew build -x test before you\n  push, and the tests that cover your change. CONTRIBUTING.md and the\n  skills under .agents/skills explain how to test.\n- Some tickets depend on others (the modularisation ones on the shared\n  code story, for example). The ticket says so where it matters.\n- Questions are welcome here on the list or on the ticket.\n\nThese are good first contributions. Each one makes the codebase safer and easier to work on for everyone who comes after you.\n\nThanks,\nAdam S",
+  "subtype" : "thread_broadcast",
+  "thread_ts" : "1793871473.882169",
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1793872185.581659",
+  "user" : "U0CEZC88QTA",
+  "bot_id" : null,
+  "text" : "<@U09C1BVTFMX> <@U01B6J5FGET> I requested an Apache JIRA account a few days ago but haven't received the approval email yet.\nCould someone please help check the status or point me to the right person? My details:\nEmail: yuva8954@gmail.comGitHub: yuvnotcode\n\nI've forked the repo, have Fineract running locally, and want to start with a beginner-friendly sub-tasks. I need the account to comment on a ticket and claim it.\n\nThank you!",
+  "subtype" : null,
+  "thread_ts" : "1793872185.581659",
+  "edited" : {
+    "ts" : "1793873032.000000"
+  },
+  "reactions" : null
+}, {
+  "ts" : "1793873505.640809",
+  "user" : "U0CEZC88QTA",
+  "bot_id" : null,
+  "text" : "<@U01B6J5FGET> <@U04PVU38B9D> <@U09C1BVTFMX>\nI'd like to work on FINERACT-3098 (Fix Javadoc problems: NotJavadoc comments and broken references), under FINERACT-3092.\n\nSince the sub-task covers 207 warnings in 60 files, I'd like to start with just the fineract-savings module (6 warnings) so the PR stays small and easy to review. The other modules stay open for anyone else to pick up.\n\nMy jira account is still pending approval, so I can't comment on the ticket yet.\nThanks!",
+  "subtype" : null,
+  "thread_ts" : "1793873505.640809",
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1793883252.111689",
+  "user" : "U0CEQMM9ENT",
+  "bot_id" : null,
+  "text" : "<@U0CEQMM9ENT> has joined the channel",
+  "subtype" : "channel_join",
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1793890510.486149",
+  "user" : "U0CEQMM9ENT",
+  "bot_id" : null,
+  "text" : "Hey everyone , I want to start contributing to mifos backend projects , but i don’t know where to start . could someone help me ? I’m ready to understand the codebase and start with begineer issues to get familiar with the projects.",
+  "subtype" : null,
+  "thread_ts" : "1793890510.486149",
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1793892060.711129",
+  "user" : "U013NG99S8P",
+  "bot_id" : null,
+  "text" : "<@U0CEQMM9ENT>\n<https://mifos.slack.com/archives/C028634A61L/p1793871676355649?thread_ts=1793871473.882169&cid=C028634A61L|https://mifos.slack.com/archives/C028634A61L/p1793871676355649?thread_ts=1793871473.882169&cid=C028634A61L> and\n\nDear newcomer,\n\nwe kindly request that you begin your onboarding by reviewing our curated, helpful information under this link: <https://issues.apache.org/jira/browse/FINERACT-2135|issues.apache.org/jira/browse/FINERACT-2135>\n\nEvery contribution that enhances the codebase’s safety, effectiveness, or readability is valuable! :)\n\nConsidering your availability and willingness to contribute, there are several areas where improvements are needed:\n\nBug tickets\n<https://issues.apache.org/jira/browse/FINERACT-2492?filter=-1&jql=project%20%3D%20%22Apache%20Fineract%22%20%20AND%20type%20%3D%20Bug%20%20%20AND%20resolution%20%3D%20Unresolved%20order%20by%20created%20DESC|issues.apache.org/jira/browse/FINERACT-2492?jql=project%20%3D%20%22A…&filter=-1>\n\nCode maintainability / readability\nWe have a significant number of compilation warnings due to various reasons. I believe at least half of these warnings could be easily fixed. As we work on resolving these warnings, the codebase could become safer and easier to maintain.\n\nAll the rest of the stories\n<https://issues.apache.org/jira/browse/FINERACT-2494?filter=-1&jql=project%20%3D%20%22Apache%20Fineract%22%20%20AND%20resolution%20%3D%20Unresolved%20order%20by%20created%20DESC|issues.apache.org/jira/browse/FINERACT-2494?jql=project%20%3D%20%22A…&filter=-1>\n\nAll the rest of the stories that are considered beginner friendly\n<https://issues.apache.org/jira/browse/FINERACT-2489?filter=-1&jql=project%20%3D%20%22Apache%20Fineract%22%20and%20labels%20IN%20(beginner-friendly%2C%20beginner%2C%20begineer%2C%20beginners%2C%20Beginner)%20%20AND%20resolution%20%3D%20Unresolved%20order%20by%20created%20DESC|issues.apache.org/jira/browse/FINERACT-2489?jql=project%20%3D%20%22A…&filter=-1>\n\nHopefully, this gives you some ideas!\n\nP.S.: Before you pick up a story that describes a new feature to be introduced, please send an email to the Fineract DEV email list to discuss whether it’s something we really want to include in Fineract.\n\nRegards,\nAdam",
+  "subtype" : null,
+  "thread_ts" : "1793892060.711129",
+  "edited" : {
+    "ts" : "1793892070.000000"
+  },
+  "reactions" : null
 } ]
