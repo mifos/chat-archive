@@ -1893,4 +1893,22 @@
   "thread_ts" : null,
   "edited" : null,
   "reactions" : null
+}, {
+  "ts" : "1794070446.238419",
+  "user" : "U0CD40X006L",
+  "bot_id" : null,
+  "text" : "<@U0CD40X006L> has joined the channel",
+  "subtype" : "channel_join",
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1794071524.356059",
+  "user" : "U0CD40X006L",
+  "bot_id" : null,
+  "text" : "Hi everyone, I’m Samarth, a student from India. I’ve been contributing to the Mifos React web app (openMF/mifos-x-web-app-react#269) and I’m now starting on Fineract.\n\nI’ve claimed FINERACT-3148, 3151 and 3150 (splitting the large loan service classes) on dev@, since my Jira account is still pending. I asked a design question about the shared helpers there too, so any input is welcome on that thread.",
+  "subtype" : null,
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
 } ]
