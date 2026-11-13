@@ -1956,4 +1956,40 @@
   "thread_ts" : null,
   "edited" : null,
   "reactions" : null
+}, {
+  "ts" : "1794500021.220909",
+  "user" : "U0C8307CD2M",
+  "bot_id" : null,
+  "text" : "Hi everyone i have created a ticket : <https://issues.apache.org/jira/projects/FINERACT/issues/FINERACT-3226|issues.apache.org/jira/…/FINERACT-3226> regarding a bug, when i was working inside web-app-react trying to create a new template from the Admin → Templates → selecting *SMS* as the template type but it results in a failure. This was cause by enum ordinal mismatch. I was able to reproduce this bug in both *ANGULAR* and *REACT apps.* This the first ticket that i had raised so i don’t know how to get assigned to this ticket, i am already working on a fix, please assign this ticket to me. Thanks!",
+  "subtype" : null,
+  "thread_ts" : "1794500021.220909",
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1794503913.413489",
+  "user" : "U08Q61AADC2",
+  "bot_id" : null,
+  "text" : "<@U08Q61AADC2> has joined the channel",
+  "subtype" : "channel_join",
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1794553069.652659",
+  "user" : "U0CGQCT1DUJ",
+  "bot_id" : null,
+  "text" : "<@U0CGQCT1DUJ> has joined the channel",
+  "subtype" : "channel_join",
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1794553288.382929",
+  "user" : "U0CCE0LCB2A",
+  "bot_id" : null,
+  "text" : "<@U0CCE0LCB2A> has joined the channel",
+  "subtype" : "channel_join",
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
 } ]
