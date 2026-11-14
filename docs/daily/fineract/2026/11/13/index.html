@@ -23,6 +23,30 @@
 <div class="archive-text">
 <span class="archive-line">@Gautam-Bharadwaj has joined the channel</span>
 </div>
+</article><article class="archive-message">
+<div class="archive-meta">
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1794589631438339" title="Fri, 13 Nov 2026 17:07:11 GMT">Fri 17:07</a><span class="archive-user">luffy2004</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">Hi everyone! I’d like to work on FINERACT-3112. I’ve commented on the ticket. Could someone please assign it to me? My JIRA username is ‘luffy2004’. Thanks!</span>
+</div>
+</article><article class="archive-message">
+<div class="archive-meta">
+<a class="archive-time archive-time-link" href="https://mifos.slack.com/archives/C028634A61L/p1794595276438899" title="Fri, 13 Nov 2026 18:41:16 GMT">Fri 18:41</a><span class="archive-user">swatishaw104</span>
+</div>
+<div class="archive-text">
+<span class="archive-line">Hi everyone, I have a quick clarification regarding FINERACT-3187.</span>
+<br><br>
+<span class="archive-line">I changed the return types of these two methods in OfficesApiResource:</span>
+<br><br>
+<ul class="archive-list">
+<li>retrieveOfficeByExternalId() to OfficeData</li>
+<li>updateOfficeWithExternalId()  to CommandProcessingResult</li>
+</ul>
+<span class="archive-line">After regenerating the client, :integration-tests:compileTestJava fails because FeignOfficeHelper and OfficeHelper still expect GetOfficeResponse and PutOfficesOfficeIdResponse.</span>
+<br><br>
+<span class="archive-line">Should I update these helper methods and their dependent tests to use the new return types, or should these two methods retain their existing Swagger response DTOs?</span>
+</div>
 </article></section>
   </main>
 </body>

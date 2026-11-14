@@ -1992,4 +1992,31 @@
   "thread_ts" : null,
   "edited" : null,
   "reactions" : null
+}, {
+  "ts" : "1794589631.438339",
+  "user" : "U0CDC6GJ2KT",
+  "bot_id" : null,
+  "text" : "Hi everyone! I’d like to work on FINERACT-3112. I’ve commented on the ticket. Could someone please assign it to me? My JIRA username is ‘luffy2004’. Thanks!",
+  "subtype" : null,
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1794595276.438899",
+  "user" : "U0CCCJJ882Y",
+  "bot_id" : null,
+  "text" : "Hi everyone, I have a quick clarification regarding FINERACT-3187.\n\nI changed the return types of these two methods in OfficesApiResource:\n\n• retrieveOfficeByExternalId() to OfficeData\n• updateOfficeWithExternalId()  to CommandProcessingResult\nAfter regenerating the client, :integration-tests:compileTestJava fails because FeignOfficeHelper and OfficeHelper still expect GetOfficeResponse and PutOfficesOfficeIdResponse.\n\nShould I update these helper methods and their dependent tests to use the new return types, or should these two methods retain their existing Swagger response DTOs?",
+  "subtype" : null,
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1794640475.516299",
+  "user" : "U0BV95PUWC9",
+  "bot_id" : null,
+  "text" : "<@U0BV95PUWC9> has joined the channel",
+  "subtype" : "channel_join",
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
 } ]
