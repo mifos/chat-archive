@@ -2019,4 +2019,69 @@
   "thread_ts" : null,
   "edited" : null,
   "reactions" : null
+}, {
+  "ts" : "1794653303.266959",
+  "user" : "U0CHK6576KD",
+  "bot_id" : null,
+  "text" : "<@U0CHK6576KD> has joined the channel",
+  "subtype" : "channel_join",
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1794653509.624839",
+  "user" : "U0CHK6576KD",
+  "bot_id" : null,
+  "text" : "Hey everyone!\n\nI’ve recently joined the Mifos community and I’m looking forward to getting started with Apache Fineract.\n\nI’m currently exploring the codebase to understand its architecture and development workflow. I’d love to start contributing, learn from experienced developers and gradually take on more challenging issues.\n\nIf there are any recommended areas to explore or beginner-friendly issues to start with, I’d really appreciate your suggestions.\n\nLooking forward to being part of the community!",
+  "subtype" : null,
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1794659917.831339",
+  "user" : "U09C1BVTFMX",
+  "bot_id" : null,
+  "text" : "Please see <https://mifos.slack.com/archives/C028634A61L/p1793871676355649?thread_ts=1793871473.882169&amp;cid=C028634A61L|https://mifos.slack.com/archives/C028634A61L/p1793871676355649?thread_ts=1793871473.882169&amp;cid=C028634A61L>",
+  "subtype" : null,
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1794659919.471029",
+  "user" : "U0CCCJJ882Y",
+  "bot_id" : null,
+  "text" : "Hi everyone, I’ve opened a PR for FINERACT-3187. I’ve updated the API responses to use typed objects and made the related integration-test changes.\n\nHere’s the PR: <https://github.com/apache/fineract/pull/6934|github.com/apache/fineract/pull/6934>\n\nPlease let me know if you have any feedback. Thanks!",
+  "subtype" : null,
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1794660169.469379",
+  "user" : "U09C1BVTFMX",
+  "bot_id" : null,
+  "text" : "I have triggered the CI checks. Please expect slower reviews due to the large volumes of PR we are getting.",
+  "subtype" : null,
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1794722079.057009",
+  "user" : "U09PJNPECV6",
+  "bot_id" : null,
+  "text" : "<@U09PJNPECV6> has joined the channel",
+  "subtype" : "channel_join",
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1794729014.581219",
+  "user" : "U0C8801HLJF",
+  "bot_id" : null,
+  "text" : "_Hi <@U013NG99S8P>, following up on #6706 (FINERACT-2976 report fixes). I’ve finalized the PostgreSQL Happy Birthday changeset using `NOW()` to ensure clean timestamp-with-timezone extraction, re-verified the part numbering, and verified all report queries on local PostgreSQL 18 and MySQL 8. All changes are rebased onto the latest develop and tests pass. Whenever you get bandwidth, would love your review!_\n\n<https://github.com/apache/fineract/pull/6706|github.com/apache/fineract/pull/6706>",
+  "subtype" : null,
+  "thread_ts" : null,
+  "edited" : {
+    "ts" : "1794729160.000000"
+  },
+  "reactions" : null
 } ]
