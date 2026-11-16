@@ -2084,4 +2084,31 @@
     "ts" : "1794729160.000000"
   },
   "reactions" : null
+}, {
+  "ts" : "1794769737.960479",
+  "user" : "U0CFHJNHZNX",
+  "bot_id" : null,
+  "text" : "<@U0CFHJNHZNX> has joined the channel",
+  "subtype" : "channel_join",
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1794806202.604319",
+  "user" : "U0C6JDFNMEZ",
+  "bot_id" : null,
+  "text" : "<@U0C6JDFNMEZ> has joined the channel",
+  "subtype" : "channel_join",
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1794806608.956089",
+  "user" : "U0C181SLRC2",
+  "bot_id" : null,
+  "text" : "<@U0C181SLRC2> has joined the channel",
+  "subtype" : "channel_join",
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
 } ]
