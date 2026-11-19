@@ -2063,7 +2063,10 @@
   "subtype" : null,
   "thread_ts" : null,
   "edited" : null,
-  "reactions" : null
+  "reactions" : [ {
+    "name" : "+1",
+    "count" : 1
+  } ]
 }, {
   "ts" : "1794722079.057009",
   "user" : "U09PJNPECV6",
@@ -2120,4 +2123,18 @@
   "thread_ts" : null,
   "edited" : null,
   "reactions" : null
+}, {
+  "ts" : "1795014096.370209",
+  "user" : "U01B6J5FGET",
+  "bot_id" : null,
+  "text" : "Hello Mifos Community! :wave:\nFirst of all… thank you. Every ticket you pick up, every review you leave, and every question you ask makes this project better. We’re genuinely glad you’re here.\nA few friendly pointers to help your contributions land smoothly and make the biggest difference:\n:dart: Aim for impact. Before diving into code, spend a little time exploring Mifos, the ecosystem around it, and how the pieces fit together. You’re not just touching one piece of software, you’re shaping functionality that organizations and the people they serve rely on around the world. Understanding the _why_ behind a change makes your PR far stronger.\n:ticket: Keep us in the loop. Let us know in this channel what you’re working on! If you’ve opened a Jira ticket yourself, please start a quick discussion here about your planned implementation _before_ you build it. A five-minute conversation can save hours of rework, avoid duplicated effort, and often surfaces context that makes your solution better.\n:white_check_mark: Make your PR review-ready. Before asking for a review, please check that:\n• All GitHub Actions checks are passing\n• CodeRabbit’s comments have been addressed and the threads resolved\nA clean, green PR is much easier to review, which means it gets merged sooner. :tada:\n:mantelpiece_clock: Patience is part of the process. Reviewers are spread across time zones and balancing other commitments. If things go quiet, a polite nudge is always welcome, we’re not ignoring you, we’re just human. :slightly_smiling_face:\nThank you again for your time, energy, and care. Let’s keep building something meaningful, together. :rocket:",
+  "subtype" : null,
+  "thread_ts" : null,
+  "edited" : {
+    "ts" : "1795014206.000000"
+  },
+  "reactions" : [ {
+    "name" : "raised_hands",
+    "count" : 4
+  } ]
 } ]
