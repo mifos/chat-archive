@@ -2137,4 +2137,22 @@
     "name" : "raised_hands",
     "count" : 4
   } ]
+}, {
+  "ts" : "1795097606.509049",
+  "user" : "U0AJWHHD5MM",
+  "bot_id" : null,
+  "text" : "Hi. I have raised this pr <https://github.com/apache/fineract/pull/6977|github.com/apache/fineract/pull/6977> for this issue : <https://issues.apache.org/jira/browse/FINERACT-3054|issues.apache.org/jira/browse/FINERACT-3054>",
+  "subtype" : null,
+  "thread_ts" : "1795097606.509049",
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1795103240.456859",
+  "user" : "U09C1BVTFMX",
+  "bot_id" : null,
+  "text" : "Please review failing checks. Some are basic like signed commits, spotless. Without it no reviewer will look at the PR.",
+  "subtype" : "thread_broadcast",
+  "thread_ts" : "1795097606.509049",
+  "edited" : null,
+  "reactions" : null
 } ]
