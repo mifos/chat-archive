@@ -2173,4 +2173,33 @@
   "thread_ts" : null,
   "edited" : null,
   "reactions" : null
+}, {
+  "ts" : "1795360326.017339",
+  "user" : "U0CCCJJ882Y",
+  "bot_id" : null,
+  "text" : "Hi everyone,\nQuick update on my two Apache Fineract PRs:\n• *FINERACT-3187:* <https://github.com/apache/fineract/pull/6934|github.com/apache/fineract/pull/6934> for this issue: <https://issues.apache.org/jira/browse/FINERACT-3187|issues.apache.org/jira/browse/FINERACT-3187>\n• *FINERACT-3186:* <https://github.com/apache/fineract/pull/6882|github.com/apache/fineract/pull/6882> for this issue: <https://issues.apache.org/jira/browse/FINERACT-3186|issues.apache.org/jira/browse/FINERACT-3186>\nI have addressed the review feedback and pushed the corresponding code and test updates to both PRs. Could someone please share an updated review status and let me know if anything else is pending?\n\n*FINERACT-3186 has been approved by Adam Saghy.* Thanks for the review!\n\nI have semester exams from *23 November to 14 December*, so I may be less active during this period and slower to respond. I wanted to share this before my exams. Thanks to everyone who has reviewed and provided feedback so far!",
+  "subtype" : null,
+  "thread_ts" : null,
+  "edited" : {
+    "ts" : "1795360556.000000"
+  },
+  "reactions" : null
+}, {
+  "ts" : "1795373940.948469",
+  "user" : "U0ASQ2Q2E8J",
+  "bot_id" : null,
+  "text" : "<@U0ASQ2Q2E8J> has joined the channel",
+  "subtype" : "channel_join",
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1795425150.302599",
+  "user" : "U09C1BVTFMX",
+  "bot_id" : null,
+  "text" : "<@U0CDC6GJ2KT> please use public channels for asking questions regarding fineract.",
+  "subtype" : null,
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
 } ]
