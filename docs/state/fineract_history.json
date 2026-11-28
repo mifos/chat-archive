@@ -2238,4 +2238,22 @@
   "thread_ts" : null,
   "edited" : null,
   "reactions" : null
+}, {
+  "ts" : "1795811000.813659",
+  "user" : "U0CMDUNRFGV",
+  "bot_id" : null,
+  "text" : "<@U0CMDUNRFGV> has joined the channel",
+  "subtype" : "channel_join",
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
+}, {
+  "ts" : "1795812086.541429",
+  "user" : "U0CMHA73KPG",
+  "bot_id" : null,
+  "text" : "<@U0CMHA73KPG> has joined the channel",
+  "subtype" : "channel_join",
+  "thread_ts" : null,
+  "edited" : null,
+  "reactions" : null
 } ]
